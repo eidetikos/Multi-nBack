@@ -1,5 +1,13 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+
+import Home from './home/Home';
+import Auth from './auth/Auth';
+import Nav from './nav/Nav';
+import About from './about/About';
+import Game from './game/Game';
+
+import { connect } from 'react-redux';
 
 
 class App extends Component {
@@ -7,13 +15,26 @@ class App extends Component {
     return (
       <Router>
         <div className="App">
-          <h1>memo</h1>
+          <header>
+            <h1>Memory App</h1>
+            <Auth/>
+            <Nav/>
+          </header>
+          <Switch>
+            <Route exact path="/" component={Home}/>
+            <Route path="/about" component={About}/>
+            <Route path="/Game" component={Game}/>
+          </Switch>
+          <footer>
+            <h1>FOOOOOOOOOOOOOT</h1>
+          </footer>
         </div>
       </Router>
     );
   }
 }
 
-export default App;
-
-// #tinychange
+export default connect(
+  state => ({}),
+  null
+)(App);
