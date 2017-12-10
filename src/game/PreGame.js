@@ -7,30 +7,30 @@ class PreGame extends PureComponent {
       <main>
         <h3>PreGame component</h3>
         <form>
-         <fieldset>
-           <legend>Variate(using this name for now) Selection</legend>
+          <fieldset>
+            <legend>Variate(using this name for now) Selection</legend>
             <select>
               <option value="2">2</option>
               <option value="3">3</option>
               <option value="4">4</option>
               <option value="5">5</option>
             </select>
-         </fieldset>
+          </fieldset>
           <legend>Difficulty Selection</legend>
-         <fieldset>
-           <div>
-           <input type="radio" name="difficulty" id="difficulty_easy" value="easy"/>
-           <label for="difficulty_easy">Easy</label>
-           </div>
-           <div>
-           <input type="radio" name="difficulty" id="difficulty_medium" value="medium"/>
-           <label for="difficulty_medium">Medium</label>
-           </div>
-           <div>
-           <input type="radio" name="difficulty" id="difficulty_hard" value="hard"/>
-           <label for="difficulty_hard">Hard</label>
-           </div>
-         </fieldset>
+          <fieldset>
+            <div>
+              <input type="radio" name="difficulty" id="difficulty_easy" value="easy"/>
+              <label for="difficulty_easy">Easy</label>
+            </div>
+            <div>
+              <input type="radio" name="difficulty" id="difficulty_medium" value="medium"/>
+              <label for="difficulty_medium">Medium</label>
+            </div>
+            <div>
+              <input type="radio" name="difficulty" id="difficulty_hard" value="hard"/>
+              <label for="difficulty_hard">Hard</label>
+            </div>
+          </fieldset>
         </form>
       </main>
     );
