@@ -4,9 +4,9 @@ import { connect } from 'react-redux';
 class InGame extends PureComponent {
   render() {
     return (
-      <main>
+      <div className="in-game">
         <h3>InGame component</h3>
-      </main>
+      </div>
     );
   }
 }

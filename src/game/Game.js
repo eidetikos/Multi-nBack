@@ -10,7 +10,7 @@ class Game extends PureComponent {
   render() {
     const { match: { url } } = this.props;
     return (
-      <main>
+      <main className="game">
         <h2>Game component</h2>
         <Switch>
           <Route path={`${url}/setup`} component={PreGame}/>

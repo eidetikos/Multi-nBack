@@ -1,11 +1,11 @@
 import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
 
-class PostGame extends PureComponent {
+class GridLayer extends PureComponent {
   render() {
     return (
-      <div className="post-game">
-        <h3>PostGame component</h3>
+      <div className="grid-layer">
+        <h2>GridLayer component</h2>
       </div>
     );
   }
@@ -14,4 +14,4 @@ class PostGame extends PureComponent {
 export default connect(
   state => ({}),
   null
-)(PostGame);
+)(GridLayer);
