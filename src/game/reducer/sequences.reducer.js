@@ -1,4 +1,4 @@
-import * as actions from '../services/constants';
+import * as actions from '../../services/constants';
 
 
 export default function sequences(state = [], { type, payload }) {
