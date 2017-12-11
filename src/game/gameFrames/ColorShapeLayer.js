@@ -6,6 +6,7 @@ class ColorShapeLayer extends PureComponent {
     return (
       <div className="color-shape-layer">
         <h2>ColorShapeLayer component</h2>
+        {this.props.children}
       </div>
     );
   }
