@@ -8,7 +8,7 @@ export function selectVariates(numVariates) {
   
   const variates = {
     position: false,
-    audio: false,
+    // audio: false,
     number: false,
     color: false,
     shape: false
@@ -34,4 +34,38 @@ export function shuffle(array) {
     array[randomIndex] = temporaryValue;
   }
   return array;
+}
+
+const variateVars = {
+  position: {
+    max: 8
+  },
+  // audio: {
+
+  // },
+  number: {
+    max: 9,
+    min: 1
+  },
+  color: [
+    'red', 'green', 'blue', 'yellow', 'orange', 'purple'
+  ],
+  shape: [
+    'circle', 'triangle', 'square', 'diamond', 'star', 'hexagon'
+  ]
+};
+
+export function generateCombos(nBack, variates) {
+  return new Array(Math.floor(nBack + 2))
+    .fill(null)
+    .map(ele => ({}))
+    .map(combo => {
+      
+      if(variates.position) combo.position = Math.floor(Math.random() * (variateVars.position.max + 1));
+      if(variates.number) combo.number = Math.floor(Math.random() * variateVars.number.max + 1);
+      if(variates.color) combo.color = variateVars.color[Math.floor(Math.random() * variateVars.color.length)];
+      if(variates.shape) combo.shape = variateVars.shape[Math.floor(Math.random() * variateVars.shape.length)];
+      
+      return combo;
+    });
 }
