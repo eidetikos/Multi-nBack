@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
 
+
 class PreGame extends PureComponent {
   render() {
     return (
