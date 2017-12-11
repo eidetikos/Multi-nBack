@@ -20,11 +20,11 @@ class InGame extends PureComponent {
       <div className="in-game">
         <h3>InGame component</h3>
         <p># of sequences: 12</p>
-        <GridLayer combo={currentCombo}>
+        {/* <GridLayer combo={currentCombo}>
           <ColorShapeLayer combo={currentCombo}>
             <AudioNumLayer combo={currentCombo}/>
           </ColorShapeLayer>
-        </GridLayer>
+        </GridLayer> */}
       </div>
     );
   }
