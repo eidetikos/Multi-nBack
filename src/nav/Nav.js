@@ -17,15 +17,6 @@ class Nav extends PureComponent {
           <Link to="/game">
             <li>game</li>
           </Link>
-          <Link to="/game/setup">
-            <li>game/setup</li>
-          </Link>
-          <Link to="/game/in-play">
-            <li>game/in-play</li>
-          </Link>
-          <Link to="/game/over">
-            <li>game/over</li>
-          </Link>
         </ul>
       </nav>
     );
