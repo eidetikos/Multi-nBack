@@ -1,5 +1,5 @@
 import * as actions from '../../services/constants';
-import { generateNBack, selectVariates } from './utils';
+import { generateNBack, selectVariates, generateCombos } from './utils';
 
 this.game = {
   difficulty: {
@@ -12,7 +12,7 @@ this.game = {
     variates: {
       position: true,
       number: true,
-      audio: false,
+      // audio: false,
       shape: true,
       color: true
     },
@@ -65,6 +65,7 @@ export function setSettings(difficulty, numVariates) {
       }
     });
     dispatch(initSequence(getState));
+    dispatch(nextCombo(getState));
   };
 }
 
@@ -80,16 +81,16 @@ export function initSequence(getState) {
       numVariates 
     }
   } = getState();
-
   const score = sequences.length;
-  const nBack = generateNBack(startingN, score);
 
+  const nBack = generateNBack(startingN, score);
   const variates = selectVariates(numVariates);
+  const combos = generateCombos(nBack, variates);
 
   const newSequence = {
     variates,
     nBack,
-    combos: [],
+    combos,
     comboPointer: -1,
     interval,
     inProgress: true,
@@ -101,4 +102,8 @@ export function initSequence(getState) {
     payload: newSequence
   };
 
+}
+
+export function nextCombo(getState) {
+  
 }
