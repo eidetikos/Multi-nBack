@@ -4,9 +4,9 @@ import { connect } from 'react-redux';
 class Auth extends PureComponent {
   render() {
     return (
-      <main>
+      <div className="auth">
         <h3>Auth component</h3>
-      </main>
+      </div>
     );
   }
 }
