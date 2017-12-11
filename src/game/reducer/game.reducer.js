@@ -2,13 +2,14 @@ import * as actions from '../../services/constants';
 import sequencesReducer from './sequences.reducer';
 
 const initState = {
-  status: null,
+  status: 'pre',
   difficulty: {
-    startingN: 0,
+    startingN: 1,
     interval: 3000
   },
   numVariates: 2,
   sequences: [],
+  finalStats: []
 };
 
 export default function game(state = initState, { type, payload }) {

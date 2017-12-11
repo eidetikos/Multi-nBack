@@ -21,15 +21,15 @@ class PreGame extends PureComponent {
           <fieldset>
             <div>
               <input type="radio" name="difficulty" id="difficulty_easy" value="easy"/>
-              <label for="difficulty_easy">Easy</label>
+              <label htmlFor="difficulty_easy">Easy</label>
             </div>
             <div>
               <input type="radio" name="difficulty" id="difficulty_medium" value="medium"/>
-              <label for="difficulty_medium">Medium</label>
+              <label htmlFor="difficulty_medium">Medium</label>
             </div>
             <div>
               <input type="radio" name="difficulty" id="difficulty_hard" value="hard"/>
-              <label for="difficulty_hard">Hard</label>
+              <label htmlFor="difficulty_hard">Hard</label>
             </div>
           </fieldset>
         </form>
