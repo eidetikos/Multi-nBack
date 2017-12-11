@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 class About extends PureComponent {
   render() {
     return (
-      <main>
+      <main className="about">
         <h2>about component</h2>
       </main>
     );

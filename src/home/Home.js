@@ -5,7 +5,7 @@ class Home extends PureComponent {
   render() {
     const { user } = this.props;
     return (
-      <main>
+      <main className="home">
         <h2>home component</h2>
         {user &&
           <h3>user stats!</h3>

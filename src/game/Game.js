@@ -7,16 +7,54 @@ import InGame from './InGame';
 import PostGame from './PostGame';
 
 class Game extends PureComponent {
+  
+  // set up fake data
+  constructor() {
+    super();
+    this.state = {
+      difficulty: {
+        initN: 2,
+        interval: 1000
+      },
+      numVariates: 4,
+      status: 'post',
+      sequences: [{
+        variates: {
+          position: true,
+          number: true,
+          audio: false,
+          shape: true,
+          color: true
+        },
+        nBack: 3,
+        interval: 1000,
+        combos: [{
+          position: 6,
+          number: 3,
+          shape: 'square',
+          color: 'red'
+        }],
+        comboPointer: 0
+      }],
+      finalStats: []
+    };
+  }
+
   render() {
+    console.log('in Game', this.state)
     const { match: { url } } = this.props;
     return (
-      <main>
+      <main className="game">
         <h2>Game component</h2>
-        <Switch>
-          <Route path={`${url}/setup`} component={PreGame}/>
-          <Route path={`${url}/in-play`} component={InGame}/>
-          <Route path={`${url}/over`} component={PostGame}/>
-        </Switch>
+        {this.state.status === 'pre' &&
+          <PreGame tempGame={this.state}/>
+        }
+        {this.state.status === 'in' &&
+          <InGame tempGame={this.state}/>
+        }
+        {this.state.status === 'post' &&
+          <PostGame tempGame={this.state}/>
+        }
       </main>
     );
   }
