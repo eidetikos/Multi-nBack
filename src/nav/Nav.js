@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 class Nav extends PureComponent {
   render() {
     return (
-      <main>
+      <nav>
         <h3>Nav component</h3>
         <ul>
           <Link to="/">
@@ -27,7 +27,7 @@ class Nav extends PureComponent {
             <li>game/over</li>
           </Link>
         </ul>
-      </main>
+      </nav>
     );
   }
 }
