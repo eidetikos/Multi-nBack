@@ -1,6 +1,7 @@
-import * as actions from '../../services/constants';
+import * as actions from '../../app/constants';
 import { generateNBack, selectVariates, generateCombos } from './utils';
 import deepEqual from 'deep-equal';
+import gameApi from '../../services/game.api';
 
 this.game = {
   difficulty: {
@@ -41,12 +42,12 @@ export function setSettings(difficulty, numVariates) {
     let startingN, interval = null;
     switch(difficulty) {
       case 'easy':
-        startingN = 1;
-        interval = 100000;
+        startingN = 10;
+        interval = 3;
         break;
       case 'medium':
-        startingN = 3;
-        interval = 2000;
+        startingN = 2;
+        interval = 2000000;
         break;
       case 'hard':
         startingN = 7;
@@ -60,7 +61,8 @@ export function setSettings(difficulty, numVariates) {
       payload: { 
         difficulty: { 
           startingN,
-          interval
+          interval,
+          difficulty
         },
         numVariates 
       }
@@ -142,6 +144,14 @@ export function checkRecall(recalled) {
 }
 
 async function wrapUp(getState, dispatch) {
+
+  const { game } = getState();
+
+  // console.log(JSON.stringify(game));
   
-  dispatch({ type: actions.GAME_OVER });
+  dispatch({ 
+    type: actions.GAME_OVER,
+    payload: gameApi.add(game)
+  
+  });
 }
