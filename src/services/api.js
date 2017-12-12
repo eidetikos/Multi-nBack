@@ -1,4 +1,4 @@
-const url = '/api';
+const url = process.env.REACT_APP_API_URL;
 
 const wrap = promise => {
   return promise.then(response => {
