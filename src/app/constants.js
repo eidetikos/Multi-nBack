@@ -1,3 +1,7 @@
+// ###  Auth Constants ### //
+export const SIGN_IN = 'SIGN_IN';
+export const LOG_OUT = 'LOG_OUT';
+
 // ###  Game Constants ### //
 export const INIT_GAME = 'INIT_GAME';
 export const SET_SETTINGS = 'SET_SETTINGS';

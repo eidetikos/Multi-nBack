@@ -8,7 +8,7 @@ const wrap = promise => {
     return response.json().then(res => console.log(res));
   });
 };
-const token =  'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjVhMzAzMzdhOGVlZGNjOTk4NDJiNjBlOCIsImlhdCI6MTUxMzEwODM0Nn0.t_RbtzpaS83KuSv7Z-Y61x4QT2VZPuV6WeKa1GU7hC0';
+const token =  'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjVhMzAxYjczYTQ0MDRlNjM3NDFhYzYwZSIsImlhdCI6MTUxMzEwMjE5NX0.xydSN_E2W9_0n-1LU5XLtcndpp2P0Wq1UbS5TF5w2W4';
 export const get = path => wrap(fetch(`${url}${path}`));
 
 export const post = (path, data) => wrap(

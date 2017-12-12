@@ -1,7 +1,8 @@
 import React, { PureComponent } from 'react';
-import Modal from 'react-modal';
 import AuthForm from '../auth/AuthForm';
 import { customStyles } from '../styles/style';
+import Modal from 'react-modal';
+Modal.setAppElement('#auth-modal');
 
 export default class Log extends PureComponent {
   constructor() {
