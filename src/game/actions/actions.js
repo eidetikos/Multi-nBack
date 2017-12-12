@@ -1,5 +1,6 @@
 import * as actions from '../../services/constants';
 import { generateNBack, selectVariates, generateCombos } from './utils';
+import deepEqual from 'deep-equal';
 
 this.game = {
   difficulty: {
@@ -65,7 +66,7 @@ export function setSettings(difficulty, numVariates) {
       }
     });
     dispatch(initSequence(getState));
-    dispatch(nextCombo(getState));
+    nextCombo(getState, dispatch);
   };
 }
 
@@ -104,6 +105,35 @@ export function initSequence(getState) {
 
 }
 
-export function nextCombo(getState) {
+export function nextCombo(getState, dispatch) {
+
+  dispatch({ type: actions.NEXT_COMBO });
   
+  const { 
+    game: {
+      sequences,
+      difficulty: { interval } 
+    }
+  } = getState();
+  const { comboPointer, combos } = sequences[sequences.length - 1];
+
+  if(combos.length - 1 === comboPointer) setTimeout(() => dispatch({ type: actions.SEQUENCE_OVER }), interval); 
+  else setTimeout(() => nextCombo(getState, dispatch), interval);
+}
+
+export function checkRecall(recalled) {
+  return (dispatch, getState) => {
+    
+    const { 
+      game: { sequences }
+    } = getState();
+
+    const { nBack, combos } = sequences[sequences.length - 1];
+    const targetCombo = combos[combos.length - nBack];
+    console.log('target', targetCombo);
+    console.log('recalled', recalled);
+    console.log(deepEqual(targetCombo, recalled));
+
+
+  };
 }
