@@ -42,7 +42,7 @@ export function setSettings(difficulty, numVariates) {
     switch(difficulty) {
       case 'easy':
         startingN = 1;
-        interval = 3000;
+        interval = 100000;
         break;
       case 'medium':
         startingN = 3;
