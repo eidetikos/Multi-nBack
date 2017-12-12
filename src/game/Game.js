@@ -13,13 +13,13 @@ class Game extends PureComponent {
       <main className="game">
         <h2>Game component</h2>
         {game.status === 'pre' &&
-          <PreGame tempGame={game}/>
+          <PreGame/>
         }
         {game.status === 'in' &&
-          <InGame tempGame={game}/>
+          <InGame/>
         }
         {game.status === 'post' &&
-          <PostGame tempGame={game}/>
+          <PostGame/>
         }
       </main>
     );

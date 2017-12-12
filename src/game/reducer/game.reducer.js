@@ -19,7 +19,7 @@ export default function game(state = initState, { type, payload }) {
     case actions.INIT_GAME:
       return { ...state, status: 'pre' };
     // GET SETTINGS changing difficulty
-    case actions.GET_SETTINGS:
+    case actions.SET_SETTINGS:
       return { ...state, difficulty: payload.difficulty, numVariates: payload.numVariates, status: 'in' };
     case actions.INIT_SEQUENCE:
     case actions.NEXT_COMBO:
