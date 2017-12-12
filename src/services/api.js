@@ -2,10 +2,10 @@ const url = process.env.REACT_APP_API_URL;
 
 const wrap = promise => {
   return promise.then(response => {
-    console.log(response);
-    // response.json().then(res => console.log(res));
+    console.log('initial reponse: ',response);
+
     if(!response.ok) return Promise.reject(new Error(response.statusText));
-    return response.json().then(res => console.log(res));
+    return response.json().then(res => console.log('JSON response: ',res));
   });
 };
 const token =  'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjVhMzAzMzdhOGVlZGNjOTk4NDJiNjBlOCIsImlhdCI6MTUxMzEwODM0Nn0.t_RbtzpaS83KuSv7Z-Y61x4QT2VZPuV6WeKa1GU7hC0';
