@@ -32,6 +32,8 @@ export default function sequences(state = [], { type, payload }) {
         currentSequence.fatal = true;
         return currentSequence;
       });
+    case actions.WRAP_UP:
+      return [];
     
     default: 
       return state;
