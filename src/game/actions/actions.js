@@ -70,7 +70,7 @@ export function setSettings(difficulty, numVariates) {
   };
 }
 
-export function initSequence(getState) {
+function initSequence(getState) {
 
   const { 
     game: { 
@@ -105,7 +105,7 @@ export function initSequence(getState) {
 
 }
 
-export function nextCombo(getState, dispatch) {
+function nextCombo(getState, dispatch) {
 
   dispatch({ type: actions.NEXT_COMBO });
   
@@ -132,8 +132,16 @@ export function checkRecall(recalled) {
     const targetCombo = combos[combos.length - nBack];
     console.log('target', targetCombo);
     console.log('recalled', recalled);
-    console.log(deepEqual(targetCombo, recalled));
 
-
+    if(deepEqual(targetCombo, recalled)) {
+      dispatch(initSequence(getState));
+      nextCombo(getState, dispatch);
+    } 
+    else wrapUp(getState, dispatch);
   };
+}
+
+async function wrapUp(getState, dispatch) {
+  
+  dispatch({ type: actions.GAME_OVER });
 }
