@@ -1,4 +1,5 @@
 import * as actions from '../../services/constants';
+import { nextCombo } from '../actions/actions';
 
 
 export default function sequences(state = [], { type, payload }) {

@@ -1,26 +1,36 @@
 import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
+import { setSettings } from './actions/actions';
 
 
 class PreGame extends PureComponent {
+
+  submitSettingsHandler = event => {
+    event.preventDefault();
+    const difficulty = event.target.difficulty.value;
+    const numVariates = event.target.numVariates.value;
+    this.props.setSettings(difficulty, numVariates);
+    
+  }
+
   render() {
     return (
       <div className="pre-game">
         <h3>PreGame component</h3>
-        <form>
+        <form onSubmit={this.submitSettingsHandler}>
           <fieldset>
             <legend>Variate(using this name for now) Selection</legend>
-            <select>
+            <select name="numVariates">
               <option value="2">2</option>
               <option value="3">3</option>
               <option value="4">4</option>
-              <option value="5">5</option>
+              {/* <option value="5">5</option> */}
             </select>
           </fieldset>
-          <legend>Difficulty Selection</legend>
           <fieldset>
+            <legend>Difficulty Selection</legend>
             <div>
-              <input type="radio" name="difficulty" id="difficulty_easy" value="easy"/>
+              <input type="radio" name="difficulty" id="difficulty_easy" value="easy" defaultChecked/>
               <label htmlFor="difficulty_easy">Easy</label>
             </div>
             <div>
@@ -32,6 +42,7 @@ class PreGame extends PureComponent {
               <label htmlFor="difficulty_hard">Hard</label>
             </div>
           </fieldset>
+          <input type="submit"/>
         </form>
       </div>
     );
@@ -40,5 +51,5 @@ class PreGame extends PureComponent {
 
 export default connect(
   state => ({}),
-  null
+  { setSettings }
 )(PreGame);

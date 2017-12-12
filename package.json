@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "deep-equal": "^1.0.1",
+    "now": "^8.5.4",
     "react": "^16.1.1",
     "react-dom": "^16.1.1",
     "react-modal": "^3.1.7",
@@ -11,14 +13,16 @@
     "react-router-dom": "^4.2.2",
     "react-scripts": "1.0.17",
     "redux": "^3.7.2",
-    "redux-thunk": "^2.2.0",
-    "shortid": "^2.2.8"
+    "redux-thunk": "^2.2.0"
   },
   "scripts": {
     "prebuild": "rm -rf ../multi-n-back-api/public",
     "postbuild": "mv ./build ../multi-n-back-api/public",
+    "predeploy": "npm run build",
+    "deploy": "now --public --name multi-n-back build && now alias",
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "postbuild": "rm -rf build/static/**/*.map",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "build-css": "node-sass-chokidar --include-path ./src/styles src/ -o src/",
@@ -27,5 +31,8 @@
   "proxy": "http://localhost:3001",
   "devDependencies": {
     "node-sass-chokidar": "0.0.3"
+  },
+  "now": {
+    "alias": "multi-n-back.now.sh"
   }
 }
