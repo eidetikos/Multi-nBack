@@ -17,12 +17,11 @@
   },
   "scripts": {
     "prebuild": "rm -rf ../multi-n-back-api/public",
-    "postbuild": "mv ./build ../multi-n-back-api/public",
+    "postbuild": "rm -rf build/static/**/*.map",
     "predeploy": "npm run build",
     "deploy": "now --public --name multi-n-back build && now alias",
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "postbuild": "rm -rf build/static/**/*.map",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "build-css": "node-sass-chokidar --include-path ./src/styles src/ -o src/",
