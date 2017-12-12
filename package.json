@@ -7,6 +7,7 @@
     "now": "^8.5.4",
     "react": "^16.1.1",
     "react-dom": "^16.1.1",
+    "react-modal": "^3.1.7",
     "react-redux": "^5.0.6",
     "react-router": "^4.2.0",
     "react-router-dom": "^4.2.2",
@@ -15,6 +16,8 @@
     "redux-thunk": "^2.2.0"
   },
   "scripts": {
+    "prebuild": "rm -rf ../multi-n-back-api/public",
+    "postbuild": "mv ./build ../multi-n-back-api/public",
     "predeploy": "npm run build",
     "deploy": "now --public --name multi-n-back build && now alias",
     "start": "react-scripts start",
