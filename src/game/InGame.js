@@ -24,10 +24,10 @@ class InGame extends PureComponent {
   };
 
   render() {
-    const { game } = this.props;
+    const { game, game: { status } } = this.props;
     const { combos, nBack, comboPointer, inProgress, variates } = game.sequences.slice(-1)[0];
-    console.log(inProgress);
-
+    const combo = combos && combos[comboPointer];
+    console.log(combo);
 
     return (
       <div className="in-game">
@@ -36,11 +36,26 @@ class InGame extends PureComponent {
         {!inProgress && 
           <RecallForm onSubmit={this.recallHandler} variates={variates}/>
         }
-        {/* <GridLayer combo={currentCombo}>
-          <ColorShapeLayer combo={currentCombo}>
-            <AudioNumLayer combo={currentCombo}/>
-          </ColorShapeLayer>
-        </GridLayer> */}
+        {combos && inProgress &&
+          <GridLayer
+            position={combo.position} 
+            useGrid={variates.position}
+          >
+            <ColorShapeLayer 
+              color={combo.color} 
+              shape={combo.shape}
+              useColor={variates.color}
+              useShape={variates.shape}
+            >
+              <AudioNumLayer 
+                audio={combo.audio} 
+                number={combo.number}
+                useAudio={variates.audio}
+                useNumber={variates.number}
+              />
+            </ColorShapeLayer>
+          </GridLayer>
+        }
       </div>
     );
   }
