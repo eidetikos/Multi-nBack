@@ -1,3 +1,3 @@
 import * as api from './api';
 
-export const post = data => api.post('/auth', data);
+export const post = (path, data) => api.post(`/auth${path}`, data);
