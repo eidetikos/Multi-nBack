@@ -5,4 +5,5 @@ export const INIT_SEQUENCE = 'INIT_SEQUENCE';
 export const NEXT_COMBO = 'NEXT_COMBO';
 export const SEQUENCE_OVER = 'SEQUENCE_OVER';
 export const GAME_OVER = 'GAME_OVER';
+export const WRAP_UP = 'WRAP_UP';
 export const LEAVE_GAME = 'LEAVE_GAME';
