@@ -6,7 +6,8 @@ class About extends PureComponent {
     return (
       <main className="about">
         <h2>About component</h2>
-        <p>It has been thought that working memory (WM), a cognitive process, and IQ correlate, perhaps using the same neural networks.  WM is a "trainable" process.</p>
+        <p>It has been thought that working memory (WM), a cognitive process, and IQ correlate, perhaps using the same neural networks.  
+          WM is a "trainable" process.  Therefore, the hope is that, by improving WM, IQ can also be improved.</p>
       </main>
     );
   }
