@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
-import Home from './home/Home';
-import Auth from './auth/Auth';
-import Nav from './nav/Nav';
-import About from './about/About';
-import Game from './game/Game';
+import Home from '../home/Home';
+import Auth from '../auth/Auth';
+import Nav from '../nav/Nav';
+import About from '../about/About';
+import Game from '../game/Game';
 
 import { connect } from 'react-redux';
 

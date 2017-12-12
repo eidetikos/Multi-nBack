@@ -1,4 +1,4 @@
-import * as actions from '../../services/constants';
+import * as actions from '../../app/constants';
 import sequencesReducer from './sequences.reducer';
 
 const initState = {
