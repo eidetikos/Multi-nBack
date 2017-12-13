@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 
 class PostGame extends PureComponent {
   render() {
+    const finalStats = this.props.game.finalStats;
     return (
       <div className="post-game">
         <h3>PostGame component</h3>
@@ -12,6 +13,8 @@ class PostGame extends PureComponent {
 }
 
 export default connect(
-  state => ({}),
+  state => ({
+    game: state.game,
+  }),
   null
 )(PostGame);
