@@ -31,13 +31,13 @@ export default function game(state = initState, { type, payload }) {
     case actions.GAME_OVER:
       return {
         ...state,
-        sequences: sequencesReducer(state.sequences, { type, payload }),
+        sequences: sequencesReducer(state.sequences, { type }),
         status: 'post'
       };
     case actions.WRAP_UP:
       return {
         ...state,
-        sequences: sequencesReducer(state.sequences, { type, payload }),
+        sequences: sequencesReducer(state.sequences, { type }),
         finalStats: payload
       };
     case actions.LEAVE_GAME:

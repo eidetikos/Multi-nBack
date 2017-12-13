@@ -67,8 +67,8 @@ function initSequence(getState) {
   const nBack = generateNBack(difficulty, score);
   const variates = selectVariates(numVariates);
   const combos = generateCombos(nBack, score, variates);
-  // const interval = 9999999999;
-  const interval = generateInterval(difficulty, score);
+  const interval = 9;
+  // const interval = generateInterval(difficulty, score);
 
   const newSequence = {
     variates,
@@ -124,9 +124,13 @@ async function wrapUp(getState, dispatch) {
 
   const { game } = getState();
   
+  const payload = await gameApi.add(game);
+
   dispatch({ 
-    type: actions.GAME_OVER,
-    payload: gameApi.add(game)
-  
+    type: actions.GAME_OVER
+  });
+  dispatch({ 
+    type: actions.WRAP_UP,
+    payload
   });
 }
