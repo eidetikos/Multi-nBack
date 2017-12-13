@@ -34,8 +34,8 @@ export default class Log extends PureComponent {
           style={customStyles}
           contentLabel="Example Modal"
         >
-          <button onClick={this.closeModal}>Logout</button>
-          <AuthForm/>
+          <button onClick={this.closeModal}>Exit</button>
+          <AuthForm closeModal={this.closeModal}/>
         </Modal>
       </div>
     );
