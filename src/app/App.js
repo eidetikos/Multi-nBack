@@ -20,11 +20,11 @@ class App extends Component {
     return (
       <Router>
         <div className="App">
-          <header>
+          {/* <header>
             <h1>Memory App</h1>
             <Auth/>
             <Nav/>
-          </header>
+          </header> */}
           <Switch>
             <Route exact path="/" component={Home}/>
             <PrivateRoute path="/about" component={About}/>
