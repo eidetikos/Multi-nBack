@@ -6,6 +6,8 @@ import Auth from '../auth/Auth';
 import Nav from '../nav/Nav';
 import About from '../about/About';
 import Game from '../game/Game';
+// import Error from './Error';
+// import Loading from './Loading';
 import PrivateRoute from '../auth/PrivateRoute';
 
 import { connect } from 'react-redux';
@@ -13,6 +15,8 @@ import { connect } from 'react-redux';
 
 class App extends Component {
   render() {
+    const { loading, error } = this.props;
+
     return (
       <Router>
         <div className="App">
@@ -27,6 +31,8 @@ class App extends Component {
             {/* <Route path="/game" component={Game}/> */}
             <PrivateRoute path="/game" component={Game}/>
           </Switch>
+          {/* <Loading loading={loading}/> */}
+          {/* <Error error={error}/> */}
           <footer>
             <h1>FOOOOOOOOOOOOOT</h1>
           </footer>
@@ -37,6 +43,9 @@ class App extends Component {
 }
 
 export default connect(
-  state => ({}),
+  state => ({ 
+    loading: state.loading,
+    error: state.error
+  }),
   null
 )(App);
