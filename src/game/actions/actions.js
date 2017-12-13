@@ -1,5 +1,5 @@
 import * as actions from '../../app/constants';
-import { generateNBack, selectVariates, generateCombos } from './utils';
+import { generateNBack, selectVariates, generateCombos, generateInterval } from './utils';
 import deepEqual from 'deep-equal';
 import gameApi from '../../services/game.api';
 
@@ -40,30 +40,11 @@ export function newGame() {
 export function setSettings(difficulty, numVariates) {
   return (dispatch, getState) => {
     let startingN, interval = null;
-    switch(difficulty) {
-      case 'easy':
-        startingN = 10;
-        interval = 3;
-        break;
-      case 'medium':
-        startingN = 2;
-        interval = 2000000;
-        break;
-      case 'hard':
-        startingN = 7;
-        interval = 1000;
-        break;
-      default:
-    }
 
     dispatch({ 
       type: actions.SET_SETTINGS,
       payload: { 
-        difficulty: { 
-          startingN,
-          interval,
-          difficulty
-        },
+        difficulty,
         numVariates 
       }
     });
@@ -76,19 +57,19 @@ function initSequence(getState) {
 
   const { 
     game: { 
-      difficulty: { 
-        startingN,
-        interval 
-      },
+      difficulty,
       sequences,
       numVariates 
     }
   } = getState();
   const score = sequences.length;
 
-  const nBack = generateNBack(startingN, score);
+  const nBack = generateNBack(difficulty, score);
   const variates = selectVariates(numVariates);
-  const combos = generateCombos(nBack, variates);
+  const combos = generateCombos(nBack, score, variates);
+  const interval = generateInterval(difficulty, score);
+
+  console.log(nBack);
 
   const newSequence = {
     variates,
@@ -113,11 +94,10 @@ function nextCombo(getState, dispatch) {
   
   const { 
     game: {
-      sequences,
-      difficulty: { interval } 
+      sequences
     }
   } = getState();
-  const { comboPointer, combos } = sequences[sequences.length - 1];
+  const { comboPointer, combos, interval } = sequences[sequences.length - 1];
 
   if(combos.length - 1 === comboPointer) setTimeout(() => dispatch({ type: actions.SEQUENCE_OVER }), interval); 
   else setTimeout(() => nextCombo(getState, dispatch), interval);
@@ -130,10 +110,11 @@ export function checkRecall(recalled) {
       game: { sequences }
     } = getState();
 
-    const { nBack, combos } = sequences[sequences.length - 1];
+    const { nBack, combos, interval } = sequences[sequences.length - 1];
     const targetCombo = combos[combos.length - nBack];
-    console.log('target', targetCombo);
-    console.log('recalled', recalled);
+    console.log('nBack', nBack);
+    console.log('combos.length', combos.length);
+    console.log('interval', interval);
 
     if(deepEqual(targetCombo, recalled)) {
       dispatch(initSequence(getState));
@@ -146,8 +127,6 @@ export function checkRecall(recalled) {
 async function wrapUp(getState, dispatch) {
 
   const { game } = getState();
-
-  // console.log(JSON.stringify(game));
   
   dispatch({ 
     type: actions.GAME_OVER,
