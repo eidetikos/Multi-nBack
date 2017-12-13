@@ -46,6 +46,7 @@ class InGame extends PureComponent {
               shape={combo.shape}
               useColor={variates.color}
               useShape={variates.shape}
+              usePosition={variates.position}
             >
               <AudioNumLayer 
                 audio={combo.audio} 

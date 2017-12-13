@@ -2,9 +2,9 @@ import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
 const variateVars = {
   position: [ 0, 1, 2, 3, 4, 5, 6, 7, 8 ],
-  // audio: {
-
-  // },
+  audio: [
+    'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine'
+  ],
   number: [ 1, 2, 3, 4, 5, 6, 7, 8, 9 ],
   color: [
     'red', 'green', 'blue', 'yellow', 'orange', 'purple'

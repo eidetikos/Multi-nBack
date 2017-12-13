@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
+import './ColorShapeLayer.css';
 
 const clipShape = (style, shape) => {
   switch(shape) {
@@ -19,14 +20,18 @@ const clipShape = (style, shape) => {
 
 class ColorShapeLayer extends PureComponent {
   render() {
-    const { color, shape, useColor, useShape } = this.props;
-
+    const { color, shape, useColor, useShape, usePosition } = this.props;
+    const defaultColor = 'lightgray';
     const style = {
       height: '100%',
       width: '100%'
     };
+    if(usePosition) style.backgroundColor = defaultColor;
+    if(useShape) {
+      clipShape(style, shape);
+      style.backgroundColor = defaultColor;
+    }
     if(useColor) style.backgroundColor = color;
-    if(useShape) clipShape(style, shape);
 
     return (
       <div className="color-shape-layer">

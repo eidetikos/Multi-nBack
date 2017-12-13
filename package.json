@@ -6,6 +6,7 @@
     "deep-equal": "^1.0.1",
     "now": "^8.5.4",
     "react": "^16.1.1",
+    "react-audio-player": "^0.6.4",
     "react-dom": "^16.1.1",
     "react-modal": "^3.1.7",
     "react-redux": "^5.0.6",
