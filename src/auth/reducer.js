@@ -10,3 +10,15 @@ export function user(store = null, { type, payload }) {
       return store;
   }
 }
+
+export function userError(state = null, { type, payload }) {
+  console.log('user error reducer');
+  switch(type) {
+    case actions.ERROR:
+      return payload;
+    case actions.LOADING:
+      return null;
+    default:
+      return state;
+  }
+}
