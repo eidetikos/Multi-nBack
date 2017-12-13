@@ -7,8 +7,10 @@ class AuthForm extends PureComponent {
 
   handleSignup = event => {
     if(event.target.value === 'signup') {
-      this.props.signUp(event.target.parentNode.name.value, event.target.parentNode.password.value);
-      this.props.closeModal();
+      this.props.signUp(event.target.parentNode.name.value, event.target.parentNode.password.value).then(() => {
+        this.props.closeModal();
+        this.props.history.push(this.props.location.pathname);
+      });
     }
   }
   
