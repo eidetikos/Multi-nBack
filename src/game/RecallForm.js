@@ -16,7 +16,7 @@ const variateVars = {
 
 class RecallForm extends PureComponent {
   render() {
-    const { variates, onSubmit } = this.props;
+    const { variates } = this.props;
     return (
       <form className="RecallForm" onSubmit={this.props.onSubmit}>
         {Object.keys(variates).map(variate => {

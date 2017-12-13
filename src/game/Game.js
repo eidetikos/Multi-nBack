@@ -8,7 +8,7 @@ import PostGame from './PostGame';
 class Game extends PureComponent {
 
   render() {
-    const { match: { url }, game } = this.props;
+    const { game } = this.props;
     return (
       <main className="game">
         <h2>Game component</h2>
