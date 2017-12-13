@@ -39,7 +39,7 @@ export default class Log extends PureComponent {
             contentLabel="Example Modal"
           >
             <button onClick={this.closeModal}>Exit</button>
-            <AuthForm closeModal={this.closeModal}/>
+            <AuthForm closeModal={this.closeModal} openModal={this.openModal}/>
             {/* <Error error={userError}/> */}
             {/* <Loading loading={loading}/> */}
           </Modal>
