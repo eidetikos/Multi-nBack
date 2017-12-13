@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
-import { signUp, signIn } from './actions';
+import { signUp, signIn, logOut } from './actions';
 import { withRouter } from 'react-router-dom';
 import Error from '../app/Error';
 
@@ -33,6 +33,7 @@ class AuthForm extends PureComponent {
   }
 
   handleLogout = () => {
+    this.props.logOut();
     localStorage.removeItem('token');
     this.props.closeModal();
     this.props.history.push('/');
@@ -66,5 +67,5 @@ export default withRouter(connect(
   state => ({ 
     userError: state.userError
   }),
-  { signUp, signIn }
+  { signUp, signIn, logOut }
 )(AuthForm));
