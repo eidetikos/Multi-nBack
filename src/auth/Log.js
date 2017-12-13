@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import AuthForm from '../auth/AuthForm';
-import { customStyles } from '../styles/style';
+import { ModalDiv }  from '../styles/style';
 import Modal from 'react-modal';
 Modal.setAppElement('#auth-modal');
 
@@ -28,15 +28,16 @@ export default class Log extends PureComponent {
     return (
       <div>
         {localStorage.getItem('token') ? <button onClick={this.openModal}>Logout</button> : <button onClick={this.openModal}>Login</button>}
-        <Modal
-          isOpen={this.state.modalIsOpen}
-          onRequestClose={this.closeModal}
-          style={customStyles}
-          contentLabel="Example Modal"
-        >
-          <button onClick={this.closeModal}>Exit</button>
-          <AuthForm closeModal={this.closeModal}/>
-        </Modal>
+        <ModalDiv>
+          <Modal
+            isOpen={this.state.modalIsOpen}
+            onRequestClose={this.closeModal}
+            contentLabel="Example Modal"
+          >
+            <button onClick={this.closeModal}>Exit</button>
+            <AuthForm closeModal={this.closeModal}/>
+          </Modal>
+        </ModalDiv>
       </div>
     );
   }
