@@ -6,23 +6,30 @@ import Error from '../app/Error';
 
 class AuthForm extends PureComponent {
 
+
   handleSignup = event => {
+  
     if(event.target.value === 'signup') {
-      this.props.signUp(event.target.parentNode.name.value, event.target.parentNode.password.value).then(() => {
-        // this.props.closeModal();
-        this.props.history.push(this.props.location.pathname);
-      });
+      this.props.signUp(event.target.parentNode.name.value, event.target.parentNode.password.value)
+        .then(() => {
+          if(!this.props.userError) {
+            this.props.closeModal();
+            this.props.history.push(this.props.location.pathname);
+          }
+        });
     }
   }
-  
+
   handleSignin = event => {
     event.preventDefault();
 
-    this.props.signIn(event.target.name.value, event.target.password.value).then(() => {
-      // this.props.closeModal();
-      this.props.history.push(this.props.location.pathname);
-      // event.target.reset();
-    });
+    this.props.signIn(event.target.name.value, event.target.password.value)
+      .then(() => {
+        if(!this.props.userError) {
+          this.props.closeModal();
+          this.props.history.push(this.props.location.pathname);
+        }
+      });
   }
 
   handleLogout = () => {
@@ -37,7 +44,6 @@ class AuthForm extends PureComponent {
 
   render() {
     const { userError } = this.props;
-
     const inOrOut = localStorage.getItem('token') ? <button onClick={this.handleLogout}>Logout</button> : <button onClick={this.handleLogout}>Login</button>;
 
     return (this.verifiedUser ? (
