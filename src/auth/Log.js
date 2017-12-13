@@ -1,7 +1,5 @@
 import React, { PureComponent } from 'react';
 import AuthForm from '../auth/AuthForm';
-// import Error from '../app/Error';
-// import Loading from '../app/Loading';
 import { ModalDiv }  from '../styles/style';
 import Modal from 'react-modal';
 Modal.setAppElement('#auth-modal');
@@ -26,13 +24,16 @@ export default class Log extends PureComponent {
     this.setState({ modalIsOpen: false });
   }
 
+  componentWillMount() {
+    this.verifiedUser = !!localStorage.getItem('token');
+  }
+
   render() {
-    // const { userError } = this.props;
 
     return (
       <div>
-        {localStorage.getItem('token') ? <button onClick={this.openModal}>Logout</button> : <button onClick={this.openModal}>Login</button>}
         <ModalDiv>
+          {this.verifiedUser ? <button onClick={this.openModal}>Logout</button> : <button onClick={this.openModal}>Login</button>}
           <Modal
             isOpen={this.state.modalIsOpen}
             onRequestClose={this.closeModal}
@@ -40,8 +41,6 @@ export default class Log extends PureComponent {
           >
             <button onClick={this.closeModal}>Exit</button>
             <AuthForm closeModal={this.closeModal} openModal={this.openModal}/>
-            {/* <Error error={userError}/> */}
-            {/* <Loading loading={loading}/> */}
           </Modal>
         </ModalDiv>
       </div>
