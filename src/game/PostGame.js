@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
+import Chart from './Chart';
 
 class PostGame extends PureComponent {
   render() {
@@ -11,7 +12,9 @@ class PostGame extends PureComponent {
           <div className="leaderboard">
             <h3>LEADERBOARD: {}</h3>
           </div>
-          <div className="nBack-Chart"></div>
+          <div className="nBack-Chart">
+            <Chart/>
+          </div>
           <div>
             <h3>Game Stats</h3>
             <ul>
