@@ -1,18 +1,11 @@
 const url = process.env.REACT_APP_API_URL;
 
-// const wrap = promise => {
-//   return promise.then(response => {
-//     if(!response.ok) return Promise.reject(new Error(response.statusText));
-//     return response.json();
-//   });
-// };
-
 const wrap = async promise => {
   
   const response = await promise;
   console.log(response);
   if(response.ok) return response.json();
-  console.log(response.json());
+
   
   const contentType = response.headers.get('content-type');
   

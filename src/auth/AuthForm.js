@@ -9,7 +9,7 @@ class AuthForm extends PureComponent {
   handleSignup = event => {
     if(event.target.value === 'signup') {
       this.props.signUp(event.target.parentNode.name.value, event.target.parentNode.password.value).then(() => {
-        this.props.closeModal();
+        // this.props.closeModal();
         this.props.history.push(this.props.location.pathname);
       });
     }
@@ -19,7 +19,7 @@ class AuthForm extends PureComponent {
     event.preventDefault();
 
     this.props.signIn(event.target.name.value, event.target.password.value).then(() => {
-      this.props.closeModal();
+      // this.props.closeModal();
       this.props.history.push(this.props.location.pathname);
       // event.target.reset();
     });
@@ -36,7 +36,8 @@ class AuthForm extends PureComponent {
   }
 
   render() {
-    const { error } = this.props;
+    const { userError } = this.props;
+
     const inOrOut = localStorage.getItem('token') ? <button onClick={this.handleLogout}>Logout</button> : <button onClick={this.handleLogout}>Login</button>;
 
     return (this.verifiedUser ? (
@@ -50,7 +51,7 @@ class AuthForm extends PureComponent {
         <input type="password" name="password" placeholder="***************"/>
         <button type="submit" name="signin">SIGNIN</button>
         <button type="button" name="signup" value="signup" >SIGNUP</button>
-        <Error error={error}/>
+        <Error error={userError}/>
       </form>
     ));
   }
@@ -58,7 +59,7 @@ class AuthForm extends PureComponent {
 
 export default withRouter(connect(
   state => ({ 
-    error: state.userError
+    userError: state.userError
   }),
   { signUp, signIn }
 )(AuthForm));
