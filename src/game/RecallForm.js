@@ -1,5 +1,8 @@
 import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
+
+import './RecallForm.css';
+
 const variateVars = {
   position: [ 0, 1, 2, 3, 4, 5, 6, 7, 8 ],
   audio: [
@@ -18,7 +21,7 @@ class RecallForm extends PureComponent {
   render() {
     const { variates } = this.props;
     return (
-      <form className="RecallForm" onSubmit={this.props.onSubmit}>
+      <form className="recall-form" onSubmit={this.props.onSubmit}>
         {Object.keys(variates).map(variate => {
           return variates[variate] ? 
             (
