@@ -14,7 +14,7 @@ this.game = {
     variates: {
       position: true,
       number: true,
-      // audio: false,
+      audio: true,
       shape: true,
       color: true
     },
@@ -69,8 +69,6 @@ function initSequence(getState) {
   const combos = generateCombos(nBack, score, variates);
   const interval = generateInterval(difficulty, score);
 
-  console.log(nBack);
-
   const newSequence = {
     variates,
     nBack,
@@ -112,9 +110,6 @@ export function checkRecall(recalled) {
 
     const { nBack, combos, interval } = sequences[sequences.length - 1];
     const targetCombo = combos[combos.length - nBack];
-    console.log('nBack', nBack);
-    console.log('combos.length', combos.length);
-    console.log('interval', interval);
 
     if(deepEqual(targetCombo, recalled)) {
       dispatch(initSequence(getState));

@@ -56,7 +56,7 @@ export function selectVariates(numVariates) {
   
   const variates = {
     position: false,
-    // audio: false,
+    audio: false,
     number: false,
     color: false,
     shape: false
@@ -88,9 +88,9 @@ const variateVars = {
   position: {
     max: 8
   },
-  // audio: {
-
-  // },
+  audio: [
+    'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine'
+  ],
   number: {
     max: 9,
     min: 1
@@ -112,10 +112,10 @@ export function generateCombos(nBack, score, variates) {
     .map(combo => {
       
       if(variates.position) combo.position = Math.floor(Math.random() * (variateVars.position.max + 1));
+      if(variates.audio) combo.audio = variateVars.audio[Math.floor(Math.random() * variateVars.audio.length)];
       if(variates.number) combo.number = Math.floor(Math.random() * variateVars.number.max + 1);
       if(variates.color) combo.color = variateVars.color[Math.floor(Math.random() * variateVars.color.length)];
       if(variates.shape) combo.shape = variateVars.shape[Math.floor(Math.random() * variateVars.shape.length)];
-      
       return combo;
     });
 }
