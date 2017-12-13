@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
 import { signUp, signIn } from './actions';
+import { withRouter } from 'react-router-dom';
 
 class AuthForm extends PureComponent {
 
@@ -16,9 +17,11 @@ class AuthForm extends PureComponent {
     console.dir(event.target);
     console.log(event.target.name.value);
     console.log(event.target.password.value);
-    this.props.signIn(event.target.name.value, event.target.password.value);
-    event.target.reset();
-    this.props.closeModal();
+    this.props.signIn(event.target.name.value, event.target.password.value).then(() => {
+      // event.target.reset();
+      this.props.closeModal();
+      this.props.history.push(this.props.location.pathname);
+    });
   }
 
   handleLogout = () => {
@@ -47,7 +50,7 @@ class AuthForm extends PureComponent {
   }
 }
 
-export default connect(
+export default withRouter(connect(
   state => ({}),
   { signUp, signIn }
-)(AuthForm);
+)(AuthForm));
