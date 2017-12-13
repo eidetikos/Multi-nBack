@@ -44,10 +44,9 @@ class AuthForm extends PureComponent {
 
   render() {
     const { userError } = this.props;
-    const inOrOut = localStorage.getItem('token') ? <button onClick={this.handleLogout}>Logout</button> : <button onClick={this.handleLogout}>Login</button>;
 
     return (this.verifiedUser ? (
-      inOrOut
+      <button onClick={this.handleLogout}>Logout</button>
     ) : (
       <form onClick={this.handleSignup} onSubmit={this.handleSignin}>
         <label>User Name:</label>
