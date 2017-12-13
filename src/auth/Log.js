@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import AuthForm from '../auth/AuthForm';
-import Error from '../app/Error';
-import Loading from '../app/Loading';
+// import Error from '../app/Error';
+// import Loading from '../app/Loading';
 import { ModalDiv }  from '../styles/style';
 import Modal from 'react-modal';
 Modal.setAppElement('#auth-modal');
@@ -27,7 +27,7 @@ export default class Log extends PureComponent {
   }
 
   render() {
-    const { loading, error } = this.props;
+    // const { userError } = this.props;
 
     return (
       <div>
@@ -40,8 +40,8 @@ export default class Log extends PureComponent {
           >
             <button onClick={this.closeModal}>Exit</button>
             <AuthForm closeModal={this.closeModal}/>
-            <Error error={error}/>
-            <Loading loading={loading}/>
+            {/* <Error error={userError}/> */}
+            {/* <Loading loading={loading}/> */}
           </Modal>
         </ModalDiv>
       </div>
