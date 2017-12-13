@@ -27,7 +27,7 @@ export default class Log extends PureComponent {
   render() {
     return (
       <div>
-        <button onClick={this.openModal}>Login</button>
+        {localStorage.getItem('token') ? <button onClick={this.openModal}>Logout</button> : <button onClick={this.openModal}>Login</button>}
         <Modal
           isOpen={this.state.modalIsOpen}
           onRequestClose={this.closeModal}
