@@ -6,6 +6,7 @@ import Auth from '../auth/Auth';
 import Nav from '../nav/Nav';
 import About from '../about/About';
 import Game from '../game/Game';
+import PrivateRoute from '../auth/PrivateRoute';
 
 import { connect } from 'react-redux';
 
@@ -22,8 +23,9 @@ class App extends Component {
           </header>
           <Switch>
             <Route exact path="/" component={Home}/>
-            <Route path="/about" component={About}/>
-            <Route path="/Game" component={Game}/>
+            <PrivateRoute path="/about" component={About}/>
+            {/* <Route path="/game" component={Game}/> */}
+            <PrivateRoute path="/game" component={Game}/>
           </Switch>
           <footer>
             <h1>FOOOOOOOOOOOOOT</h1>
