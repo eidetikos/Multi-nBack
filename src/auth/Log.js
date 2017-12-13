@@ -1,10 +1,11 @@
 import React, { PureComponent } from 'react';
+import { connect } from 'react-redux';
 import AuthForm from '../auth/AuthForm';
 import { ModalDiv }  from '../styles/style';
 import Modal from 'react-modal';
 Modal.setAppElement('#auth-modal');
 
-export default class Log extends PureComponent {
+class Log extends PureComponent {
   constructor() {
     super();
 
@@ -29,11 +30,11 @@ export default class Log extends PureComponent {
   }
 
   render() {
-
+    console.log(!!this.props.user);
     return (
       <div>
         <ModalDiv>
-          {this.verifiedUser ? <button onClick={this.openModal}>Logout</button> : <button onClick={this.openModal}>Login</button>}
+          <button onClick={this.openModal}>{this.props.user ? 'Logout' : 'Login'}</button>
           <Modal
             isOpen={this.state.modalIsOpen}
             onRequestClose={this.closeModal}
@@ -47,3 +48,7 @@ export default class Log extends PureComponent {
     );
   }
 }
+export default connect(
+  state => ({ user: state.user }),
+  null
+)(Log);
