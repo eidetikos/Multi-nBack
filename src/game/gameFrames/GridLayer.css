@@ -1,6 +1,11 @@
-.grid {
+.grid-layer {
     height: 30em;
     width: 30em;
+}
+
+.grid {
+    height: 100%;
+    width: 100%;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;

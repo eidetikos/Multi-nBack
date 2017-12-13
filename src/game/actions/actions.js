@@ -67,6 +67,7 @@ function initSequence(getState) {
   const nBack = generateNBack(difficulty, score);
   const variates = selectVariates(numVariates);
   const combos = generateCombos(nBack, score, variates);
+  // const interval = 9999999999;
   const interval = generateInterval(difficulty, score);
 
   const newSequence = {
