@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
+import Log from './Log';
 
 class Auth extends PureComponent {
  
@@ -7,6 +8,7 @@ class Auth extends PureComponent {
     return (
       <div className="auth">
         <h3>Auth component</h3>
+        <Log/>
       </div>
     );
   }
