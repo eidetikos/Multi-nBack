@@ -7,12 +7,12 @@ class PostGame extends PureComponent {
     const user = this.props.user;
     return (
       <div className="post-game">
-        <h1>{user}'s Final Stats</h1>
+        {/* <h1>{user}'s Final Stats</h1> */}
         <div className="leaderboard">
           <h3>LEADERBOARD: {}</h3>
         </div>
         <div className="nBack-Chart"></div>
-        <div>
+        {/* <div>
           <h3>Game Stats</h3>
           <ul>
             <li>
@@ -22,7 +22,7 @@ class PostGame extends PureComponent {
               Your average N achieved: { finalStats.avgN }
             </li>
           </ul>
-        </div>
+        </div> */}
       </div>
     );
   }
