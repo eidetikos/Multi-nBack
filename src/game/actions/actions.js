@@ -121,12 +121,13 @@ export function checkRecall(recalled) {
 async function wrapUp(getState, dispatch) {
 
   const { game } = getState();
-  
-  const payload = await gameApi.add(game);
-
   dispatch({ 
     type: actions.GAME_OVER
   });
+
+  const payload = await gameApi.add(game);
+  
+  console.log('here is the getState', getState());
   dispatch({ 
     type: actions.WRAP_UP,
     payload
