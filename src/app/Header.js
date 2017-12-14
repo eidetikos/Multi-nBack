@@ -1,14 +1,19 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
 import Auth from '../auth/Auth';
 import Nav from '../nav/Nav';
 
+import './Header.css';
+
 class Header extends Component {
   render() {
+    const { user } = this.props;
+    console.log(!!user);
 
     return (
-      <header>
-        <h1>Memory App</h1>
+      <header className={user ? 'collapsed-header' : 'hero-header'}>
+        <h1>multi N back</h1>
         <Auth/>
         <Nav/>
       </header>  
@@ -16,5 +21,10 @@ class Header extends Component {
   }
 }
   
-export default Header;
+export default connect(
+  state => ({
+    user: state.user
+  }),
+  null
+)(Header);
   

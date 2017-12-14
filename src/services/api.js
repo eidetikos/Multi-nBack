@@ -1,5 +1,7 @@
 const url = process.env.REACT_APP_API_URL;
 
+export const getStoreToken = () => localStorage.getItem('token');
+
 const wrap = async promise => {
   
   const response = await promise;

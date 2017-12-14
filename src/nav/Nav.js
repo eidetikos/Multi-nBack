@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 
 class Nav extends PureComponent {
   render() {
+
     return (
       <nav>
         <h3>Nav component</h3>
@@ -14,9 +15,11 @@ class Nav extends PureComponent {
           <Link to="/about">
             <li>about</li>
           </Link>
-          <Link to="/game">
-            <li>game</li>
-          </Link>
+          {this.props.user &&
+            <Link to="/game">
+              <li>game</li>
+            </Link>
+          }
         </ul>
       </nav>
     );
@@ -24,6 +27,8 @@ class Nav extends PureComponent {
 }
 
 export default connect(
-  state => ({}),
+  state => ({
+    user: state.user
+  }),
   null
 )(Nav);
