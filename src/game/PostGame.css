@@ -1,4 +1,19 @@
 .post-game {
   height: 100%;
   width: 100%;
+  font-size: 75%;
+}
+
+ul {
+  list-style: none;
+}
+
+.post-fieldset {
+  width: 300px;
+  margin: auto;
+  text-align: center;
+}
+
+h1 {
+  margin: 0;
 }
