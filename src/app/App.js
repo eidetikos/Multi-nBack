@@ -9,6 +9,10 @@ import About from '../about/About';
 import Game from '../game/Game';
 import PrivateRoute from '../auth/PrivateRoute';
 
+import { connect } from 'react-redux';
+
+import './App.css'
+
 
 class App extends Component {
 
