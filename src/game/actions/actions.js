@@ -3,33 +3,6 @@ import { generateNBack, selectVariates, generateCombos, generateInterval } from 
 import deepEqual from 'deep-equal';
 import gameApi from '../../services/game.api';
 
-this.game = {
-  difficulty: {
-    initN: 2,
-    interval: 1000
-  },
-  numVariates: 4,
-  status: 'in',
-  sequences: [{
-    variates: {
-      position: true,
-      number: true,
-      audio: true,
-      shape: true,
-      color: true
-    },
-    nBack: 3,
-    interval: 1000,
-    combos: [{
-      position: 6,
-      number: 3,
-      shape: 'square',
-      color: 'red'
-    }],
-    comboPointer: 0
-  }]
-};
-
 
 export function newGame() {
   return {
@@ -37,13 +10,15 @@ export function newGame() {
   };
 }
 
-export function setSettings(difficulty, numVariates) {
+export function setSettings(difficulty, numVariates, audio) {
+  
   return (dispatch, getState) => {
     dispatch({ 
       type: actions.SET_SETTINGS,
       payload: { 
         difficulty,
-        numVariates 
+        numVariates,
+        audio
       }
     });
     dispatch(initSequence(getState));
@@ -57,13 +32,14 @@ function initSequence(getState) {
     game: { 
       difficulty,
       sequences,
+      audio,
       numVariates 
     }
   } = getState();
   const score = sequences.length;
-
+  // console.log('numVariates in initSequences', selectVariates(numVariates, audio));
   const nBack = generateNBack(difficulty, score);
-  const variates = selectVariates(numVariates);
+  const variates = selectVariates(numVariates, audio);
   const combos = generateCombos(nBack, score, variates);
   // const interval = generateInterval(difficulty, score);
   const interval = 9;
