@@ -5,8 +5,9 @@ const initState = {
   status: 'pre',
   difficulty: {
     startingN: 1,
-    interval: 3000
+    interval: 3000,
   },
+  audio: false,
   numVariates: 2,
   sequences: [],
   finalStats: []
@@ -20,7 +21,7 @@ export default function game(state = initState, { type, payload }) {
       return { ...state, status: 'pre' };
     // GET SETTINGS changing difficulty
     case actions.SET_SETTINGS:
-      return { ...state, difficulty: payload.difficulty, numVariates: payload.numVariates, status: 'in' };
+      return { ...state, difficulty: payload.difficulty, numVariates: payload.numVariates, audio: payload.audio, status: 'in' };
     case actions.INIT_SEQUENCE:
     case actions.NEXT_COMBO:
     case actions.SEQUENCE_OVER:
