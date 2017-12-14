@@ -47,10 +47,24 @@ white: #fff
 
 }
 
-.hero-header .nav {
+.hero-header nav {
 
 }
 
+.hero-header nav ul {
+    text-align: left;
+    position: absolute;
+    right: 0;
+    width: 7em;
+    margin: 0;
+    list-style-type: none;
+    color: #d8eaec;
+}
+
+.hero-header nav ul li {
+    padding: 0.25em 1em;
+    border-bottom: solid 3px #568289;
+}
 
 
 
@@ -68,17 +82,49 @@ white: #fff
 
 .collapsed-header {
     height: 80px;
-    overflow: scroll;
+    background: #254044;
+    color: #d8eaec;
+    position: relative;
+    border-bottom: solid #770d00 3px;
 }
 
 .collapsed-header h1 {
-
+    position: absolute;
+    left: 0;
+    width: 66%;
+    padding-left: 1.5em;
+    text-align: left;
+    font-size: 110%;
 }
 
 .collapsed-header .auth {
 
 }
 
-.collapsed-header .nav {
+.collapsed-header nav {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
 
+.collapsed-header nav ul {
+    z-index: 10;
+    text-align: left;
+    position: absolute;
+    top: 83px;
+    right: 0;
+    width: 7em;
+    margin: 0;
+    list-style-type: none;
+    color: #d8eaec;
+}
+
+.collapsed-header nav ul li {
+    padding: 0.25em 1em;
+    border-bottom: solid 3px #568289;
+    background-color: white;
+}
+
+.collapsed-header nav ul li:hover {
+    background-color: #d8eaec;
 }
