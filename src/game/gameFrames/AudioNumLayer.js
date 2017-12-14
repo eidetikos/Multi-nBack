@@ -8,12 +8,10 @@ class AudioNumLayer extends PureComponent {
   
   handleClick = e => {
     e.stopPropagation();
-    if(this.props.inRecall && !e.target.value) this.props.onColorPick();
+    if(this.props.inRecall && !e.target.value) this.props.onShapePick();
   }
 
-  handleNumSelect = e => {
-    this.props.onNumberPick(e.target.value);
-  }
+  handleNumSelect = e => this.props.onNumberPick(e.target.value);
   
   render() {
     const { number, audio, useNumber, useAudio, inRecall } = this.props;

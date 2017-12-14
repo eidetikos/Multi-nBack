@@ -12,7 +12,6 @@ export function user(store = null, { type, payload }) {
 }
 
 export function userError(state = null, { type, payload }) {
-  console.log('user error reducer');
   switch(type) {
     case actions.ERROR:
       return payload;

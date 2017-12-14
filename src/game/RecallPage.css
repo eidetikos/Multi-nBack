@@ -5,7 +5,7 @@
 }
 
 .n-back-display {
-    margin: 0 0 5px 0;
+    margin: 0 0 3px 0;
     height: 45px;
     border-radius: 15px;
     background-color: lightblue;
@@ -63,7 +63,6 @@
 .circle-picker {
     float: left;
     justify-content: space-around;
-    margin-top: 5px;
     padding: 5px 0;
 }
 
@@ -80,4 +79,9 @@
     font-weight: bold;
     letter-spacing: 0.5em;
     color: green;
+}
+
+.submit-recall-button:focus, .submit-recall-button:hover {
+    box-sizing: border-box;
+    border: outset rgb(223, 247, 223) 2px;
 }

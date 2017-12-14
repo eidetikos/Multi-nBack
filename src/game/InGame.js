@@ -15,20 +15,13 @@ class InGame extends PureComponent {
   // getRecalled = (variant, combination, { target }) => target[variant] ? combination[variant] = target[variant].value : null;
 
   recallHandler = recalled => {
-    console.log(recalled);
-    // const recalled = {};
-    // if(event.target.position) recalled.position = event.target.position.value;
-    // if(event.target.color) recalled.color = event.target.color.value;
-    // if(event.target.shape) recalled.shape = event.target.shape.value;
-    // if(event.target.audio) recalled.audio = event.target.audio.value;
-    // if(event.target.number) recalled.number = event.target.number.value;
     this.props.checkRecall(recalled);
   };
 
   render() {
-    const { game, game: { status } } = this.props;
+    const { game } = this.props;
     const thisSequence = game.sequences.slice(-1)[0];
-    const { combos, nBack, comboPointer, inProgress, variates } = thisSequence;
+    const { combos, comboPointer, inProgress, variates } = thisSequence;
     const combo = combos && combos[comboPointer];
 
     return (
@@ -67,8 +60,7 @@ class InGame extends PureComponent {
 
 export default connect(
   state => ({
-    game: state.game,
-    // sequence: state.game.sequences.slice(-1)
+    game: state.game
   }),
   { checkRecall }
 )(InGame);

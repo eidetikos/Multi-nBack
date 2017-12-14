@@ -14,8 +14,6 @@ import { connect } from 'react-redux';
 
 class App extends Component {
   render() {
-    const { loading, error } = this.props;
-
     return (
       <Router>
         <div className="App">
@@ -26,8 +24,6 @@ class App extends Component {
             {/* <Route path="/game" component={Game}/> */}
             <PrivateRoute path="/game" component={Game}/>
           </Switch>
-          {/* <Loading loading={loading}/> */}
-          {/* <Error error={error}/> */}
           <footer>
             <h1>FOOOOOOOOOOOOOT</h1>
           </footer>

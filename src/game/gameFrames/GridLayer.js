@@ -8,7 +8,7 @@ class GridLayer extends Component {
   handlePick = e => {
     if(this.props.inRecall) {
       const { id } = e.target;
-      if(id.split('-')[0] === 'block') this.props.onPick(parseInt(id.slice(-1)));
+      if(id.split('-')[0] === 'block') this.props.onPick(parseInt(id.slice(-1), 10));
     }
   }
   
