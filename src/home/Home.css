@@ -1,0 +1,21 @@
+.home {
+    height: fit-content;
+    overflow: auto;
+}
+
+.stats {
+    height: 40em;
+    margin: 2.5%;
+    border-radius: 5px;
+    background: lightblue;
+}
+
+.user-stats {
+    float: left;
+    width: 30%;
+    margin-right: 0;
+}
+
+.community-stats {
+    margin-left: 0;
+}
