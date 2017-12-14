@@ -9,41 +9,52 @@ export class Chart extends PureComponent {
     const nBacks = finalStats.game.sequences.map((sequence) => sequence.nBack).reverse();
     nBacks.pop();
     const chartData = {
-      labels: new Array(finalStats.game.sequences.length+1).fill(1).map((e, i) => i+1),
+      labels: new Array(finalStats.game.sequences.length+1).fill(1).map((e, i) => +1),
       datasets: [{
         label: 'N',
         fill: false,
         data: nBacks,
-        // backgroundColor: '#770D00',
-        borderColor: ' #770D00',
+        borderColor: '#770D00',
         borderWidth: 2,
         pointRadius: 3,
         scaleStartValue: 0
       }]
-      // options: {
-      //   scales: {
-      //     yAxes: [{
-      //       ticks: {
-      //         max: 10,
-      //         min: 0
-      //       }
-      //     }]
-      //   },
-      //   legend: {
-      //     display: true,
-      //     labels: {
-      //       boxWidth: 10,
-      //       padding: 5
-      //     }
-      //   },
-      //   title: 'No. of Sequence Played'
-      // }
     };
+
+    const chartOptions = {
+      scales: {
+        yAxes: [{
+          ticks: {
+            beginAtZero: true,
+            stepSize: 1  
+          }
+        }]
+      },
+      legend: {
+        display: true,
+        labels: {
+          boxWidth: 10,
+          padding: 5
+        }
+      },
+      title: {
+        display: true,
+        text: 'Sequence No. Played',
+        position: 'bottom'
+      },
+      layout: {
+        padding: {
+          left: 0,
+          right: 50
+        }
+      }
+    };
+
 
     return (finalStats.game.sequences ?
       (
         <div className="game-chart">
-          <RC2 data={chartData} type="line" width="500" height="300" redraw="true" />
+          <RC2 data={chartData} options={chartOptions} type="line" width="500" height="300" redraw="true" />
           {/* <RC2 data={finalStats.game.sequences.nBack} type="line" width="500" height="300" redraw /> */}
         </div>
       ) : (

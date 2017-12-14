@@ -1,32 +1,32 @@
 import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
 import Chart from './Chart';
+import { PostGameStyled, ChartStats } from '../styles/style';
 
 class PostGame extends PureComponent {
   render() {
     const finalStats = this.props.game.finalStats;
     return (finalStats.game ?
       (
-        <div className="post-game">
+        <PostGameStyled>
           <h1>{finalStats.user.name}'s Final Stats</h1>
-          <div className="leaderboard">
-            <h3>LEADERBOARD: {}</h3>
-          </div>
-          <div className="nBack-Chart">
+          <ChartStats>
+            {/* <ChartStyled> */}
             <Chart/>
-          </div>
-          <div>
-            <h3>Game Stats</h3>
-            <ul>
-              <li>
+            {/* </ChartStyled> */}
+            <div>
+              <h3>Your Personal Game Stats</h3>
+              <ul>
+                <li>
               Your highest N achieved: { finalStats.game.highN }
-              </li>
-              <li>
+                </li>
+                <li>
               Your average N achieved: { finalStats.game.avgN }
-              </li>
-            </ul>
-          </div>
-        </div>
+                </li>
+              </ul>
+            </div>
+          </ChartStats>
+        </PostGameStyled>
       ) : (
         <div className="post-game"></div>
       ));
