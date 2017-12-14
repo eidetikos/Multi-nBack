@@ -4,6 +4,14 @@ import { connect } from 'react-redux';
 import './GridLayer.css';
 
 class GridLayer extends Component {
+
+  handlePick = e => {
+    if(this.props.inRecall) {
+      const { id } = e.target;
+      if(id.split('-')[0] === 'block') this.props.onPick(parseInt(id.slice(-1)));
+    }
+  }
+  
   render() {
     const { position, useGrid } = this.props;
     return (
@@ -14,10 +22,10 @@ class GridLayer extends Component {
           this.props.children
         }
         {useGrid &&
-          <div className="grid">
+          <div className="grid" onClick={this.handlePick}>
             {new Array(9).fill(1).map((block, i) => {
               if(i === position) return this.props.children;
-              return <div key={i} className="grid-block"></div>;
+              return <div key={i} id={`block-${i}`} className="grid-block"></div>;
             })}
           </div>
         }

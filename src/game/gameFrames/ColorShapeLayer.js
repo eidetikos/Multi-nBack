@@ -1,5 +1,7 @@
 import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
+
+
 import './ColorShapeLayer.css';
 
 const clipShape = (style, shape) => {
