@@ -3,7 +3,6 @@ const url = process.env.REACT_APP_API_URL;
 const wrap = async promise => {
   
   const response = await promise;
-  console.log(response);
   if(response.ok) return response.json();
 
   
