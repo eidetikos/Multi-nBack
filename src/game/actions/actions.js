@@ -39,8 +39,6 @@ export function newGame() {
 
 export function setSettings(difficulty, numVariates) {
   return (dispatch, getState) => {
-    let startingN, interval = null;
-
     dispatch({ 
       type: actions.SET_SETTINGS,
       payload: { 
@@ -67,8 +65,8 @@ function initSequence(getState) {
   const nBack = generateNBack(difficulty, score);
   const variates = selectVariates(numVariates);
   const combos = generateCombos(nBack, score, variates);
-  const interval = 9;
   // const interval = generateInterval(difficulty, score);
+  const interval = 9;
 
   const newSequence = {
     variates,
@@ -109,7 +107,7 @@ export function checkRecall(recalled) {
       game: { sequences }
     } = getState();
 
-    const { nBack, combos, interval } = sequences[sequences.length - 1];
+    const { nBack, combos } = sequences[sequences.length - 1];
     const targetCombo = combos[combos.length - nBack];
 
     if(deepEqual(targetCombo, recalled)) {

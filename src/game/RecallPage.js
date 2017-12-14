@@ -25,8 +25,6 @@ const variateVars = {
   ]
 };
 
-'#f00', '#ffa500', '#ff0', '#008000', '#00f', '#800080'
-
 const translateColor = color => {
   let colorMap = {
     red: '#ff0000',
@@ -63,13 +61,12 @@ class RecallPage extends PureComponent {
       if(variates[variate]) tempState[variate] = variateVars[variate][0];
     });
     if(variates.shape) tempState.shape = 0;
+    if(variates.audio) tempState.audio = 'silence';
 
     this.setState(tempState);
   }
 
   handlePick = variate => pick => {
-    console.log('variate', variate);
-    
     if(variate === 'color') pick = translateColor(pick.hex);
     if(variate === 'shape') pick = this.state.shape < 5 ? this.state.shape + 1 : 0;
     if(variate === 'audio') {
@@ -77,7 +74,6 @@ class RecallPage extends PureComponent {
       else return;
     }
 
-    console.log('pick', pick);
     this.setState({ [variate]: pick });
   }
 
@@ -91,8 +87,7 @@ class RecallPage extends PureComponent {
   }
 
   render() {
-    const { 
-      onSubmit,
+    const {
       sequence: { variates, nBack }
     } = this.props;
 
@@ -100,11 +95,24 @@ class RecallPage extends PureComponent {
       position, color, shape, audio, number
     } = this.state;
 
-    console.log(variates);
-
+    if(this.props.sequence) console.log(this.props.sequence.combos[this.props.sequence.combos.length - this.props.sequence.nBack]);
+    
     return (
       <div className="recall-page">
         <h3 className="n-back-display">nBack: {nBack}</h3>
+        {variates &&
+          <ColorPicker
+            color={color ? translateColor(color) : '#f00'}
+            onChange={color ? this.handlePick('color') : null}
+            width="100%"
+            colors={variates.color ?
+              ['#f00', '#ffa500', '#ff0', '#008000', '#00f', '#800080'] :
+              ['#ffe5e5', '#fff6e5', '#ffffe5', '#e5f2e5', '#e5e5ff', '#f2e5f2']
+            }
+            circleSize={30}
+            circleSpacing={0}
+          />
+        }
         {variates && 
           <div className="recall-page-top">
             <GridLayer
@@ -127,7 +135,7 @@ class RecallPage extends PureComponent {
                   useNumber={variates.number}
                   inRecall={true}
                   onNumberPick={this.handlePick('number')}
-                  onColorPick={this.handlePick('shape')}
+                  onShapePick={typeof shape === 'number' ? this.handlePick('shape') : () => {}}
                 />
               </ColorShapeLayer>
             </GridLayer>
@@ -141,7 +149,7 @@ class RecallPage extends PureComponent {
                       backgroundColor: 'lightblue'
                     }}
                   >
-                    <span style={{ float: 'left' }}>&#128266;</span>
+                    <span style={{ float: 'left' }} role="img" aria-label={variateVars.audio[i]}>&#128266;</span>
                     {variateVars.audio[i]}
                   </section>
                 ) : (
@@ -154,20 +162,7 @@ class RecallPage extends PureComponent {
             </div>
           </div>
         }
-        {variates &&
-          <ColorPicker
-            color={color ? translateColor(color) : '#f00'}
-            onChange={color ? this.handlePick('color') : null}
-            width="100%"
-            colors={variates.color ?
-              ['#f00', '#ffa500', '#ff0', '#008000', '#00f', '#800080'] :
-              ['#ffe5e5', '#fff6e5', '#ffffe5', '#e5f2e5', '#e5e5ff', '#f2e5f2']
-            }
-            circleSize={30}
-            circleSpacing={0}
-          />
-        }
-        <div className='submit-recall-button' onClick={this.handleSubmit}>
+        <div className='submit-recall-button' tabIndex="1234" onClick={this.handleSubmit}>
           Submit
         </div>
       </div>
@@ -179,20 +174,3 @@ export default connect(
   state => ({}),
   null
 )(RecallPage);
-
-
-
-{/* <form className="recall-form" onSubmit={onSubmit}>
-  {Object.keys(variates).map(variate => {
-    return variates[variate] ? 
-      (
-        <select key={variate} name={variate}>
-          {variateVars[variate].map((variant, i) => (
-            <option key={i} value={variant}>{variant}</option>
-          ))}
-        </select>
-      ) :
-      null;
-  })}
-  <input type="submit"/>
-</form> */}
