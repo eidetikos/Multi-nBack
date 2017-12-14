@@ -7,7 +7,6 @@ class Auth extends PureComponent {
   render() {
     return (
       <div className="auth">
-        <h3>Auth component</h3>
         <Log/>
       </div>
     );
