@@ -5,8 +5,7 @@ import './Home.css';
 
 class Home extends PureComponent {
   render() {
-    // const { user } = this.props;
-    const user = true;
+    const { user } = this.props;
     return (
       <main className="home">
         <h2>home component</h2>

@@ -1,0 +1,62 @@
+/*
+japanese indigo: #254044
+barn red: #770d00
+wintergreen dream: #568289
+azureish white: #d8eaec
+white: #fff
+*/
+
+
+.hero-header {
+    height: 720px;
+    background-size: cover;
+    background-attachment: fixed;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#d8eaec), to(white));
+    background-image: -webkit-linear-gradient(top, #d8eaec, white);
+    background-image: -moz-linear-gradient(top, #d8eaec, white);
+    background: linear-gradient(to bottom, #d8eaecbe 60%, white);
+    background-image: url(https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/Vio80dDve/neuron-network-activity-background-animation-for-a-biological-structure-and-its-network-communication-activity_rpuopx28__F0000.png);
+}
+
+.hero-header h1 {
+    margin: 0;
+}
+
+.hero-header .auth {
+
+}
+
+.hero-header .nav {
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.collapsed-header {
+
+}
+
+.collapsed-header h1 {
+
+}
+
+.collapsed-header .auth {
+
+}
+
+.collapsed-header .nav {
+
+}
