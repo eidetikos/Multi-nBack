@@ -1,6 +1,9 @@
 // ###  Auth Constants ### //
 export const SIGN_IN = 'SIGN_IN';
 export const LOG_OUT = 'LOG_OUT';
+export const CHECKED_TOKEN = 'CHECKED_TOKEN';
+export const GOT_TOKEN = 'GOT_TOKEN';
+export const AUTH_ERROR = 'AUTH_ERROR';
 
 // ###  Game Constants ### //
 export const INIT_GAME = 'INIT_GAME';

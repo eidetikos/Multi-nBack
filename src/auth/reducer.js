@@ -13,7 +13,7 @@ export function user(store = null, { type, payload }) {
 
 export function userError(state = null, { type, payload }) {
   switch(type) {
-    case actions.ERROR:
+    case actions.AUTH_ERROR:
       return payload;
     case actions.LOADING:
       return null;

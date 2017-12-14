@@ -1,5 +1,28 @@
 import * as auth from '../services/authApi';
 import * as actions from '../app/constants';
+import { getStoreToken } from '../services/api';
+
+export function checkForToken() {
+  return dispatch => {
+    const token = getStoreToken();
+    if(!token) {
+      dispatch({ type: actions.CHECKED_TOKEN });
+      return;
+    }
+    dispatch({ type: actions.GOT_TOKEN, payload: token });
+    
+    return auth.verify()
+      .then(() => auth.getUser())
+      .then(user => {
+        dispatch({ type: actions.SIGN_IN, payload: user });
+      })
+      .catch(error => {
+        dispatch({ type: actions.AUTH_ERROR, payload: error });
+      });
+  };
+}
+
+
 
 export function signUp(name, password) {
   return async dispatch => {
@@ -14,14 +37,14 @@ export function signUp(name, password) {
       });
 
       dispatch({
-        type: actions.ERROR,
+        type: actions.AUTH_ERROR,
         payload: null
       });
 
     }
     catch(error) {
       dispatch({
-        type: actions.ERROR,
+        type: actions.AUTH_ERROR,
         payload: error
       });
     }
@@ -41,7 +64,7 @@ export function signIn(name, password) {
       });
 
       dispatch({
-        type: actions.ERROR,
+        type: actions.AUTH_ERROR,
         payload: null
       });
 
@@ -49,7 +72,7 @@ export function signIn(name, password) {
     }
     catch(error) {
       dispatch({
-        type: actions.ERROR,
+        type: actions.AUTH_ERROR,
         payload: error
       });
     }
