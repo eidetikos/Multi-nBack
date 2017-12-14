@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import Home from '../home/Home';
-import Auth from '../auth/Auth';
-import Nav from '../nav/Nav';
+import Header from './Header';
 import About from '../about/About';
 import Game from '../game/Game';
 // import Error from './Error';
@@ -20,11 +19,7 @@ class App extends Component {
     return (
       <Router>
         <div className="App">
-          {/* <header>
-            <h1>Memory App</h1>
-            <Auth/>
-            <Nav/>
-          </header> */}
+          <Header/>
           <Switch>
             <Route exact path="/" component={Home}/>
             <PrivateRoute path="/about" component={About}/>
