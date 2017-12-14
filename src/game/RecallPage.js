@@ -109,7 +109,7 @@ class RecallPage extends PureComponent {
               ['#f00', '#ffa500', '#ff0', '#008000', '#00f', '#800080'] :
               ['#ffe5e5', '#fff6e5', '#ffffe5', '#e5f2e5', '#e5e5ff', '#f2e5f2']
             }
-            circleSize={30}
+            circleSize={45}
             circleSpacing={0}
           />
         }
@@ -162,9 +162,9 @@ class RecallPage extends PureComponent {
             </div>
           </div>
         }
-        <div className='submit-recall-button' tabIndex="1234" onClick={this.handleSubmit}>
+        <h3 className='submit-recall-button' tabIndex="1234" onClick={this.handleSubmit}>
           Submit
-        </div>
+        </h3>
       </div>
     );
   }

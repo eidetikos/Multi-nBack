@@ -1,9 +1,21 @@
-/*
+/* --COLORS-- */
+/* 
 japanese indigo: #254044
 barn red: #770d00
 wintergreen dream: #568289
 azureish white: #d8eaec
-white: #fff
+white: #fff 
+*/
+
+/* --FONTS-- */
+/*
+font-family: 'Barlow Semi Condensed', sans-serif;
+font-family: 'Oxygen', sans-serif;
+font-family: 'Dosis', sans-serif;
+font-family: 'Maven Pro', sans-serif;
+font-family: 'Pragati Narrow', sans-serif;
+font-family: 'Comfortaa', cursive;
+font-family: 'Gruppo', cursive;
 */
 
 
@@ -13,6 +25,12 @@ html, body {
   font-family: sans-serif;
   box-sizing: border-box;
   min-height: 100%;
+  font-family: 'Pragati Narrow', sans-serif;
+  font-size: 135%;
+}
+
+header, h1, h2, h3, h4, h5 {
+  font-family: 'Gruppo', cursive;
 }
 
 #root {

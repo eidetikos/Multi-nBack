@@ -13,7 +13,7 @@ class Header extends Component {
 
     return (
       <header className={user ? 'collapsed-header' : 'hero-header'}>
-        <h1>Memory App</h1>
+        <h1>multi N back</h1>
         <Auth/>
         <Nav/>
       </header>  

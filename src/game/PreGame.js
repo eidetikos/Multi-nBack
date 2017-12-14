@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
 import { setSettings } from './actions/actions';
 
-import './PreGame';
+import './PreGame.css';
 
 
 class PreGame extends PureComponent {
