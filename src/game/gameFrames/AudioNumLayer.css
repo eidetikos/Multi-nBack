@@ -10,3 +10,18 @@
     text-align: center;
     font-size: 54px;
 }
+
+.audio-num-layer > select {
+    width: fit-content;
+    text-align: center;
+    font-size: 40px;
+    margin: auto;
+    border: none;
+    border-radius: 15%;
+    background-color: hsla(0, 0%, 100%, 0.6);
+}
+
+.audio-num-layer > select:focus {
+    border: white 1px outset;
+    outline: none;
+}
