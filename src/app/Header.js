@@ -9,6 +9,7 @@ import './Header.css';
 class Header extends Component {
   render() {
     const { user } = this.props;
+    console.log(!!user);
 
     return (
       <header className={user ? 'collapsed-header' : 'hero-header'}>
@@ -21,7 +22,9 @@ class Header extends Component {
 }
   
 export default connect(
-  state => state.user,
+  state => ({
+    user: state.user
+  }),
   null
 )(Header);
   
