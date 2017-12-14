@@ -1,12 +1,11 @@
 import React, { PureComponent } from 'react';
+import { connect } from 'react-redux';
 import AuthForm from '../auth/AuthForm';
-// import Error from '../app/Error';
-// import Loading from '../app/Loading';
 import { ModalDiv }  from '../styles/style';
 import Modal from 'react-modal';
 Modal.setAppElement('#auth-modal');
 
-export default class Log extends PureComponent {
+class Log extends PureComponent {
   constructor() {
     super();
 
@@ -26,25 +25,30 @@ export default class Log extends PureComponent {
     this.setState({ modalIsOpen: false });
   }
 
-  render() {
-    // const { userError } = this.props;
+  componentWillMount() {
+    this.verifiedUser = !!localStorage.getItem('token');
+  }
 
+  render() {
+    console.log(!!this.props.user);
     return (
       <div>
-        {localStorage.getItem('token') ? <button onClick={this.openModal}>Logout</button> : <button onClick={this.openModal}>Login</button>}
         <ModalDiv>
+          <button onClick={this.openModal}>{this.props.user ? 'Logout' : 'Login'}</button>
           <Modal
             isOpen={this.state.modalIsOpen}
             onRequestClose={this.closeModal}
             contentLabel="Example Modal"
           >
             <button onClick={this.closeModal}>Exit</button>
-            <AuthForm closeModal={this.closeModal}/>
-            {/* <Error error={userError}/> */}
-            {/* <Loading loading={loading}/> */}
+            <AuthForm closeModal={this.closeModal} openModal={this.openModal}/>
           </Modal>
         </ModalDiv>
       </div>
     );
   }
 }
+export default connect(
+  state => ({ user: state.user }),
+  null
+)(Log);
