@@ -38,6 +38,9 @@ white: #fff
 
 .hero-header h1 {
     margin: 0;
+    position: absolute;
+    top: 35%; left: 50%;
+    transform: translateX(-50%)
 }
 
 .hero-header .auth {

@@ -10,7 +10,7 @@ class Game extends PureComponent {
   render() {
     const { game } = this.props;
     return (
-      <main className="game" style={{ height: '30em', width: '30em', margin: 'auto' }}>
+      <main className="game" style={{ height: '20em', width: '20em', margin: 'auto' }}>
         {game.status === 'pre' &&
           <PreGame/>
         }

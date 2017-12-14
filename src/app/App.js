@@ -9,7 +9,7 @@ import About from '../about/About';
 import Game from '../game/Game';
 import PrivateRoute from '../auth/PrivateRoute';
 
-import './App.css'
+import './App.css';
 
 
 class App extends Component {
