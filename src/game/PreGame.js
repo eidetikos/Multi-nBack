@@ -11,15 +11,23 @@ class PreGame extends PureComponent {
     event.preventDefault();
     const difficulty = event.target.difficulty.value;
     const numVariates = event.target.numVariates.value;
-    this.props.setSettings(difficulty, numVariates);
-    
+    const audio = event.target.audio_choice.value === 'false' ? false : true;
+    this.props.setSettings(difficulty, numVariates, audio);
   }
+  
 
   render() {
     return (
       <div className="pre-game">
         <h3>PreGame component</h3>
         <form onSubmit={this.submitSettingsHandler}>
+          <fieldset>
+            <legend>Audio on/off</legend>
+            <input type="radio" name="audio_choice" id="audio_choice_off" value="false" defaultChecked />
+            <label htmlFor="audio_choice_off">Off</label>
+            <input type="radio" name="audio_choice" id="audio_choice_on" value="true" />
+            <label htmlFor="audio_choice_on">On</label>
+          </fieldset>
           <fieldset>
             <legend>Variate(using this name for now) Selection</legend>
             <select name="numVariates">
