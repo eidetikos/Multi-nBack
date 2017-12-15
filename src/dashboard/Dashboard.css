@@ -20,6 +20,65 @@
     margin-right: 0;
     font-size: 50%;
 }
+.user-stats h2 {
+    margin: 0 auto 2em auto;
+    width: 8em;
+    background-color: white;
+    border-radius: 0.4em;
+    box-shadow: 0 2px 4px rgb(131, 199, 209);
+    border-bottom: solid #770d00 1px;
+    padding: 0.3em 0.3em 0.4em 0.3em;
+    letter-spacing: 0.1em
+}
+
+.personal-leaderboard-of-all-stats {
+    margin: auto;
+    width: 80%;
+    position: relative;
+    margin-bottom: 3em;
+    background-image: -webkit-gradient(linear, right, left, from(white), to(rgba(131, 199, 209, 0)));
+    background-image: -webkit-linear-gradient(right, white, rgba(131, 199, 209, 0));
+    background-image: -moz-linear-gradient(right, white, rgba(131, 199, 209, 0));
+    background-image: linear-gradient(to left, white, rgba(131, 199, 209, 0));
+    background-image: #d8eaec;
+    border-top-right-radius: 0.5em;
+    border-bottom-right-radius: 0.5em;
+    box-sizing: content-box;
+    padding: 0.8em 0 0.1em 0;
+}
+
+.personal-leaderboard-of-all-stats:nth-child(-n + 2)::after {
+    content: '';
+    height: 1em;
+    width: 1em;
+    background-color: #568289;
+    position: absolute;
+    bottom: -2em;
+    left: 50%;
+    transform: translateX(-50%);
+    clip-path: polygon(50% 0, 75% 50%, 50% 100%, 25% 50%)
+}
+
+.user-stats h5 {
+    margin-top: 0.5em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-bottom: solid #254044 1px;
+    margin: 0 auto;
+    width: 3em;
+    padding: 0.3em 0.3em 1em 0.3em;
+    letter-spacing: 0.1em
+}
+
+.personal-leaderboard-stat-data {
+    margin-top: 0.3em;
+}
+
+.personal-leaderboard-stat-data span {
+    width: 8em;
+}
 
 .community-stats {
     position: inherit;

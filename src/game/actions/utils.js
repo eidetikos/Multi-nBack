@@ -61,15 +61,13 @@ export function selectVariates(numVariates, audio) {
     color: false,
     shape: false
   };
-
   if(audio !== undefined && audio === false) delete variates.audio;
-  console.log('audio???', variates);
+
   const variateArray = shuffle(Object.keys(variates));
-  
   variateArray.forEach((variate, i) => {
     if(i < numVariates) variates[variate] = true;
   });
-  console.log(' returned audio???', variates);
+
   return variates;
 }
 
