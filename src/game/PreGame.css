@@ -24,7 +24,7 @@
 }
 
 .pre-game section>fieldset {
-    width: 40%;
+    width: 38%;
 }
 
 .pre-game fieldset {
@@ -54,26 +54,11 @@
     letter-spacing: 0.1em;
 }
 
-/* TODO: add alt radio buttons;
-/* 
-.pre-game input[type="radio"]:not(old) {
-    width   : 28px;
-    margin  : 0;
-    padding : 0;
-    opacity : 0;
+.pre-game fieldset {
+    border-radius: 0.4em;
 }
 
-.pre-game input[type=checkbox]:not(old) + label {
-  display      : inline-block;
-  margin-left  : -28px;
-  padding-left : 28px;
-  background   : url('checks.png') no-repeat 0 0;
-  line-height  : 24px;
-}
-
-.pre-game input[type="radio"]:not(old):checked {
-    font-size: 30px;
-} */
+/* TODO: add alt radio buttons; */
 
 .pre-game .select-fieldset {
     position: relative;
