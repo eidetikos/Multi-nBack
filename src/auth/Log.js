@@ -14,7 +14,7 @@ class Log extends PureComponent {
     super();
 
     this.state = {
-      modalIsOpen: true,
+      modalIsOpen: false,
       confirmLogoutIsOpen: false
     };
 
