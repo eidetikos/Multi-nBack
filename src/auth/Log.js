@@ -55,7 +55,7 @@ class Log extends PureComponent {
           </div>
         ) : (
           <ModalDiv>
-            <button onClick={this.openModal}>Login</button>
+            <button className="login-button" onClick={this.openModal}>Login</button>
             <Modal
               isOpen={this.state.modalIsOpen}
               onRequestClose={this.closeModal}

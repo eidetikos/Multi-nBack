@@ -14,12 +14,12 @@ class Dashboard extends PureComponent {
     this.props.getCommunityStats();
   }
   render() {
-    console.log(this.props.stats);
     const { user, stats } = this.props;
     const styleProps = user ? {
       width: '63%',
       margin: '2.5% 2.5% 2.5% 0'
     } : {
+      zIndex: -1,
       width: '90%',
       left: '50%',
       transform: 'translate(-50%)'

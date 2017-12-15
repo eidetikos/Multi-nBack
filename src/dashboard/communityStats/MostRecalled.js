@@ -6,14 +6,13 @@ class MostRecalled extends PureComponent {
 
   render() {
     const { leaderboard } = this.props;
-    console.log('mostrecalled', leaderboard);
     return leaderboard ?  ( 
       <article className="community-most-recalled community-leaderboard">
         <h4 className="community-leaderboard-header">Most N-backs Recalled</h4>
         <section className="community-most-recalled-leaderboard">
           <ul>
-            {leaderboard.map(leader => (
-              <li>
+            {leaderboard.map((leader, i) => (
+              <li key={i}>
                 <span className="community-leaderboard-username">{leader.name}: </span>
                 <span className="community-leaderboard-data">{leader.count}</span>
               </li>

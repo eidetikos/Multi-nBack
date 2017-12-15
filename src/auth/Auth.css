@@ -4,6 +4,20 @@
     position: relative;
 }
 
+.login-button {
+    position: absolute;
+    top: 53%; left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #254044;
+    padding: 0.1em 1.2em;
+    color: white;
+    font-family: 'Pragati Narrow', sans-serif;
+    font-size: 100%;
+    outline: none;
+    border: none;
+    border-radius: 0.5em;
+}
+
 .close-modal-button {
     position: absolute;
     right: 20px;

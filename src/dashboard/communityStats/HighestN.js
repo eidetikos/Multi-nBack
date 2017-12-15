@@ -12,11 +12,11 @@ class HighestN extends PureComponent {
         <h4 className="community-leaderboard-header">Highest N-backs</h4>
         <div className="community-highest-n-leaderboard">
           {Object.keys(leaderboard).map(difficulty => (
-            <section className={`community-highest-n-${difficulty} community-leaderboard-of-highest-n`}>
+            <section key={difficulty} className={`community-highest-n-${difficulty} community-leaderboard-of-highest-n`}>
               <h5 className="community-leaderboard-difficulty-h5">{difficulty}</h5>
               <ul>
-                {leaderboard[difficulty].map(leader => (
-                  <li>
+                {leaderboard[difficulty].map((leader, i) => (
+                  <li key={i}>
                     <span className="community-leaderboard-username">{leader.name}: </span>
                     <span className="community-leaderboard-data">{leader.maxN}</span>
                   </li>

@@ -42,6 +42,9 @@ white: #fff
     position: absolute;
     top: 35%; left: 50%;
     transform: translateX(-50%);
+    width: 7em;
+    padding-bottom: 0.3em;
+    border-bottom: 3px solid #770d00;
     color: #254044;
 }
 
@@ -51,14 +54,16 @@ white: #fff
 
 
 .hero-header nav {
-    position: absolute;
-    right: 5%;
+    position: fixed;
+    right: 4.2%;
     top: 3.5%;
 }
 
 .hero-header .nav-button {
     border-radius: 50%;
+    z-index: 10;
     background: #568289;
+    box-shadow: 0 1px 3px #d8eaec;
 }
 
 .hero-header nav ul {
@@ -82,7 +87,7 @@ white: #fff
     padding: 0.25em 1em;
     border-top: solid 1px #568289;
     border-bottom: solid 1px #568289;
-    background-color: #d8eaec;
+    background-color: white;
     color: #254044;
 }
 

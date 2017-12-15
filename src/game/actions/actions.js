@@ -1,4 +1,5 @@
 import * as actions from '../../app/constants';
+                                                        // REMEMBER: reactivate interval generator at lines 44/45
 import { generateNBack, selectVariates, generateCombos, generateInterval } from './utils';
 import deepEqual from 'deep-equal';
 import gameApi from '../../services/game.api';
@@ -37,7 +38,6 @@ export function initSequence(getState) {
     }
   } = getState();
   const score = sequences.length;
-  // console.log('numVariates in initSequences', selectVariates(numVariates, audio));
   const nBack = generateNBack(difficulty, score);
   const variates = selectVariates(numVariates, audio);
   const combos = generateCombos(nBack, score, variates);
