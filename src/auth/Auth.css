@@ -57,11 +57,20 @@
 .login-input input {
     position: absolute;
     right: 0;
-    padding-left: 0.5em;
+    border: none;
+    border-radius: 0.3em;
+    background: #d8eaec;
+    padding: 0.3em 0.3em 0.3em 1em;
+    margin-top: -0.2em;
     letter-spacing: 0.1em;
     font-family: 'Pragati Narrow', sans-serif;
     font-size: 60%;    
     width: 7.5em;
+    outline: none;
+}
+
+.login-input input:focus {
+    border: 1px solid #568289;
 }
 
 .login-window p {

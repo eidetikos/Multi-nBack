@@ -5,12 +5,14 @@ import PreGame from './PreGame';
 import InGame from './InGame';
 import PostGame from './PostGame';
 
+import './Game.css';
+
 class Game extends PureComponent {
 
   render() {
     const { game } = this.props;
     return (
-      <main className="game" style={{ height: '20em', width: '20em', margin: 'auto' }}>
+      <main className="game">
         {game.status === 'pre' &&
           <PreGame/>
         }
