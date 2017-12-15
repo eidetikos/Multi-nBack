@@ -52,8 +52,8 @@ export function generateInterval(difficulty, score) {
   return interval;
 }
 
-export function selectVariates(numVariates) {
-  
+export function selectVariates(numVariates, audio) {
+
   const variates = {
     position: false,
     audio: false,
@@ -65,6 +65,7 @@ export function selectVariates(numVariates) {
   const variateArray = shuffle(Object.keys(variates));
   variateArray.forEach((variate, i) => {
     if(i < numVariates) variates[variate] = true;
+    if(audio !== undefined) variates.audio = audio;
   });
   return variates;
 }
