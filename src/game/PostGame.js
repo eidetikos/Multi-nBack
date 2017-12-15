@@ -24,7 +24,6 @@ class PostGame extends PureComponent {
             <h1>{finalStats.user.name}'s Final Stats</h1>
             <Chart/>
           </div>
-          
           <div className="post-stats">
             <fieldset className="post-field">
               <legend>Game Stats</legend>
@@ -44,6 +43,7 @@ class PostGame extends PureComponent {
                 <input type="button"  name="change-settings" id="change-settings" value="Change Settings" onClick={this.handleChangeSettings}/>
               </div>
             </div>
+
           </div>
 
         </div>
