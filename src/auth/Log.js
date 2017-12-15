@@ -29,9 +29,9 @@ class Log extends PureComponent {
   handleLogoutToggle = () => this.setState({ confirmLogoutIsOpen: !this.state.confirmLogoutIsOpen })
 
   handleLogout = () => {
+    localStorage.removeItem('token');
     this.props.logOut();
     this.handleLogoutToggle();
-    localStorage.removeItem('token');
     this.props.history.push('/');
   }
 

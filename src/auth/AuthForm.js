@@ -24,8 +24,8 @@ class AuthForm extends PureComponent {
   }
 
   handleLogout = () => {
-    this.props.logOut();
     localStorage.removeItem('token');
+    this.props.logOut();
     this.props.closeModal();
     this.props.history.push('/');
   }
