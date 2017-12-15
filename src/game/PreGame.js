@@ -6,6 +6,12 @@ import './PreGame';
 
 
 class PreGame extends PureComponent {
+  constructor() {
+    super();
+    this.state = {
+      options: [2,3,4]
+    };
+  }
 
   submitSettingsHandler = event => {
     event.preventDefault();
@@ -14,27 +20,30 @@ class PreGame extends PureComponent {
     const audio = event.target.audio_choice.value === 'false' ? false : true;
     this.props.setSettings(difficulty, numVariates, audio);
   }
-  
+
+  handleOptions = event => {
+    const newOptionState = event.target.value === 'false' ? [2,3,4] : [2,3,4,5];
+    this.setState({ options: newOptionState });
+  }
 
   render() {
+    const mappedOptions = this.state.options.map((option,i) => <option key={i} value={option}>{ option }</option>);
+
     return (
       <div className="pre-game">
         <h3>PreGame component</h3>
         <form onSubmit={this.submitSettingsHandler}>
           <fieldset>
             <legend>Audio on/off</legend>
-            <input type="radio" name="audio_choice" id="audio_choice_off" value="false" defaultChecked />
+            <input type="radio" name="audio_choice" id="audio_choice_off" value="false" onChange={this.handleOptions} defaultChecked />
             <label htmlFor="audio_choice_off">Off</label>
-            <input type="radio" name="audio_choice" id="audio_choice_on" value="true" />
+            <input type="radio" name="audio_choice" id="audio_choice_on" value="true" onChange={this.handleOptions} />
             <label htmlFor="audio_choice_on">On</label>
           </fieldset>
           <fieldset>
-            <legend>Variate(using this name for now) Selection</legend>
+            <legend>Variate Selection</legend>
             <select name="numVariates">
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
+              {mappedOptions}
             </select>
           </fieldset>
           <fieldset>
