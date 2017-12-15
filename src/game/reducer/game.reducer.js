@@ -21,18 +21,8 @@ export default function game(state = initState, { type, payload }) {
       return { ...state, status: 'pre' };
     // GET SETTINGS changing difficulty
     case actions.SET_SETTINGS:
-      return { 
-        ...state,
-        difficulty: payload.difficulty, 
-        numVariates: payload.numVariates, 
-        audio: payload.audio, 
-      };
+      return { ...state, difficulty: payload.difficulty, numVariates: payload.numVariates, audio: payload.audio, status: 'in' };
     case actions.INIT_SEQUENCE:
-      return {
-        ...state,
-        status: 'in', 
-        sequences: sequencesReducer(state.sequences, { type, payload })
-      };
     case actions.NEXT_COMBO:
     case actions.SEQUENCE_OVER:
       return {
