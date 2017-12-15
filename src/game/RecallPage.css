@@ -8,14 +8,14 @@
     margin: 0 0 3px 0;
     height: 45px;
     border-radius: 15px;
-    background-color: lightblue;
+    background-color: #254044;
 
     line-height: 45px;
     text-align: center;
     font-size: 30px;
     font-weight: bold;
     letter-spacing: 0.5em;
-    color: darkblue;
+    color: white;
 }
 
 .recall-page-top {
@@ -74,17 +74,19 @@
     width: 100%;
     height: 45px;
     border-radius: 15px;
-    background-color: lightgreen;
+    background-color: #568289;
 
     line-height: 40px;
     text-align: center;
     font-size: 30px;
     font-weight: bold;
     letter-spacing: 0.5em;
-    color: green;
+    color: #d8eaec;
 }
 
 .submit-recall-button:focus, .submit-recall-button:hover {
-    box-sizing: border-box;
-    border: outset rgb(223, 247, 223) 2px;
+    background-image: -webkit-gradient(radial, center, from(#d8eaec), to(end-color));
+    background-image: -webkit-radial-gradient(center, #d8eaec, #ffffff00 25%, #ffffff00 75%, #d8eaec);
+    background-image: -moz-radial-gradient(center, #d8eaec, #ffffff00 25%, #ffffff00 75%, #d8eaec);
+    background-image: radial-gradient(at center, #ffffff00 60%, #d8eaec);
 }

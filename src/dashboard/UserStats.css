@@ -1,0 +1,18 @@
+
+
+.stats-page-left button {
+    position: absolute;
+    top: 0;
+    left: 0; right: 0;
+    width: 100%;
+    height: 8%;
+    border-radius: 0.4em;
+    border: none;
+    padding: 0.5em 2em 0.5em 2em;
+    background: #568289;
+    color: #d8eaec;
+    letter-spacing: 0.1em;
+    font-family: 'Gruppo', cursive;
+    font-size: 150%;
+    font-weight: bold;
+}

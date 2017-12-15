@@ -1,5 +1,5 @@
 .about {
-    padding: 4em 20%;
+    padding: 2.5em 20% 4em 20%;;
 }
 
 .about section {
@@ -19,6 +19,25 @@
     background-color: #568289;
 }
 
-.about section:last-child {
-    margin-bottom: 0;
+.about .about-team-section {
+    margin-bottom: 4em;
+}
+
+.about button {
+    border-radius: 0.4em;
+    border: none;
+    padding: 0.5em 2em 0.5em 2em;
+    background: #568289;
+    color: #d8eaec;
+    font-family: 'Gruppo', cursive;
+    font-size: 100%;
+    font-weight: bold;
+}
+
+
+.about button:hover {
+    background-image: -webkit-gradient(radial, center, from(#d8eaec), to(end-color));
+    background-image: -webkit-radial-gradient(center, #d8eaec, #ffffff00 25%, #ffffff00 75%, #d8eaec);
+    background-image: -moz-radial-gradient(center, #d8eaec, #ffffff00 25%, #ffffff00 75%, #d8eaec);
+    background-image: radial-gradient(at center, #ffffff00 60%, #d8eaec);
 }

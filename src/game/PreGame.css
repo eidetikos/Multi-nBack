@@ -105,6 +105,8 @@
 }
 
 .pre-game .play-button:focus {
-    box-sizing: border-box;
-    border-bottom: 3px solid #770d00;
+    background-image: -webkit-gradient(radial, center, from(#d8eaec), to(end-color));
+    background-image: -webkit-radial-gradient(center, #d8eaec, #ffffff00 25%, #ffffff00 75%, #d8eaec);
+    background-image: -moz-radial-gradient(center, #d8eaec, #ffffff00 25%, #ffffff00 75%, #d8eaec);
+    background-image: radial-gradient(at center, #ffffff00 60%, #d8eaec);
 }
