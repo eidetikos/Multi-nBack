@@ -38,9 +38,7 @@ class App extends Component {
             <Route path="/about" component={About}/>
             <PrivateRoute path="/game" component={Game}/>
           </Switch>
-          {/* <footer>
-            <h1>FOOOOOOOOOOOOOT</h1>
-          </footer> */}
+          <footer></footer>
         </div>
       </Router>
     );

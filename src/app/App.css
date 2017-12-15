@@ -2,6 +2,7 @@
   text-align: center;
   min-height: 100%;
   min-width: 100%;
+  position: relative;
 }
 
 
@@ -23,4 +24,35 @@
   background-image: -webkit-radial-gradient(center, #d8eaec, #ffffff00 25%, #ffffff00 75%, #d8eaec);
   background-image: -moz-radial-gradient(center, #d8eaec, #ffffff00 25%, #ffffff00 75%, #d8eaec);
   background-image: radial-gradient(at center, #ffffff00 60%, #d8eaec);
+}
+
+footer {
+  width: 100%;
+  height: 10em;
+  margin-top: 4em;
+  /* background-color: #254044; */
+  position: relative;
+}
+
+footer::after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  height: 720px;
+  top: 0; right: 0; bottom: 0; left: 0;
+  background-image: -webkit-gradient(linear, left bottom, left top, from(#d8eaec), to(white));
+  background-image: -webkit-linear-gradient(bottom, #d8eaec, white);
+  background-image: -moz-linear-gradient(bottom, #d8eaec, white);
+  background-image: linear-gradient(to top, #d8eaec00 80%, white);
+}
+
+footer::before {
+  content: '';
+  position: absolute;
+  z-index: -100;
+  height: 720px;
+  background-size: cover;
+  background-attachment: fixed;
+  background-color: #254044;
+  top: 0; right: 0; bottom: 0; left: 0;
 }
