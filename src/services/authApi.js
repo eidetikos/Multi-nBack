@@ -5,3 +5,7 @@ export const post = (path, data) => api.post(`/auth${path}`, data);
 export const verify = () => {
   return api.get('/auth/verify');
 };
+
+export const getUser = () => {
+  return api.get('/auth');
+};
