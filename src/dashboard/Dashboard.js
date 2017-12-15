@@ -7,7 +7,6 @@ import TopScore from './communityStats/TopScore';
 import { getCommunityStats, getUserStats } from './actions';
 
 import './Dashboard.css';
-import './UserStats.css';
 
 class Dashboard extends PureComponent {
 
