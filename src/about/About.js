@@ -4,8 +4,7 @@ import { connect } from 'react-redux';
 class About extends PureComponent {
   render() {
     return (
-      <main className="about">
-        <h2>About component</h2>
+      <main id="about" className="about">
         <h3>History</h3>
         <p>Working memory (WM) is a cognitive process.  WM is thought to be "trainable", relating to how much a person can think about at one time.  
         It is thought that WM and IQ correlate, perhaps using the same neural networks.  Therefore, the hope is that, by improving WM, IQ will also be improved.</p>

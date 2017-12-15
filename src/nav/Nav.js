@@ -27,11 +27,11 @@ class Nav extends PureComponent {
           </svg>
         </section>
         {this.state.collapsed &&
-          <ul>
+          <ul onClick={this.handleToggle}>
             <Link to="/">
               <li>home</li>
             </Link>
-            <Link to="/about">
+            <Link to="/about#about">
               <li>about</li>
             </Link>
             {this.props.user &&

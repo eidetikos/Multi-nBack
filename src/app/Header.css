@@ -40,30 +40,53 @@ white: #fff
     margin: 0;
     position: absolute;
     top: 35%; left: 50%;
-    transform: translateX(-50%)
+    transform: translateX(-50%);
+    color: #254044;
 }
 
 .hero-header .auth {
 
 }
 
-.hero-header nav {
 
+.hero-header nav {
+    position: absolute;
+    right: 5%;
+    top: 3.5%;
+}
+
+.hero-header .nav-button {
+    border-radius: 50%;
+    background: #568289;
 }
 
 .hero-header nav ul {
+    z-index: 10;
     text-align: left;
     position: absolute;
+    top: 83px;
     right: 0;
     width: 7em;
     margin: 0;
+    border-radius: 10%;
+    border-top: solid 2px #254044;
+    border-bottom: solid 2px #254044;
+    overflow: hidden;
     list-style-type: none;
-    color: #d8eaec;
+    padding: 0;
+    color: #254044;
 }
 
 .hero-header nav ul li {
     padding: 0.25em 1em;
-    border-bottom: solid 3px #568289;
+    border-top: solid 1px #568289;
+    border-bottom: solid 1px #568289;
+    background-color: #d8eaec;
+    color: #254044;
+}
+
+.hero-header nav ul li:hover {
+    background-color: #d8eaec;
 }
 
 
