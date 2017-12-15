@@ -115,7 +115,7 @@ white: #fff
 .collapsed-header h1 {
     position: absolute;
     left: 0;
-    width: 66%;
+    width: 8em;
     padding-left: 1.5em;
     line-height: 80px;
     text-align: left;
@@ -126,6 +126,7 @@ white: #fff
     position: absolute;
     right: 80px;
     height: 80px;
+    width: 10em;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -185,7 +186,7 @@ white: #fff
 .confirm-logout {
     position: absolute;
     left: 0; right: 0;
-    height: 100px;
+    height: 6em;
     margin-top: 17px;
     border-top: solid #770d00 3px;
     background: white;
@@ -193,6 +194,7 @@ white: #fff
     font-family: 'Pragati Narrow', sans-serif;  
     color: #254044;
     text-align: center;
+    z-index: 3;
 }
 
 button.confirm-logout-close {
@@ -205,15 +207,17 @@ button.confirm-logout-close {
     border-radius: 3px;
 }
 
-.confirm-logout p {
+.confirm-logout p { 
+    position: absolute;
+    width: 100%;
+    top: 12%;
     margin: 18px 0 0 0;
-    padding-left: 1em;
-    text-align: left;
+    text-align: center;
 }
 
 button.confirm-logout-button {
     position: absolute;
-    top: 58px;
+    top: 60%;
     right: 50%;
     transform: translateX(50%);
     box-sizing: border-box;
