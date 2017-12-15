@@ -47,7 +47,7 @@ class AuthForm extends PureComponent {
     const { userError } = this.props;
 
     return (this.verifiedUser ? (
-      <button onClick={this.handleLogout}>Logout</button>
+      <button onClick={this.handleLogout}>Are you sure?</button>
     ) : (
       <form onClick={this.handleSignup} onSubmit={this.handleSignin}>
         <label>User Name:</label>
