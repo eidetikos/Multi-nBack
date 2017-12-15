@@ -31,7 +31,7 @@ class PreGame extends PureComponent {
 
     return (
       <form className="pre-game" onSubmit={this.submitSettingsHandler}>
-        <h3>Settings</h3>
+        <h2>Settings</h2>
         <fieldset>
           <legend>Difficulty Selection</legend>
           <div>

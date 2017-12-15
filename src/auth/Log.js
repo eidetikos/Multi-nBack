@@ -5,9 +5,7 @@ import { connect } from 'react-redux';
 import { logOut } from './actions';
 
 import AuthForm from '../auth/AuthForm';
-import { ModalDiv }  from '../styles/style';
-import Modal from 'react-modal';
-Modal.setAppElement('#auth-modal');
+
 
 class Log extends PureComponent {
   constructor() {
