@@ -12,7 +12,6 @@ class PostGame extends PureComponent {
   }
 
   handleChangeSettings = () => {
-    this.props.initSequence();
     this.props.newGame();
   }
 

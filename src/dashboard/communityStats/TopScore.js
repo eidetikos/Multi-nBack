@@ -12,11 +12,11 @@ class TopScore extends PureComponent {
         <h4 className="community-leaderboard-header">Top Scores</h4>
         <div className="community-top-score-leaderboard">
           {Object.keys(leaderboard).map(difficulty => (
-            <section className={`community-top-score-${difficulty} community-leaderboard-of-top-score`}>
+            <section key={difficulty} className={`community-top-score-${difficulty} community-leaderboard-of-top-score`}>
               <h5 className="community-leaderboard-difficulty-h5">{difficulty}</h5>
               <ul>
-                {leaderboard[difficulty].map(leader => (
-                  <li>
+                {leaderboard[difficulty].map((leader, i) => (
+                  <li key={i}>
                     <span className="community-leaderboard-username">{leader.name}: </span>
                     <span className="community-leaderboard-data">{leader.highestScore}</span>
                   </li>

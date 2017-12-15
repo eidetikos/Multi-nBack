@@ -5,9 +5,7 @@ import { connect } from 'react-redux';
 import { logOut } from './actions';
 
 import AuthForm from '../auth/AuthForm';
-import { ModalDiv }  from '../styles/style';
-import Modal from 'react-modal';
-Modal.setAppElement('#auth-modal');
+
 
 class Log extends PureComponent {
   constructor() {
@@ -54,17 +52,15 @@ class Log extends PureComponent {
             <button className="logout-button" onClick={this.handleLogoutToggle}>Logout</button>
           </div>
         ) : (
-          <ModalDiv>
-            <button onClick={this.openModal}>Login</button>
-            <Modal
-              isOpen={this.state.modalIsOpen}
-              onRequestClose={this.closeModal}
-              contentLabel="Example Modal"
-            >
-              <button className="close-modal-button" onClick={this.closeModal}>X</button>
-              <AuthForm closeModal={this.closeModal} openModal={this.openModal}/>
-            </Modal>
-          </ModalDiv>
+          <div className="login-modal">
+            <button className="login-button" onClick={this.openModal}>Login</button>
+            {this.state.modalIsOpen &&
+              <div className="login-window">
+                <button className="close-modal-button" onClick={this.closeModal}>X</button>
+                <AuthForm closeModal={this.closeModal} openModal={this.openModal}/>
+              </div>
+            }
+          </div>
         )}
         {this.state.confirmLogoutIsOpen &&
           <section className="confirm-logout">

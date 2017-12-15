@@ -1,30 +1,35 @@
 .dashboard {
     height: fit-content;
     overflow: auto;
+    position: relative;
+    z-index: -1;
 }
 
 .stats {
-    height: 39.7em;
+    height: 33em;
     border-radius: 5px;
     background: rgba(131, 199, 209, 0.7);    
     padding-top: 2.3em
 }
 
 .user-stats {
+    position: absolute;
+    top: 0; left: 0;
     margin: 2.5%;
-    float: left;
     width: 30%;
     margin-right: 0;
     font-size: 50%;
 }
 
 .community-stats {
+    position: inherit;
     font-size: 50%;
+    left: 35%;
 }
 
 .community-leaderboards {
     width: 100%;
-    height: 70%;
+    height: 85%;
     display: flex;
     justify-content: space-around;
     box-sizing: border-box;
@@ -112,7 +117,7 @@
 
 .community-most-recalled-leaderboard {
     height: 100%;
-    margin-top: -1em;
+    margin-top: -0.3em; 
 }
 
 
@@ -120,12 +125,13 @@
 
 .community-leaderboard-difficulty-h5 {
     border-bottom: #254044 solid 1px;
-    padding: 0.5em;
+    padding: 0.3em;
 }
 
 .community-leaderboard ul {
     list-style: none;
-    padding: 0;
+    margin: 0;
+    padding: 0.15em;
     font-size: 70%;
     font-weight: lighter;
     height: 88%;

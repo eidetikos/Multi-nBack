@@ -42,6 +42,9 @@ white: #fff
     position: absolute;
     top: 35%; left: 50%;
     transform: translateX(-50%);
+    width: 7em;
+    padding-bottom: 0.3em;
+    border-bottom: 3px solid #770d00;
     color: #254044;
 }
 
@@ -51,14 +54,23 @@ white: #fff
 
 
 .hero-header nav {
-    position: absolute;
-    right: 5%;
+    position: fixed;
+    right: 4.2%;
     top: 3.5%;
 }
 
 .hero-header .nav-button {
     border-radius: 50%;
+    z-index: 10;
     background: #568289;
+    box-shadow: 0 1px 3px #d8eaec;
+}
+
+.hero-header .nav-button:hover {
+    background-image: -webkit-gradient(radial, center, from(#d8eaec), to(end-color));
+    background-image: -webkit-radial-gradient(center, #d8eaec, #ffffff00 25%, #ffffff00 75%, #d8eaec);
+    background-image: -moz-radial-gradient(center, #d8eaec, #ffffff00 25%, #ffffff00 75%, #d8eaec);
+    background-image: radial-gradient(at center, #ffffff00 60%, #d8eaec);
 }
 
 .hero-header nav ul {
@@ -70,8 +82,8 @@ white: #fff
     width: 7em;
     margin: 0;
     border-radius: 10%;
-    border-top: solid 2px #254044;
     border-bottom: solid 2px #254044;
+    border-top: solid 2px #254044;
     overflow: hidden;
     list-style-type: none;
     padding: 0;
@@ -82,7 +94,7 @@ white: #fff
     padding: 0.25em 1em;
     border-top: solid 1px #568289;
     border-bottom: solid 1px #568289;
-    background-color: #d8eaec;
+    background-color: white;
     color: #254044;
 }
 
@@ -107,6 +119,10 @@ white: #fff
 .collapsed-header {
     height: 80px;
     background: #254044;
+    background-image: -webkit-gradient(linear, left, right, from(#254044 70%), to(#568289));
+    background-image: -webkit-linear-gradient(right, #5682899a -26%, #254044 4%, #254044 70%, #5682899a);
+    background-image: -moz-linear-gradient(right, #5682899a -26%, #254044 4%, #254044 70%, #5682899a);
+    background-image: linear-gradient(to right, #5682899a -26%, #254044 4%, #254044 70%, #5682899a);
     color: #d8eaec;
     position: relative;
     border-bottom: solid #770d00 3px;
@@ -169,8 +185,12 @@ white: #fff
     right: 0;
     width: 7em;
     margin: 0;
+    padding: 0;
+    border-bottom-left-radius: 10%;
+    border-bottom: solid 2px #254044;
     list-style-type: none;
     color: #d8eaec;
+    overflow: hidden;
 }
 
 .collapsed-header nav ul li {

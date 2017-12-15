@@ -1,5 +1,113 @@
 .pre-game {
+    box-sizing: border-box;
     height: 100%;
     width: 100%;
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    color: #254044;
     font-size: 100%;
+}
+
+.pre-game h2 {
+    margin: 0 auto;
+    width: 8em;
+    border-bottom: 2px solid #770d00;
+    padding-bottom: 0.3em;
+
+}
+
+.pre-game section {
+    display: flex;
+    justify-content: space-between;
+}
+
+.pre-game section>fieldset {
+    width: 40%;
+}
+
+.pre-game fieldset {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.pre-game fieldset div {
+    position: relative;
+}
+
+.pre-game input[type="radio"] {
+    position: absolute;
+    left: 20%;
+    height: 3em;
+    width: 3em;
+    border-radius: 50%;
+}
+
+.pre-game label {
+    display: inline-block;
+    position: relative;
+    left: 4%;
+    height: 1.5em;
+    width: 1.5em;
+    letter-spacing: 0.1em;
+}
+
+/* TODO: add alt radio buttons;
+/* 
+.pre-game input[type="radio"]:not(old) {
+    width   : 28px;
+    margin  : 0;
+    padding : 0;
+    opacity : 0;
+}
+
+.pre-game input[type=checkbox]:not(old) + label {
+  display      : inline-block;
+  margin-left  : -28px;
+  padding-left : 28px;
+  background   : url('checks.png') no-repeat 0 0;
+  line-height  : 24px;
+}
+
+.pre-game input[type="radio"]:not(old):checked {
+    font-size: 30px;
+} */
+
+.pre-game .select-fieldset {
+    position: relative;
+}
+
+.pre-game select {
+    position: absolute;
+    top: 40%; left: 50%;
+    transform: translateX(-50%);
+    font-size: 150%;
+    background: #d8eaec;
+    border-radius: 0.3em;
+    outline: none;
+    border: none;
+    padding: 0.1em 0.4em;
+}
+
+
+.pre-game .play-button {
+    margin-top: 0.5em;
+    border-radius: 0.4em;
+    border: none;
+    padding: 0.5em 2em 0.5em 3em;
+    background: #568289;
+    color: #d8eaec;
+    letter-spacing: 1em;
+    font-family: 'Gruppo', cursive;
+    font-size: 100%;
+    font-weight: bold;
+}
+
+.pre-game .play-button:focus {
+    background-image: -webkit-gradient(radial, center, from(#d8eaec), to(end-color));
+    background-image: -webkit-radial-gradient(center, #d8eaec, #ffffff00 25%, #ffffff00 75%, #d8eaec);
+    background-image: -moz-radial-gradient(center, #d8eaec, #ffffff00 25%, #ffffff00 75%, #d8eaec);
+    background-image: radial-gradient(at center, #ffffff00 60%, #d8eaec);
 }

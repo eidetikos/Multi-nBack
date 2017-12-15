@@ -9,7 +9,6 @@ import './Header.css';
 class Header extends Component {
   render() {
     const { user } = this.props;
-    console.log(!!user);
 
     return (
       <header className={user ? 'collapsed-header' : 'hero-header'}>

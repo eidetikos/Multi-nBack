@@ -7,10 +7,13 @@ import Error from '../app/Error';
 class AuthForm extends PureComponent {
 
 
-  handleSignup = event => {
-  
-    if(event.target.value === 'signup') {
-      this.props.signUp(event.target.parentNode.name.value, event.target.parentNode.password.value)
+  handleLogin = event => {
+
+    if(event.target.value === 'signin' || event.target.value === 'signup') {
+      const loginType = event.target.value;
+      const form = event.target.parentNode.parentNode;
+
+      this.props[loginType](form.name.value, form.password.value)
         .then(() => {
           if(!this.props.userError) {
             this.props.closeModal();
@@ -18,18 +21,6 @@ class AuthForm extends PureComponent {
           }
         });
     }
-  }
-
-  handleSignin = event => {
-    event.preventDefault();
-
-    this.props.signIn(event.target.name.value, event.target.password.value)
-      .then(() => {
-        if(!this.props.userError) {
-          this.props.closeModal();
-          this.props.history.push(this.props.location.pathname);
-        }
-      });
   }
 
   handleLogout = () => {
@@ -49,14 +40,22 @@ class AuthForm extends PureComponent {
     return (this.verifiedUser ? (
       <button onClick={this.handleLogout}>Are you sure?</button>
     ) : (
-      <form onClick={this.handleSignup} onSubmit={this.handleSignin}>
-        <label>User Name:</label>
-        <input name="name" maxlength="8"/>
-        <p>* user name must be unique</p>
-        <label>Password:</label>
-        <input type="password" name="password" placeholder="***************"/>
-        <button type="submit" name="signin">SIGNIN</button>
-        <button type="button" name="signup" value="signup">SIGNUP</button>
+      <form onClick={this.handleLogin}>
+        <section className="login-input-field">
+          <section className="login-input">
+            <label>User Name:</label>
+            <input name="name" maxlength="8"/>
+          </section>
+          <p>* user name must be unique</p>
+        </section>
+        <section className="login-input login-input-field">
+          <label>Password:</label>
+          <input type="password" name="password" placeholder="**********"/>
+        </section>
+        <section className="login-buttons-field">
+          <button type="button" className="signin-button" name="signin" value="signin">sign in</button>
+          <button type="button" className="signup-button" name="signup" value="signup">sign up</button>
+        </section>
         <Error error={userError}/>
       </form>
     ));
@@ -67,5 +66,5 @@ export default withRouter(connect(
   state => ({ 
     userError: state.userError
   }),
-  { signUp, signIn, logOut }
+  { signup: signUp, signin: signIn, logOut }
 )(AuthForm));

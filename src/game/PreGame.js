@@ -30,40 +30,44 @@ class PreGame extends PureComponent {
     const mappedOptions = this.state.options.map((option,i) => <option key={i} value={option}>{ option }</option>);
 
     return (
-      <div className="pre-game">
-        <h3>PreGame component</h3>
-        <form onSubmit={this.submitSettingsHandler}>
+      <form className="pre-game" onSubmit={this.submitSettingsHandler}>
+        <h2>Settings</h2>
+        <fieldset>
+          <legend>Difficulty Selection</legend>
+          <div>
+            <input type="radio" name="difficulty" id="difficulty_easy" value="easy" defaultChecked/>
+            <label htmlFor="difficulty_easy">Easy</label>
+          </div>
+          <div>
+            <input type="radio" name="difficulty" id="difficulty_medium" value="medium"/>
+            <label htmlFor="difficulty_medium">Medium</label>
+          </div>
+          <div>
+            <input type="radio" name="difficulty" id="difficulty_hard" value="hard"/>
+            <label htmlFor="difficulty_hard">Hard</label>
+          </div>
+        </fieldset>
+        <section>
           <fieldset>
             <legend>Audio on/off</legend>
-            <input type="radio" name="audio_choice" id="audio_choice_off" value="false" onChange={this.handleOptions} defaultChecked />
-            <label htmlFor="audio_choice_off">Off</label>
-            <input type="radio" name="audio_choice" id="audio_choice_on" value="true" onChange={this.handleOptions} />
-            <label htmlFor="audio_choice_on">On</label>
+            <div>
+              <input type="radio" name="audio_choice" id="audio_choice_off" value="false" onChange={this.handleOptions} defaultChecked />
+              <label htmlFor="audio_choice_off">Off</label>
+            </div>
+            <div>
+              <input type="radio" name="audio_choice" id="audio_choice_on" value="true" onChange={this.handleOptions} />
+              <label htmlFor="audio_choice_on">On</label>
+            </div>
           </fieldset>
-          <fieldset>
+          <fieldset className="select-fieldset">
             <legend>Variate Selection</legend>
             <select name="numVariates">
               {mappedOptions}
             </select>
           </fieldset>
-          <fieldset>
-            <legend>Difficulty Selection</legend>
-            <div>
-              <input type="radio" name="difficulty" id="difficulty_easy" value="easy" defaultChecked/>
-              <label htmlFor="difficulty_easy">Easy</label>
-            </div>
-            <div>
-              <input type="radio" name="difficulty" id="difficulty_medium" value="medium"/>
-              <label htmlFor="difficulty_medium">Medium</label>
-            </div>
-            <div>
-              <input type="radio" name="difficulty" id="difficulty_hard" value="hard"/>
-              <label htmlFor="difficulty_hard">Hard</label>
-            </div>
-          </fieldset>
-          <input type="submit"/>
-        </form>
-      </div>
+        </section>
+        <input className="play-button" type="submit" value="PLAY"/>
+      </form>
     );
   }
 }

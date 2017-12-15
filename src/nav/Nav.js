@@ -29,7 +29,7 @@ class Nav extends PureComponent {
         {this.state.collapsed &&
           <ul onClick={this.handleToggle}>
             <Link to="/">
-              <li>home</li>
+              <li>dashboard</li>
             </Link>
             <Link to="/about#about">
               <li>about</li>
