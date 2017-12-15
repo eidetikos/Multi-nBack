@@ -15,6 +15,10 @@ export const GAME_OVER = 'GAME_OVER';
 export const WRAP_UP = 'WRAP_UP';
 export const LEAVE_GAME = 'LEAVE_GAME';
 
+// ### Stats ### //
+export const GET_COMMUNITY_STATS = 'GET_COMMUNITY_STATS';
+export const GET_USER_STATS = 'GET_USER_STATS';
+
 // ### Loading / Error Constants ### //
 export const LOADING = 'LOADING';
 export const LOADED = 'LOADED';
