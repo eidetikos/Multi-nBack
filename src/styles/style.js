@@ -29,8 +29,8 @@ align-items: center;
 animation: App-logo-spin infinite 1s linear;
 `;
 
-export const ChartStats = styled.div`
-display: flex;
-flexDirection: column; 
-justify-content: center;
-`;
+// export const ChartStats = styled.div`
+// display: flex;
+// flexDirection: column; 
+// justify-content: center;
+// `;
