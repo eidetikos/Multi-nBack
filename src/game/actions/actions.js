@@ -64,7 +64,7 @@ export function initSequence() {
   };
 }
 
-function nextCombo(getState, dispatch) {
+export function nextCombo(getState, dispatch) {
 
   dispatch({ type: actions.NEXT_COMBO });
   
@@ -98,12 +98,12 @@ export function checkRecall(recalled) {
 }
 
 async function wrapUp(getState, dispatch) {
-
+  
   const { game } = getState();
   dispatch({ 
     type: actions.GAME_OVER
   });
-
+  
   const payload = await gameApi.add(game);
   
   console.log('here is the getState', getState());
@@ -111,4 +111,11 @@ async function wrapUp(getState, dispatch) {
     type: actions.WRAP_UP,
     payload
   });
+}
+
+export function replay() {
+  return (dispatch, getState) => {
+    dispatch(initSequence(getState));
+    nextCombo(getState, dispatch);
+  };
 }
