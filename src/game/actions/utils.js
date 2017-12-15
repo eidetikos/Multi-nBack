@@ -62,11 +62,14 @@ export function selectVariates(numVariates, audio) {
     shape: false
   };
 
+  if(audio !== undefined && audio === false) delete variates.audio;
+  console.log('audio???', variates);
   const variateArray = shuffle(Object.keys(variates));
+  
   variateArray.forEach((variate, i) => {
     if(i < numVariates) variates[variate] = true;
-    if(audio !== undefined) variates.audio = audio;
   });
+  console.log(' returned audio???', variates);
   return variates;
 }
 
@@ -106,7 +109,7 @@ const variateVars = {
 
 const generateComboLength = (nBack, score) => nBack + Math.random() * (3 * nBack + 2 * Math.pow(1.2, -score));
 
-export function generateCombos(nBack, score, variates) {
+export function generateCombos(nBack, score, variates, audio) {
   return new Array(Math.floor(generateComboLength(nBack, score)))
     .fill(null)
     .map(ele => ({}))
