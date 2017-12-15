@@ -14,7 +14,7 @@ class Log extends PureComponent {
     super();
 
     this.state = {
-      modalIsOpen: false,
+      modalIsOpen: true,
       confirmLogoutIsOpen: false
     };
 
@@ -54,17 +54,15 @@ class Log extends PureComponent {
             <button className="logout-button" onClick={this.handleLogoutToggle}>Logout</button>
           </div>
         ) : (
-          <ModalDiv>
+          <div className="login-modal">
             <button className="login-button" onClick={this.openModal}>Login</button>
-            <Modal
-              isOpen={this.state.modalIsOpen}
-              onRequestClose={this.closeModal}
-              contentLabel="Example Modal"
-            >
-              <button className="close-modal-button" onClick={this.closeModal}>X</button>
-              <AuthForm closeModal={this.closeModal} openModal={this.openModal}/>
-            </Modal>
-          </ModalDiv>
+            {this.state.modalIsOpen &&
+              <div className="login-window">
+                <button className="close-modal-button" onClick={this.closeModal}>X</button>
+                <AuthForm closeModal={this.closeModal} openModal={this.openModal}/>
+              </div>
+            }
+          </div>
         )}
         {this.state.confirmLogoutIsOpen &&
           <section className="confirm-logout">
