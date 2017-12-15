@@ -1,0 +1,10 @@
+.auth
+
+.ReactModal__Content {
+    position: relative;
+}
+
+.close-modal-button {
+    position: absolute;
+    right: 20px;
+}

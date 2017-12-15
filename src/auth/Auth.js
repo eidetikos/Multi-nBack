@@ -1,13 +1,13 @@
 import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
 import Log from './Log';
+import './Auth.css';
 
 class Auth extends PureComponent {
  
   render() {
     return (
       <div className="auth">
-        <h3>Auth component</h3>
         <Log/>
       </div>
     );

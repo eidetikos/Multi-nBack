@@ -2,7 +2,21 @@ import React, { PureComponent } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
+import './Nav.css';
+
 class Nav extends PureComponent {
+
+  constructor() {
+    super();
+    this.state = {
+      collapsed: false
+    };
+  }
+
+  handleToggle = () => {
+    this.setState({ collapsed: !this.state.collapsed });
+  }
+
   render() {
 
     return (
