@@ -54,7 +54,7 @@ export class Chart extends PureComponent {
     return (finalStats.game.sequences ?
       (
         <div className="game-chart">
-          <RC2 data={chartData} options={chartOptions} type="line" width="500" height="275" redraw="true" />
+          <RC2 data={chartData} options={chartOptions} type="line" width="500" height="300" redraw="true" />
           {/* <RC2 data={finalStats.game.sequences.nBack} type="line" width="500" height="300" redraw /> */}
         </div>
       ) : (
