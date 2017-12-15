@@ -1,45 +1,31 @@
 import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
-import { initSequence, newGame, replay } from './actions/actions';
 import Chart from './Chart';
-import './PostGame.css';
-import { ChartStats } from '../styles/style';
 
 class PostGame extends PureComponent {
-
-  handleReset = () => {
-    this.props.replay();
-  }
-
-  handleChangeSettings = () => {
-    this.props.initSequence();
-    this.props.newGame();
-  }
-
   render() {
     const finalStats = this.props.game.finalStats;
     return (finalStats.game ?
       (
         <div className="post-game">
           <h1>{finalStats.user.name}'s Final Stats</h1>
-          <ChartStats>
+          <div className="leaderboard">
+            <h3>LEADERBOARD: {}</h3>
+          </div>
+          <div className="nBack-Chart">
             <Chart/>
-            <form>
-              <fieldset className="post-fieldset">
-                <legend>Game Stats</legend>
-                <ul>
-                  <li>
+          </div>
+          <div>
+            <h3>Game Stats</h3>
+            <ul>
+              <li>
               Your highest N achieved: { finalStats.game.highN }
-                  </li>
-                  <li>
+              </li>
+              <li>
               Your average N achieved: { finalStats.game.avgN }
-                  </li>
-                </ul>
-              </fieldset>
-            </form>
-            <input type="button" value="Replay Game" onClick={this.handleReset}/>
-            <input type="button" value="Change Settings" onClick={this.handleChangeSettings}/>
-          </ChartStats>
+              </li>
+            </ul>
+          </div>
         </div>
       ) : (
         <div className="post-game"></div>
@@ -51,5 +37,5 @@ export default connect(
   state => ({
     game: state.game
   }),
-  { initSequence, newGame, replay }
+  null
 )(PostGame);
