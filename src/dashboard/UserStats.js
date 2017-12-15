@@ -1,8 +1,13 @@
 import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
+import { getUserStats } from './actions';
 
 
 class UserStats extends PureComponent {
+  
+  componentDidMount() { 
+    this.props.getUserStats();
+  }
   
   render() {
     const { personal } = this.props;
@@ -22,12 +27,12 @@ class UserStats extends PureComponent {
         </div>
       </article>
     ) : (
-      <article className=""></article>
+      <article></article>
     );
   }
 }
 
 export default connect(
   state => ({}),
-  null
+  { getUserStats }
 )(UserStats);

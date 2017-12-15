@@ -2,20 +2,19 @@ const url = process.env.REACT_APP_API_URL;
 
 export const getStoreToken = () => localStorage.getItem('token');
 
+
 const wrap = async promise => {
-  
   const response = await promise;
   if(response.ok) return response.json();
 
-  
   const contentType = response.headers.get('content-type');
-  
   const error = contentType && contentType.startsWith('application/json')
     ? await response.json()
     : await response.text();
-  
+    
   throw error;
 };
+
 
 export const get = (path) => wrap(fetch(`${url}${path}`, {
   method: 'get',

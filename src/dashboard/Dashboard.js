@@ -8,12 +8,13 @@ import { getCommunityStats, getUserStats } from './actions';
 
 import './Dashboard.css';
 
+
 class Dashboard extends PureComponent {
 
   componentDidMount() { 
     this.props.getCommunityStats();
-    this.props.getUserStats();
   }
+
   render() {
     const { user, stats, personal } = this.props;
 

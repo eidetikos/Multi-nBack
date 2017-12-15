@@ -20,6 +20,7 @@
     margin-right: 0;
     font-size: 50%;
 }
+
 .user-stats h2 {
     margin: 0 auto 2em auto;
     width: 8em;
@@ -36,10 +37,10 @@
     width: 80%;
     position: relative;
     margin-bottom: 3em;
-    background-image: -webkit-gradient(linear, right, left, from(white), to(rgba(131, 199, 209, 0)));
-    background-image: -webkit-linear-gradient(right, white, rgba(131, 199, 209, 0));
-    background-image: -moz-linear-gradient(right, white, rgba(131, 199, 209, 0));
-    background-image: linear-gradient(to left, white, rgba(131, 199, 209, 0));
+    background-image: -webkit-gradient(linear, right, left, from(white 50%), to(rgba(131, 199, 209, 0)));
+    background-image: -webkit-linear-gradient(right, white 50%, rgba(131, 199, 209, 0));
+    background-image: -moz-linear-gradient(right, white 50%, rgba(131, 199, 209, 0));
+    background-image: linear-gradient(to left, white 50%, rgba(131, 199, 209, 0));
     background-image: #d8eaec;
     border-top-right-radius: 0.5em;
     border-bottom-right-radius: 0.5em;

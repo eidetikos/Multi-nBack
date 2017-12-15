@@ -4,8 +4,8 @@ import { connect } from 'react-redux';
 
 import './Nav.css';
 
-class Nav extends PureComponent {
 
+class Nav extends PureComponent {
   constructor() {
     super();
     this.state = {
@@ -13,9 +13,7 @@ class Nav extends PureComponent {
     };
   }
 
-  handleToggle = () => {
-    this.setState({ collapsed: !this.state.collapsed });
-  }
+  handleToggle = () => this.setState({ collapsed: !this.state.collapsed });
 
   render() {
     return (

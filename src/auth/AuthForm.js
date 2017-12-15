@@ -4,8 +4,8 @@ import { signUp, signIn, logOut } from './actions';
 import { withRouter } from 'react-router-dom';
 import Error from '../app/Error';
 
-class AuthForm extends PureComponent {
 
+class AuthForm extends PureComponent {
 
   handleLogin = event => {
 
@@ -44,7 +44,7 @@ class AuthForm extends PureComponent {
         <section className="login-input-field">
           <section className="login-input">
             <label>User Name:</label>
-            <input name="name" maxlength="8"/>
+            <input name="name" maxLength="10"/>
           </section>
           <p>* user name must be unique</p>
         </section>

@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 
 import './GridLayer.css';
 
+
 class GridLayer extends Component {
 
   handlePick = e => {

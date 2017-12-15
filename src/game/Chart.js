@@ -2,12 +2,14 @@ import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
 import RC2 from 'react-chartjs2';
 
+
 export class Chart extends PureComponent {
 
   render() {
     const finalStats = this.props.game.finalStats;
     const nBacks = finalStats.game.sequences.map((sequence) => sequence.nBack).reverse();
     nBacks.pop();
+    
     const chartData = {
       labels: new Array(finalStats.game.sequences.length+1).fill(1).map((e, i) => i+1),
       datasets: [{

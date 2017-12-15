@@ -12,7 +12,7 @@ class About extends PureComponent {
         <section>
           <h2>History</h2>
           <p>Working memory (WM) is a cognitive process.  WM is thought to be "trainable", and describes the scope and permanence of what a person can hold in their mind over a short period of time.  
-          Studies have found that WM and IQ correlate, perhaps through use of the same neural networks.  Therefore, the hope is that, by improving WM, IQ may also improve.</p>
+            Studies have found that WM and IQ correlate, perhaps through use of the same neural networks.  Therefore, the hope is that, by improving WM, IQ may also improve.</p>
           <p>There are many "mind" games on the market, from Sudoku to memory-matching games.  Studies have shown that none of these have demonstrated 
             any marked improvement in memory... until the emergence of the Dual-N-Back memory game.  This game calls upon the user to recall two independent variates, presented 
             simultaneously, instead of just one.

@@ -1,14 +1,12 @@
 import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
-
 import { CirclePicker as ColorPicker } from 'react-color';
+
 import GridLayer from './gameFrames/GridLayer';
 import ColorShapeLayer from './gameFrames/ColorShapeLayer';
 import AudioNumLayer from './gameFrames/AudioNumLayer';
 
 import './RecallPage.css';
-
-
 
 
 const variateVars = {
@@ -43,8 +41,6 @@ const translateColor = color => {
 };
 
 
-
-
 class RecallPage extends PureComponent {
   constructor() {
     super();
@@ -73,12 +69,10 @@ class RecallPage extends PureComponent {
       if(pick.target.id.split('-')[0] === 'audio') pick = pick.target.innerText;
       else return;
     }
-
     this.setState({ [variate]: pick });
   }
 
   handleSubmit = () => {
-
     const recalled = { ...this.state };
     delete recalled.pickerWindowToggle;
     if(typeof recalled.shape === 'number') recalled.shape = variateVars.shape[recalled.shape];
@@ -91,9 +85,7 @@ class RecallPage extends PureComponent {
       sequence: { variates, nBack }
     } = this.props;
 
-    const {
-      position, color, shape, audio, number
-    } = this.state;
+    const { position, color, shape, audio, number } = this.state;
 
     if(this.props.sequence) console.log(this.props.sequence.combos[this.props.sequence.combos.length - this.props.sequence.nBack]);
     

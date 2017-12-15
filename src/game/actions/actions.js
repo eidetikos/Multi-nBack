@@ -101,6 +101,7 @@ async function wrapUp(getState, dispatch) {
 
   const payload = await gameApi.add(game);
   
+  // Saving for DEMO!
   console.log('here is the getState', getState());
   
   dispatch({ 

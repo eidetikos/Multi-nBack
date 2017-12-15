@@ -1,6 +1,7 @@
 import * as actions from '../../app/constants';
 import sequencesReducer from './sequences.reducer';
 
+
 const initState = {
   status: 'pre',
   difficulty: {
@@ -13,13 +14,12 @@ const initState = {
   finalStats: []
 };
 
+
 export default function game(state = initState, { type, payload }) {
 
   switch(type) {
-    // INIT_GAME setting status to pre
     case actions.INIT_GAME:
       return { ...state, status: 'pre' };
-    // GET SETTINGS changing difficulty
     case actions.SET_SETTINGS:
       return { 
         ...state,

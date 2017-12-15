@@ -1,9 +1,7 @@
 import React, { PureComponent } from 'react';
 import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
-
 import { logOut } from './actions';
-
 import AuthForm from '../auth/AuthForm';
 
 

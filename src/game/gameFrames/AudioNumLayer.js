@@ -4,6 +4,7 @@ import Audio from 'react-audio-player';
 
 import './AudioNumLayer.css';
 
+
 class AudioNumLayer extends PureComponent {
   
   handleClick = e => {
