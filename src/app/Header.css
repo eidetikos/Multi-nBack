@@ -33,7 +33,7 @@ white: #fff
     height: 720px;
     background-size: cover;
     background-attachment: fixed;
-    background-image: url(http://s.newsweek.com/sites/www.newsweek.com/files/2016/05/04/memory-manipulation-mice-neuron-brain.jpg);
+    background-image: url(https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/Vio80dDve/neuron-network-activity-background-animation-for-a-biological-structure-and-its-network-communication-activity_rpuopx28__F0000.png);
     top: 0; right: 0; bottom: 0; left: 0;
 }
 
@@ -41,17 +41,54 @@ white: #fff
     margin: 0;
     position: absolute;
     top: 35%; left: 50%;
-    transform: translateX(-50%)
+    transform: translateX(-50%);
+    color: #254044;
 }
 
 .hero-header .auth {
 
 }
 
-.hero-header .nav {
 
+.hero-header nav {
+    position: absolute;
+    right: 5%;
+    top: 3.5%;
 }
 
+.hero-header .nav-button {
+    border-radius: 50%;
+    background: #568289;
+}
+
+.hero-header nav ul {
+    z-index: 10;
+    text-align: left;
+    position: absolute;
+    top: 83px;
+    right: 0;
+    width: 7em;
+    margin: 0;
+    border-radius: 10%;
+    border-top: solid 2px #254044;
+    border-bottom: solid 2px #254044;
+    overflow: hidden;
+    list-style-type: none;
+    padding: 0;
+    color: #254044;
+}
+
+.hero-header nav ul li {
+    padding: 0.25em 1em;
+    border-top: solid 1px #568289;
+    border-bottom: solid 1px #568289;
+    background-color: #d8eaec;
+    color: #254044;
+}
+
+.hero-header nav ul li:hover {
+    background-color: #d8eaec;
+}
 
 
 
@@ -69,17 +106,126 @@ white: #fff
 
 .collapsed-header {
     height: 80px;
-    overflow: scroll;
+    background: #254044;
+    color: #d8eaec;
+    position: relative;
+    border-bottom: solid #770d00 3px;
 }
 
 .collapsed-header h1 {
-
+    position: absolute;
+    left: 0;
+    width: 66%;
+    padding-left: 1.5em;
+    line-height: 80px;
+    text-align: left;
+    font-size: 110%;
 }
 
 .collapsed-header .auth {
-
+    position: absolute;
+    right: 80px;
+    height: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    text-align: right;
+    font-size: 85%;
 }
 
-.collapsed-header .nav {
+.collapsed-header .auth .logout-button {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border: none;
+    border-bottom: solid 1px #770d00;
+    padding: 0.1em 0 0.1em 1em;
+    text-align: right;
+    letter-spacing: 0.2em;
+    font-weight: bold;
+    background-color: #d8eaec00;
+    color: #d8eaec;
+    outline: none;
+}
 
+.collapsed-header .auth .logout-button:hover, .collapsed-header .auth .logout-button:target {
+    background-image: -webkit-gradient(linear, left, right, from(#d8eaeca2), to(rgba(255, 255, 255, 0)));
+    background-image: -webkit-linear-gradient(right, #d8eaeca2, rgba(255, 255, 255, 0));
+    background-image: -moz-linear-gradient(right, #d8eaeca2, rgba(255, 255, 255, 0));
+    background-image: linear-gradient(to right, #d8eaeca2, rgba(255, 255, 255, 0));
+}
+
+.collapsed-header nav {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.collapsed-header nav ul {
+    z-index: 10;
+    text-align: left;
+    position: absolute;
+    top: 83px;
+    right: 0;
+    width: 7em;
+    margin: 0;
+    list-style-type: none;
+    color: #d8eaec;
+}
+
+.collapsed-header nav ul li {
+    padding: 0.25em 1em;
+    border-bottom: solid 3px #568289;
+    background-color: white;
+}
+
+.collapsed-header nav ul li:hover {
+    background-color: #d8eaec;
+}
+
+.confirm-logout {
+    position: absolute;
+    left: 0; right: 0;
+    height: 100px;
+    margin-top: 17px;
+    border-top: solid #770d00 3px;
+    background: white;
+    border-bottom: solid #770d00 3px;
+    font-family: 'Pragati Narrow', sans-serif;  
+    color: #254044;
+    text-align: center;
+}
+
+button.confirm-logout-close {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    border: none;
+    color: #254044;
+    background: #d8eaec;
+    border-radius: 3px;
+}
+
+.confirm-logout p {
+    margin: 18px 0 0 0;
+    padding-left: 1em;
+    text-align: left;
+}
+
+button.confirm-logout-button {
+    position: absolute;
+    top: 58px;
+    right: 50%;
+    transform: translateX(50%);
+    box-sizing: border-box;
+    border: none;
+    border-radius: 8px;
+    padding: 0.5em 3em;
+    text-align: center;
+    background-color: #d8eaec;
+    letter-spacing: 0.2em;
+    outline: none;
+}
+
+button.confirm-logout-button:hover, button.confirm-logout-button:target {
+    border: 2px solid #568289;
 }
