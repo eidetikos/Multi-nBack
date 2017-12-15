@@ -1,10 +1,18 @@
 import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
+import { initSequence, newGame } from './actions/actions';
 import Chart from './Chart';
 import './PostGame.css';
 import { ChartStats } from '../styles/style';
 
 class PostGame extends PureComponent {
+
+  handleReset = () => {
+    console.log('WOOOHOOO', this.props);
+    this.props.initSequence();
+    this.props.newGame();
+  }
+
   render() {
     const finalStats = this.props.game.finalStats;
     return (finalStats.game ?
@@ -26,6 +34,7 @@ class PostGame extends PureComponent {
                 </ul>
               </fieldset>
             </form>
+            <input type="button" value="Replay" onClick={this.handleReset}/>
           </ChartStats>
         </div>
       ) : (
@@ -38,5 +47,5 @@ export default connect(
   state => ({
     game: state.game
   }),
-  null
+  { initSequence, newGame }
 )(PostGame);

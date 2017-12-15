@@ -26,39 +26,42 @@ export function setSettings(difficulty, numVariates, audio) {
   };
 }
 
-function initSequence(getState) {
+export function initSequence() {
 
-  const { 
-    game: { 
-      difficulty,
-      sequences,
-      audio,
-      numVariates 
-    }
-  } = getState();
-  const score = sequences.length;
-  // console.log('numVariates in initSequences', selectVariates(numVariates, audio));
-  const nBack = generateNBack(difficulty, score);
-  const variates = selectVariates(numVariates, audio);
-  const combos = generateCombos(nBack, score, variates);
-  // const interval = generateInterval(difficulty, score);
-  const interval = 9;
-
-  const newSequence = {
-    variates,
-    nBack,
-    combos,
-    comboPointer: -1,
-    interval,
-    inProgress: true,
-    fatal: false
+  return(dispatch, getState) => {
+    const { 
+      game: { 
+        difficulty,
+        sequences,
+        audio,
+        numVariates 
+      }
+    } = getState();
+    const score = sequences.length;
+    // console.log('numVariates in initSequences', selectVariates(numVariates, audio));
+    const nBack = generateNBack(difficulty, score);
+    const variates = selectVariates(numVariates, audio);
+    const combos = generateCombos(nBack, score, variates);
+    // const interval = generateInterval(difficulty, score);
+    const interval = 9;
+  
+    const newSequence = {
+      variates,
+      nBack,
+      combos,
+      comboPointer: -1,
+      interval,
+      inProgress: true,
+      fatal: false
+    };
+  
+    dispatch(
+      { 
+        type: actions.INIT_SEQUENCE,
+        payload: newSequence
+      }
+    );
   };
-
-  return { 
-    type: actions.INIT_SEQUENCE,
-    payload: newSequence
-  };
-
 }
 
 function nextCombo(getState, dispatch) {
