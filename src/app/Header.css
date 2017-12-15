@@ -73,104 +73,13 @@ white: #fff
 }
 
 .collapsed-header h1 {
-    position: absolute;
-    left: 0;
-    width: 8em;
-    padding-left: 1.5em;
-    line-height: 80px;
-    text-align: left;
-    font-size: 110%;
+
 }
 
 .collapsed-header .auth {
-    position: absolute;
-    right: 80px;
-    height: 80px;
-    width: 10em;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    text-align: right;
-    font-size: 85%;
+
 }
 
-.collapsed-header .auth .logout-button {
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
-    border: none;
-    border-bottom: solid 1px #770d00;
-    padding: 0.1em 0 0.1em 1em;
-    text-align: right;
-    letter-spacing: 0.2em;
-    font-weight: bold;
-    background-color: #d8eaec00;
-    color: #d8eaec;
-    outline: none;
+.collapsed-header .nav {
+
 }
-
-.collapsed-header .auth .logout-button:hover, .collapsed-header .auth .logout-button:target {
-    background-image: -webkit-gradient(linear, left, right, from(#d8eaeca2), to(rgba(255, 255, 255, 0)));
-    background-image: -webkit-linear-gradient(right, #d8eaeca2, rgba(255, 255, 255, 0));
-    background-image: -moz-linear-gradient(right, #d8eaeca2, rgba(255, 255, 255, 0));
-    background-image: linear-gradient(to right, #d8eaeca2, rgba(255, 255, 255, 0));
-}
-
-.collapsed-header nav {
-    position: absolute;
-    right: 0;
-    top: 0;
-}
-
-.collapsed-header nav ul {
-    z-index: 10;
-    text-align: left;
-    position: absolute;
-    top: 83px;
-    right: 0;
-    width: 7em;
-    margin: 0;
-    list-style-type: none;
-    color: #d8eaec;
-}
-
-.confirm-logout {
-    position: absolute;
-    left: 0; right: 0;
-    height: 6em;
-    margin-top: 17px;
-    border-top: solid #770d00 3px;
-    background: white;
-    border-bottom: solid #770d00 3px;
-    font-family: 'Pragati Narrow', sans-serif;  
-    color: #254044;
-    text-align: center;
-}
-
-
-.confirm-logout p {
-    position: absolute;
-    width: 100%;
-    top: 12%;
-    margin: 18px 0 0 0;
-    text-align: center;
-}
-
-button.confirm-logout-button {
-    position: absolute;
-    top: 60%;
-    right: 50%;
-    transform: translateX(50%);
-    box-sizing: border-box;
-    border: none;
-    border-radius: 8px;
-    padding: 0.5em 3em;
-    text-align: center;
-    background-color: #d8eaec;
-    letter-spacing: 0.2em;
-    outline: none;
-}
-
-button.confirm-logout-button:hover, button.confirm-logout-button:target {
-    border: 2px solid #568289;
-}
-
