@@ -1,6 +1,8 @@
 import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
 import Chart from './Chart';
+import './PostGame.css';
+import { ChartStats } from '../styles/style';
 
 class PostGame extends PureComponent {
   render() {
@@ -9,23 +11,22 @@ class PostGame extends PureComponent {
       (
         <div className="post-game">
           <h1>{finalStats.user.name}'s Final Stats</h1>
-          <div className="leaderboard">
-            <h3>LEADERBOARD: {}</h3>
-          </div>
-          <div className="nBack-Chart">
+          <ChartStats>
             <Chart/>
-          </div>
-          <div>
-            <h3>Game Stats</h3>
-            <ul>
-              <li>
+            <form>
+              <fieldset className="post-fieldset">
+                <legend>Game Stats</legend>
+                <ul>
+                  <li>
               Your highest N achieved: { finalStats.game.highN }
-              </li>
-              <li>
+                  </li>
+                  <li>
               Your average N achieved: { finalStats.game.avgN }
-              </li>
-            </ul>
-          </div>
+                  </li>
+                </ul>
+              </fieldset>
+            </form>
+          </ChartStats>
         </div>
       ) : (
         <div className="post-game"></div>
