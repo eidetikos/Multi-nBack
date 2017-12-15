@@ -1,4 +1,5 @@
 import * as auth from '../services/authApi';
+import { getUser } from '../services/meApi';
 import * as actions from '../app/constants';
 import { getStoreToken } from '../services/api';
 
@@ -12,7 +13,7 @@ export function checkForToken() {
     dispatch({ type: actions.GOT_TOKEN, payload: token });
     
     return auth.verify()
-      .then(() => auth.getUser())
+      .then(() => getUser())
       .then(user => {
         dispatch({ type: actions.SIGN_IN, payload: user });
       })
