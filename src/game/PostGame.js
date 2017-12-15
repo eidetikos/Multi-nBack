@@ -35,10 +35,10 @@ class PostGame extends PureComponent {
             </fieldset>
             <div className="post-button">
               <div>
-                <input type="button" name="replay" id="replay" value="Replay Game" onClick={this.handleReset}/>
+                <input type="button" name="replay" id="replay" value="Replay" onClick={this.handleReset}/>
               </div>
               <div>
-                <input type="button"  name="change-settings" id="change-settings" value="Change Settings" onClick={this.handleChangeSettings}/>
+                <input type="button"  name="change-settings" id="change-settings" value="Settings" onClick={this.handleChangeSettings}/>
               </div>
             </div>
           </div>
