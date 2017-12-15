@@ -11,7 +11,6 @@ export const ModalDiv = styled.div`{
   }
 `;
 
-
 export const ErrorDiv = styled.div`
   color: red;
   font-family: monospace;
@@ -19,12 +18,19 @@ export const ErrorDiv = styled.div`
 `;
 
 export const LoadingStyled = styled.div`
-color: rgb(122, 0, 128);
-position: absolute;
-top: 0; bottom: 0;
-left: 0; right: 0;
-display: flex;
-justify-content: center;
-align-items: center;
-animation: App-logo-spin infinite 1s linear;
+  color: rgb(122, 0, 128);
+  position: absolute;
+  top: 0; bottom: 0;
+  left: 0; right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: App-logo-spin infinite 1s linear;
 `;
+
+export const ChartStats = styled.div`
+  display: flex:
+  flexDirection: column;
+  justify-content: center;
+`;
+
