@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import { initSequence, newGame, replay } from './actions/actions';
 import Chart from './Chart';
 import './PostGame.css';
-// import { ChartStats } from '../styles/style';
 
 class PostGame extends PureComponent {
 
@@ -34,7 +33,6 @@ class PostGame extends PureComponent {
                     Your average N achieved: { finalStats.game.avgN }
               </p>
             </fieldset>
-
             <div className="post-button">
               <div>
                 <input type="button" name="replay" id="replay" value="Replay Game" onClick={this.handleReset}/>
@@ -43,9 +41,7 @@ class PostGame extends PureComponent {
                 <input type="button"  name="change-settings" id="change-settings" value="Change Settings" onClick={this.handleChangeSettings}/>
               </div>
             </div>
-
           </div>
-
         </div>
       ) : (
         <div className="post-game"></div>
