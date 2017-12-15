@@ -26,7 +26,7 @@ export function setSettings(difficulty, numVariates, audio) {
   };
 }
 
-function initSequence(getState) {
+export function initSequence(getState) {
 
   const { 
     game: { 
@@ -61,7 +61,7 @@ function initSequence(getState) {
 
 }
 
-function nextCombo(getState, dispatch) {
+export function nextCombo(getState, dispatch) {
 
   dispatch({ type: actions.NEXT_COMBO });
   
@@ -109,3 +109,10 @@ async function wrapUp(getState, dispatch) {
     payload
   });
 }
+
+export function replay() {
+  return (dispatch, getState) => {
+    dispatch(initSequence(getState));
+    nextCombo(getState, dispatch);
+  };
+} 
