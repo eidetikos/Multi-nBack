@@ -51,7 +51,7 @@ class AuthForm extends PureComponent {
     ) : (
       <form onClick={this.handleSignup} onSubmit={this.handleSignin}>
         <label>User Name:</label>
-        <input name="name" maxlength="12"/>
+        <input name="name" maxlength="8"/>
         <p>* user name must be unique</p>
         <label>Password:</label>
         <input type="password" name="password" placeholder="***************"/>

@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
 import UserStats from './UserStats';
 import HighestN from './communityStats/HighestN';
-import MostSequences from './communityStats/MostSequences';
+import MostRecalled from './communityStats/MostRecalled';
 import TopScore from './communityStats/TopScore';
 import { getCommunityStats } from './actions';
 
@@ -16,6 +16,7 @@ class Dashboard extends PureComponent {
   render() {
     console.log(this.props.stats);
     const { user, stats } = this.props;
+    console.log(user)
     return (
       <main className="dashboard">
         
@@ -33,7 +34,7 @@ class Dashboard extends PureComponent {
           <h2>community stats</h2>
           <div className="community-leaderboards">
             <HighestN leaderboard={stats.highestNBackPerDifficulty}/>
-            <MostSequences leaderboard={stats.mostSequencesByUser}/>
+            <MostRecalled leaderboard={stats.mostSequencesByUser}/>
             <TopScore leaderboard={stats.topScoresPerDifficulty}/>
           </div>
         </section>

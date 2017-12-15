@@ -6,11 +6,10 @@ class HighestN extends PureComponent {
 
   render() {
     const { leaderboard } = this.props;
-    console.log('leaderboard',leaderboard);
 
     return leaderboard ?  ( 
       <article className="community-highest-n community-leaderboard">
-        <h4>Highest N-back</h4>
+        <h4 className="community-leaderboard-header">Highest N-backs</h4>
         <div className="community-highest-n-leaderboard">
           {Object.keys(leaderboard).map(difficulty => (
             <section className={`community-highest-n-${difficulty} community-leaderboard-of-highest-n`}>
