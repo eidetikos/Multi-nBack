@@ -107,6 +107,10 @@ white: #fff
 .collapsed-header {
     height: 80px;
     background: #254044;
+    background-image: -webkit-gradient(linear, left, right, from(#254044 70%), to(#568289));
+    background-image: -webkit-linear-gradient(right, #5682899a -26%, #254044 4%, #254044 70%, #5682899a);
+    background-image: -moz-linear-gradient(right, #5682899a -26%, #254044 4%, #254044 70%, #5682899a);
+    background-image: linear-gradient(to right, #5682899a -26%, #254044 4%, #254044 70%, #5682899a);
     color: #d8eaec;
     position: relative;
     border-bottom: solid #770d00 3px;

@@ -16,7 +16,14 @@ class Dashboard extends PureComponent {
   render() {
     console.log(this.props.stats);
     const { user, stats } = this.props;
-    console.log(user)
+    const styleProps = user ? {
+      width: '63%',
+      margin: '2.5% 2.5% 2.5% 0'
+    } : {
+      width: '90%',
+      left: '50%',
+      transform: 'translate(-50%)'
+    };
     return (
       <main className="dashboard">
         
@@ -25,11 +32,7 @@ class Dashboard extends PureComponent {
         }
         <section 
           className="stats community-stats"
-          style={{
-            width: user ? '63%' : '90%',
-            float: user ? 'right' : 'center',
-            margin: user ? '2.5% 2.5% 2.5% 0' : '0 auto'
-          }}
+          style={styleProps}
         >
           <h2>community stats</h2>
           <div className="community-leaderboards">
