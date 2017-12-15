@@ -29,14 +29,9 @@ class Dashboard extends PureComponent {
     };
     return (
       <main className="dashboard">
-        <section className="stats personal-stats" style={styleProps} >
-          <h2>personal user stats</h2>
-          {user &&
-          <div className="personal-leaderboards">
-            <UserStats personal={personal}/>
-          </div>
-          }
-        </section>
+        {user &&
+          <UserStats personal={personal}/>
+        }
         <section 
           className="stats community-stats"
           style={styleProps}
