@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { checkForToken } from '../auth/actions';
 
-import Home from '../home/Home';
+import Dashboard from '../dashboard/Dashboard';
 import Header from './Header';
 import About from '../about/About';
 import Game from '../game/Game';
@@ -25,7 +25,7 @@ class App extends Component {
         <div className="App">
           <Header/>
           <Switch>
-            <Route exact path="/" component={Home}/>
+            <Route exact path="/" component={Dashboard}/>
             <Route path="/about" component={About}/>
             <PrivateRoute path="/game" component={Game}/>
           </Switch>
