@@ -24,7 +24,7 @@
   background-image: -webkit-radial-gradient(center, #d8eaec, #ffffff00 25%, #ffffff00 75%, #d8eaec);
   background-image: -moz-radial-gradient(center, #d8eaec, #ffffff00 25%, #ffffff00 75%, #d8eaec);
   background-image: radial-gradient(at center, #ffffff00 60%, #d8eaec);
-}
+} 
 
 footer {
   width: 100%;
