@@ -39,6 +39,7 @@ class Dashboard extends PureComponent {
     } : {
       zIndex: -1,
       width: '90%',
+      left: this.state.width >= 1080 ? '0' : '35%'
     };
     return (
       <main className="dashboard">
