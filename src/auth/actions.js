@@ -81,5 +81,9 @@ export function signIn(name, password) {
 }
 
 export function logOut() {
-  return { type: actions.LOG_OUT };
+
+  return dispatch => {
+    dispatch({ type: actions.INIT_GAME });
+    dispatch({ type: actions.LOG_OUT });
+  };
 }
