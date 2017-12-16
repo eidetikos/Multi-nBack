@@ -44,13 +44,13 @@ class AuthForm extends PureComponent {
         <section className="login-input-field">
           <section className="login-input">
             <label>User Name:</label>
-            <input name="name" maxLength="10"/>
+            <input name="name" required maxLength="10"/>
           </section>
           <p>* user name must be unique</p>
         </section>
         <section className="login-input login-input-field">
           <label>Password:</label>
-          <input type="password" name="password" placeholder="**********"/>
+          <input type="password" name="password" required placeholder="**********"/>
         </section>
         <section className="login-buttons-field">
           <button type="button" className="signin-button" name="signin" value="signin">sign in</button>

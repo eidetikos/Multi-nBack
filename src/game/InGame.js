@@ -47,6 +47,7 @@ class InGame extends PureComponent {
                 number={combo.number}
                 useAudio={variates.audio}
                 useNumber={variates.number}
+                useGrid={variates.position}
               />
             </ColorShapeLayer>
           </GridLayer>

@@ -10,22 +10,35 @@ import './Dashboard.css';
 
 
 class Dashboard extends PureComponent {
-
-  componentDidMount() { 
+  constructor(props) {
+    super(props);
+    this.state = { width: '0', height: '0' };
+    this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
+  }
+  
+  componentDidMount() {
     this.props.getCommunityStats();
+    this.updateWindowDimensions();
+    window.addEventListener('resize', this.updateWindowDimensions);
+  }
+  
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.updateWindowDimensions);
+  }
+  
+  updateWindowDimensions() {
+    this.setState({ width: window.innerWidth, height: window.innerHeight });
   }
 
   render() {
     const { user, stats, personal } = this.props;
-
+    
     const styleProps = user ? {
-      width: '63%',
-      margin: '2.5% 2.5% 2.5% 0'
+      width: this.state.width >= 1080 ? '63%' : '90%',
+      margin: this.state.width >= 1080 ? '2.5% 2.5% 2.5% 0' : '5% auto'
     } : {
       zIndex: -1,
       width: '90%',
-      left: '50%',
-      transform: 'translate(-50%)'
     };
     return (
       <main className="dashboard">
@@ -37,7 +50,7 @@ class Dashboard extends PureComponent {
           style={styleProps}
         >
           <h2>community stats</h2>
-          <div className="community-leaderboards">
+          <div className="stats community-leaderboards">
             <HighestN leaderboard={stats.highestNBackPerDifficulty}/>
             <MostRecalled leaderboard={stats.mostSequencesByUser}/>
             <TopScore leaderboard={stats.topScoresPerDifficulty}/>

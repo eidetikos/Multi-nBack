@@ -12,6 +12,7 @@ class PostGame extends PureComponent {
 
   render() {
     const finalStats = this.props.game.finalStats;
+    console.log(finalStats)
 
     return (finalStats.game ?
       (
@@ -23,12 +24,8 @@ class PostGame extends PureComponent {
           <div className="post-stats">
             <fieldset className="post-field">
               <legend>Game Stats</legend>
-              <p>
-                    highest N: { finalStats.game.highN }
-              </p>
-              <p>
-                    average N: { finalStats.game.avgN }
-              </p>
+              <p>highest N: {finalStats.game.highN}</p>
+              <p>average N: {finalStats.game.avgN}</p>
             </fieldset>
             <div className="post-button">
               <div>

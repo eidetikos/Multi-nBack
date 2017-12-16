@@ -15,7 +15,10 @@ class AudioNumLayer extends PureComponent {
   handleNumSelect = e => this.props.onNumberPick(e.target.value);
   
   render() {
-    const { number, audio, useNumber, useAudio, inRecall } = this.props;
+    const { number, audio, useNumber, useAudio, useGrid, inRecall } = this.props;
+    const selectFontSize = { fontSize: useGrid ? '2.5em' : '4.5em' };
+    const displayFontSize = { fontSize: useGrid ? '3em' : '7em' };
+
     return (
       <div 
         className="audio-num-layer" 
@@ -25,6 +28,7 @@ class AudioNumLayer extends PureComponent {
           inRecall ? (
             <select 
               value={number}
+              style={selectFontSize}
               onChange={this.handleNumSelect}
             >
               {new Array(9).fill(1).map((ele, i) => i + 1).map(numOption => (
@@ -32,7 +36,7 @@ class AudioNumLayer extends PureComponent {
               ))}
             </select>
           ) : (
-            <div>{number}</div>
+            <div style={displayFontSize}>{number}</div>
           )
         )}
         {useAudio &&

@@ -7,9 +7,10 @@
 
 
 .home > a > button {
-  width: 70%;
+  width: 90%;
+  height: 4em;
   margin-top: 0.8em;
-  border-radius: 0.4em;
+  border-radius: 1em;
   border: none;
   padding: 0.5em 2em 0.5em 2em;
   background: #568289;
@@ -24,7 +25,7 @@
   background-image: -webkit-radial-gradient(center, #d8eaec, #ffffff00 25%, #ffffff00 75%, #d8eaec);
   background-image: -moz-radial-gradient(center, #d8eaec, #ffffff00 25%, #ffffff00 75%, #d8eaec);
   background-image: radial-gradient(at center, #ffffff00 60%, #d8eaec);
-}
+} 
 
 footer {
   width: 100%;
@@ -55,4 +56,22 @@ footer::before {
   background-attachment: fixed;
   background-color: #254044;
   top: 0; right: 0; bottom: 0; left: 0;
+}
+
+
+
+
+
+
+
+
+
+
+@media (min-width: 1080px) {
+  .home > a > button {
+    width: 70%;
+    height: 2em;    
+    border-radius: 0.4em;
+    
+  }
 }

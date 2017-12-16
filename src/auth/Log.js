@@ -30,8 +30,8 @@ class Log extends PureComponent {
 
   handleLogout = () => {
     localStorage.removeItem('token');
-    this.props.logOut();
     this.handleLogoutToggle();
+    this.props.logOut();
     this.props.history.push('/');
   }
 

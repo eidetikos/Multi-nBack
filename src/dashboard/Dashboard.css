@@ -6,19 +6,11 @@
 }
 
 .stats {
-    height: 33em;
-    border-radius: 5px;
+    border-radius: 1em;
     background: rgba(131, 199, 209, 0.7);    
-    padding-top: 2.3em
-}
-
-.user-stats {
-    position: absolute;
-    top: 0; left: 0;
-    margin: 2.5%;
-    width: 30%;
-    margin-right: 0;
-    font-size: 50%;
+    padding: 2.3em 0;
+    margin: 5% auto;
+    width: 90%;
 }
 
 .user-stats h2 {
@@ -37,27 +29,15 @@
     width: 80%;
     position: relative;
     margin-bottom: 3em;
-    background-image: -webkit-gradient(linear, right, left, from(white 50%), to(rgba(131, 199, 209, 0)));
-    background-image: -webkit-linear-gradient(right, white 50%, rgba(131, 199, 209, 0));
-    background-image: -moz-linear-gradient(right, white 50%, rgba(131, 199, 209, 0));
-    background-image: linear-gradient(to left, white 50%, rgba(131, 199, 209, 0));
+    background-image: -webkit-gradient(linear, top, bottom, from(white 50%), to(rgba(131, 199, 209, 0)));
+    background-image: -webkit-linear-gradient(top, white 50%, rgba(131, 199, 209, 0));
+    background-image: -moz-linear-gradient(top, white 50%, rgba(131, 199, 209, 0));
+    background-image: linear-gradient(to bottom, white 50%, rgba(131, 199, 209, 0));
     background-image: #d8eaec;
+    border-top-left-radius: 0.5em;
     border-top-right-radius: 0.5em;
-    border-bottom-right-radius: 0.5em;
     box-sizing: content-box;
     padding: 0.8em 0 0.1em 0;
-}
-
-.personal-leaderboard-of-all-stats:nth-child(-n + 2)::after {
-    content: '';
-    height: 1em;
-    width: 1em;
-    background-color: #568289;
-    position: absolute;
-    bottom: -2em;
-    left: 50%;
-    transform: translateX(-50%);
-    clip-path: polygon(50% 0, 75% 50%, 50% 100%, 25% 50%)
 }
 
 .user-stats h5 {
@@ -81,24 +61,20 @@
     width: 8em;
 }
 
-.community-stats {
-    position: inherit;
-    font-size: 50%;
-    left: 35%;
-}
-
 .community-leaderboards {
-    width: 100%;
+    width: 90%;
     height: 85%;
     display: flex;
+    flex-direction: column;
     justify-content: space-around;
     box-sizing: border-box;
-    padding: 0 1em;
+    padding: 0 1em;        
+    background: none;
 }
 
 .community-stats h2 {
     margin: 0 auto 1.5em auto;
-    width: 15em;
+    width: 8em;
     background-color: white;
     border-radius: 0.4em;
     box-shadow: 0 2px 4px rgb(131, 199, 209);
@@ -109,7 +85,8 @@
 
 .community-leaderboard {
     box-sizing: border-box;
-    width: 35%;
+    width: 100%;
+    margin-bottom: 3em;
     padding: 1em;
     background-image: -webkit-gradient(linear, left top, left bottom, from(white), to(rgba(131, 199, 209, 0)));
     background-image: -webkit-linear-gradient(top, white, rgba(131, 199, 209, 0));
@@ -169,7 +146,7 @@
 
 
 .community-most-recalled {
-    width: 20%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -178,6 +155,11 @@
 .community-most-recalled-leaderboard {
     height: 100%;
     margin-top: -0.3em; 
+}
+
+.community-most-recalled-leaderboard li {
+    width: 50%;
+    margin: auto;
 }
 
 
@@ -214,4 +196,95 @@
 .community-leaderboard-data {
     float: right;
     padding-right: 7%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (min-width: 1080px) {
+
+    .stats {
+        height: 33em;
+        border-radius: 6px;
+        background: rgba(131, 199, 209, 0.7);    
+        padding-top: 2.3em 0 0 0;
+        margin: 5% auto;
+        width: 90%;
+    }
+    
+    .user-stats {
+        position: absolute;
+        top: 0; left: 0;
+        margin: 2.5%;
+        width: 30%;
+        margin-right: 0;
+        font-size: 50%;
+    }
+    
+    .personal-leaderboard-of-all-stats {
+        background-image: -webkit-gradient(linear, right, left, from(white 50%), to(rgba(131, 199, 209, 0)));
+        background-image: -webkit-linear-gradient(right, white 50%, rgba(131, 199, 209, 0));
+        background-image: -moz-linear-gradient(right, white 50%, rgba(131, 199, 209, 0));
+        background-image: linear-gradient(to left, white 50%, rgba(131, 199, 209, 0));
+        border-top-right-radius: 0.5em;
+        border-bottom-right-radius: 0.5em;
+    }
+    
+    .personal-leaderboard-of-all-stats:nth-child(-n + 2)::after {
+        content: '';
+        height: 1em;
+        width: 1em;
+        background-color: #568289;
+        position: absolute;
+        bottom: -2em;
+        left: 50%;
+        transform: translateX(-50%);
+        clip-path: polygon(50% 0, 75% 50%, 50% 100%, 25% 50%)
+    }
+    
+    .community-stats {
+        position: inherit;
+        font-size: 50%;
+        left: 35%;
+    }
+    
+    .community-stats h2 {
+        width: 15em;
+    }
+
+    .community-leaderboards {
+        width: 100%;
+        height: 85%;
+        flex-direction: row;    
+        background: none;
+    }
+
+    .community-leaderboard {
+        width: 35%;
+    }
+
+    .community-most-recalled {
+        width: 20%;
+    }
+
+    .community-most-recalled-leaderboard li {
+        width: 100%;
+    }
 }
