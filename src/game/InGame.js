@@ -9,10 +9,8 @@ import { checkRecall } from './actions/actions';
 
 import './InGame.css';
 
-class InGame extends PureComponent {
 
-  // Maybe save for later?
-  // getRecalled = (variant, combination, { target }) => target[variant] ? combination[variant] = target[variant].value : null;
+class InGame extends PureComponent {
 
   recallHandler = recalled => {
     this.props.checkRecall(recalled);

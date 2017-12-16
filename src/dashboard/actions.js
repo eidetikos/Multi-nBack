@@ -13,3 +13,16 @@ export function getCommunityStats() {
   };
 }
 
+
+export function getUserStats() {
+  return async dispatch => {
+
+    const userStats = await stats.getPersonalStats();
+    if(userStats) {
+      dispatch({
+        type: actions.GET_USER_STATS,
+        payload: userStats
+      });
+    }
+  };
+}

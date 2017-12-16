@@ -1,5 +1,4 @@
 import * as actions from '../../app/constants';
-                                                        // REMEMBER: reactivate interval generator at lines 44/45
 import { generateNBack, selectVariates, generateCombos, generateInterval } from './utils';
 import deepEqual from 'deep-equal';
 import gameApi from '../../services/game.api';
@@ -41,8 +40,7 @@ export function initSequence(getState) {
   const nBack = generateNBack(difficulty, score);
   const variates = selectVariates(numVariates, audio);
   const combos = generateCombos(nBack, score, variates);
-  // const interval = generateInterval(difficulty, score);
-  const interval = 9;
+  const interval = generateInterval(difficulty, score);
 
   const newSequence = {
     variates,
@@ -103,7 +101,9 @@ async function wrapUp(getState, dispatch) {
 
   const payload = await gameApi.add(game);
   
+  // Saving for DEMO!
   console.log('here is the getState', getState());
+  
   dispatch({ 
     type: actions.WRAP_UP,
     payload

@@ -4,17 +4,20 @@ import UserStats from './UserStats';
 import HighestN from './communityStats/HighestN';
 import MostRecalled from './communityStats/MostRecalled';
 import TopScore from './communityStats/TopScore';
-import { getCommunityStats } from './actions';
+import { getCommunityStats, getUserStats } from './actions';
 
 import './Dashboard.css';
+
 
 class Dashboard extends PureComponent {
 
   componentDidMount() { 
     this.props.getCommunityStats();
   }
+
   render() {
-    const { user, stats } = this.props;
+    const { user, stats, personal } = this.props;
+
     const styleProps = user ? {
       width: '63%',
       margin: '2.5% 2.5% 2.5% 0'
@@ -26,9 +29,8 @@ class Dashboard extends PureComponent {
     };
     return (
       <main className="dashboard">
-        
         {user &&
-          <UserStats/>
+          <UserStats personal={personal}/>
         }
         <section 
           className="stats community-stats"
@@ -49,7 +51,8 @@ class Dashboard extends PureComponent {
 export default connect(
   state => ({
     user: state.user,
+    personal: state.stats.user,
     stats: state.stats.community
   }),
-  { getCommunityStats }
+  { getCommunityStats, getUserStats }
 )(Dashboard);

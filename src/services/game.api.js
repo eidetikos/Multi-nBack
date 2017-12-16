@@ -1,5 +1,6 @@
 import { post, get } from './api';
 
+
 export default {
   add(data) {
     return post('/games', data);
@@ -10,8 +11,4 @@ export default {
   getUsers() {
     return get('/games/users');
   },
-
-  // ### Aggregations ### //
-
-
 };

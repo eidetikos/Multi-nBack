@@ -59,6 +59,7 @@
 }
 
 /* TODO: add alt radio buttons; */
+/* Post project week */
 
 .pre-game .select-fieldset {
     position: relative;
@@ -75,7 +76,6 @@
     border: none;
     padding: 0.1em 0.4em;
 }
-
 
 .pre-game .play-button {
     margin-top: 0.5em;

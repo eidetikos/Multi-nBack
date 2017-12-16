@@ -33,7 +33,6 @@ export default function sequences(state = [], { type, payload }) {
       });
     case actions.WRAP_UP:
       return [];
-    
     default: 
       return state;
   }

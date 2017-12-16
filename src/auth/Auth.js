@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import Log from './Log';
 import './Auth.css';
 
+
 class Auth extends PureComponent {
  
   render() {

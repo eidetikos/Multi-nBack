@@ -20,6 +20,7 @@ white: #fff
     z-index: -1;
     height: 720px;
     top: 0; right: 0; bottom: 0; left: 0;
+    border-top: 1px solid #770d00;
     background-image: -webkit-gradient(linear, left top, left bottom, from(#d8eaec), to(white));
     background-image: -webkit-linear-gradient(top, #d8eaec, white);
     background-image: -moz-linear-gradient(top, #d8eaec, white);
@@ -47,11 +48,6 @@ white: #fff
     border-bottom: 3px solid #770d00;
     color: #254044;
 }
-
-.hero-header .auth {
-
-}
-
 
 .hero-header nav {
     position: fixed;

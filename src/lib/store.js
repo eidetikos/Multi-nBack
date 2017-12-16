@@ -6,11 +6,13 @@ import  game  from '../game/reducer/game.reducer';
 import { stats } from '../dashboard/reducer';
 import { loading, error } from '../app/reducer';
 
+
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 const rootReducer = combineReducers({
   user, game, stats, userError, loading, error
 });
+
 
 export const store = createStore(
   rootReducer,

@@ -1,9 +1,7 @@
 import React, { PureComponent } from 'react';
 import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
-
 import { logOut } from './actions';
-
 import AuthForm from '../auth/AuthForm';
 
 
@@ -31,9 +29,9 @@ class Log extends PureComponent {
   handleLogoutToggle = () => this.setState({ confirmLogoutIsOpen: !this.state.confirmLogoutIsOpen })
 
   handleLogout = () => {
+    localStorage.removeItem('token');
     this.props.logOut();
     this.handleLogoutToggle();
-    localStorage.removeItem('token');
     this.props.history.push('/');
   }
 

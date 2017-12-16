@@ -6,6 +6,7 @@ import Nav from '../nav/Nav';
 
 import './Header.css';
 
+
 class Header extends Component {
   render() {
     const { user } = this.props;

@@ -3,48 +3,49 @@ import { connect } from 'react-redux';
 import { initSequence, newGame, replay } from './actions/actions';
 import Chart from './Chart';
 import './PostGame.css';
-import { ChartStats } from '../styles/style';
+
 
 class PostGame extends PureComponent {
 
-  handleReset = () => {
-    this.props.replay();
-  }
-
-  handleChangeSettings = () => {
-    this.props.newGame();
-  }
+  handleReset = () => this.props.replay();
+  handleChangeSettings = () => this.props.newGame();
 
   render() {
     const finalStats = this.props.game.finalStats;
+
     return (finalStats.game ?
       (
         <div className="post-game">
-          <h1>{finalStats.user.name}'s Final Stats</h1>
-          <ChartStats>
+          <div className="post-chart">
+            <h5>{finalStats.user.name}'s Final Stats</h5>
             <Chart/>
-            <form>
-              <fieldset className="post-fieldset">
-                <legend>Game Stats</legend>
-                <ul>
-                  <li>
-              Your highest N achieved: { finalStats.game.highN }
-                  </li>
-                  <li>
-              Your average N achieved: { finalStats.game.avgN }
-                  </li>
-                </ul>
-              </fieldset>
-            </form>
-            <input type="button" value="Replay Game" onClick={this.handleReset}/>
-            <input type="button" value="Change Settings" onClick={this.handleChangeSettings}/>
-          </ChartStats>
+          </div>
+          <div className="post-stats">
+            <fieldset className="post-field">
+              <legend>Game Stats</legend>
+              <p>
+                    highest N: { finalStats.game.highN }
+              </p>
+              <p>
+                    average N: { finalStats.game.avgN }
+              </p>
+            </fieldset>
+            <div className="post-button">
+              <div>
+                <input type="button" name="replay" id="replay" value="Replay" onClick={this.handleReset}/>
+              </div>
+              <div>
+                <input type="button"  name="change-settings" id="change-settings" value="Settings" onClick={this.handleChangeSettings}/>
+              </div>
+            </div>
+          </div>
         </div>
       ) : (
         <div className="post-game"></div>
       ));
   }
 }
+
 export default connect(
   state => ({
     game: state.game
