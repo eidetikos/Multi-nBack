@@ -7,11 +7,10 @@ export class Chart extends PureComponent {
 
   render() {
     const finalStats = this.props.game.finalStats;
-    const nBacks = finalStats.game.sequences.map((sequence) => sequence.nBack).reverse();
-    nBacks.pop();
+    const nBacks = finalStats.game.sequences.map((sequence) => sequence.nBack);
     
     const chartData = {
-      labels: new Array(finalStats.game.sequences.length+1).fill(1).map((e, i) => i+1),
+      labels: new Array(finalStats.game.sequences.length).fill(1).map((e, i) => i+1),
       datasets: [{
         label: 'N',
         fill: false,
