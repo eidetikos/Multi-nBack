@@ -17,11 +17,19 @@ export function getCommunityStats() {
 export function getUserStats() {
   return async dispatch => {
 
-    const userStats = await stats.getPersonalStats();
-    if(userStats) {
+    try {
+      const userStats = await stats.getPersonalStats();
+      if(userStats) {
+        dispatch({
+          type: actions.GET_USER_STATS,
+          payload: userStats
+        });
+      }
+    }
+    catch(error) {
       dispatch({
         type: actions.GET_USER_STATS,
-        payload: userStats
+        payload: {}
       });
     }
   };
