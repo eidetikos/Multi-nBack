@@ -78,12 +78,13 @@ white: #fff
     width: 7em;
     margin: 0;
     border-radius: 10%;
-    border-bottom: solid 2px #254044;
-    border-top: solid 2px #254044;
+    border-bottom: solid 4px #254044;
+    border-top: solid 4px #254044;
     overflow: hidden;
     list-style-type: none;
     padding: 0;
     color: #254044;
+    font-size: 200%;
 }
 
 .hero-header nav ul li {
@@ -180,6 +181,7 @@ white: #fff
     list-style-type: none;
     color: #d8eaec;
     overflow: hidden;
+    font-size: 200%;
 }
 
 .collapsed-header nav ul li {
@@ -261,6 +263,11 @@ button.confirm-logout-button:hover, button.confirm-logout-button:target {
 
 
 @Media (min-width: 1080px) {
+
+    .hero-header nav ul,
+    .collapsed-header nav ul {
+        font-size: 135%;
+    }
 
     .collapsed-header .auth .logout-button:hover, .collapsed-header .auth .logout-button:target {
         background-image: -webkit-gradient(linear, left, right, from(#d8eaeca2), to(rgba(255, 255, 255, 0)));
