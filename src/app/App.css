@@ -41,9 +41,9 @@ footer::after {
   z-index: -1;
   height: 720px;
   top: 0; right: 0; bottom: 0; left: 0;
-  background-image: -webkit-gradient(linear, left bottom, left top, from(#d8eaec), to(white));
-  background-image: -webkit-linear-gradient(bottom, #d8eaec, white);
-  background-image: -moz-linear-gradient(bottom, #d8eaec, white);
+  background-image: -webkit-gradient(linear, left bottom, left top, from(#d8eaec00), to(white));
+  background-image: -webkit-linear-gradient(bottom, #d8eaec00, white);
+  background-image: -moz-linear-gradient(bottom, #d8eaec00, white);
   background-image: linear-gradient(to top, #d8eaec00 80%, white);
 }
 

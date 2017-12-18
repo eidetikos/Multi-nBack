@@ -21,9 +21,9 @@ white: #fff
     height: 720px;
     top: 0; right: 0; bottom: 0; left: 0;
     border-top: 1px solid #770d00;
-    background-image: -webkit-gradient(linear, left top, left bottom, from(#d8eaec), to(white));
-    background-image: -webkit-linear-gradient(top, #d8eaec, white);
-    background-image: -moz-linear-gradient(top, #d8eaec, white);
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#d8eaecbe), to(white));
+    background-image: -webkit-linear-gradient(top, #d8eaecbe, white);
+    background-image: -moz-linear-gradient(top, #d8eaecbe, white);
     background-image: linear-gradient(to bottom, #d8eaecbe 60%, white);
 }
 
@@ -78,12 +78,13 @@ white: #fff
     width: 7em;
     margin: 0;
     border-radius: 10%;
-    border-bottom: solid 2px #254044;
-    border-top: solid 2px #254044;
+    border-bottom: solid 4px #254044;
+    border-top: solid 4px #254044;
     overflow: hidden;
     list-style-type: none;
     padding: 0;
     color: #254044;
+    font-size: 200%;
 }
 
 .hero-header nav ul li {
@@ -160,13 +161,6 @@ white: #fff
     outline: none;
 }
 
-.collapsed-header .auth .logout-button:hover, .collapsed-header .auth .logout-button:target {
-    background-image: -webkit-gradient(linear, left, right, from(#d8eaeca2), to(rgba(255, 255, 255, 0)));
-    background-image: -webkit-linear-gradient(right, #d8eaeca2, rgba(255, 255, 255, 0));
-    background-image: -moz-linear-gradient(right, #d8eaeca2, rgba(255, 255, 255, 0));
-    background-image: linear-gradient(to right, #d8eaeca2, rgba(255, 255, 255, 0));
-}
-
 .collapsed-header nav {
     position: absolute;
     right: 0;
@@ -187,6 +181,7 @@ white: #fff
     list-style-type: none;
     color: #d8eaec;
     overflow: hidden;
+    font-size: 200%;
 }
 
 .collapsed-header nav ul li {
@@ -201,7 +196,7 @@ white: #fff
 
 .confirm-logout {
     position: absolute;
-    left: 0; right: 0;
+    left: -5.25em; right: 0;
     height: 6em;
     margin-top: 17px;
     border-top: solid #770d00 3px;
@@ -210,17 +205,19 @@ white: #fff
     font-family: 'Pragati Narrow', sans-serif;  
     color: #254044;
     text-align: center;
+    font-size: 200%;
     z-index: 3;
 }
 
 button.confirm-logout-close {
     position: absolute;
-    top: 5px;
-    right: 5px;
+    top: 0.2em;
+    right: 0.2em;
     border: none;
     color: #254044;
     background: #d8eaec;
-    border-radius: 3px;
+    border-radius: 0.25em;
+    font-size: 100%;
 }
 
 .confirm-logout p { 
@@ -242,10 +239,55 @@ button.confirm-logout-button {
     padding: 0.5em 3em;
     text-align: center;
     background-color: #d8eaec;
+    font-size: 50%;
     letter-spacing: 0.2em;
     outline: none;
 }
 
 button.confirm-logout-button:hover, button.confirm-logout-button:target {
     border: 2px solid #568289;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@Media (min-width: 1080px) {
+
+    .hero-header nav ul,
+    .collapsed-header nav ul {
+        font-size: 135%;
+    }
+
+    .collapsed-header .auth .logout-button:hover, .collapsed-header .auth .logout-button:target {
+        background-image: -webkit-gradient(linear, left, right, from(#d8eaeca2), to(rgba(255, 255, 255, 0)));
+        background-image: -webkit-linear-gradient(right, #d8eaeca2, rgba(255, 255, 255, 0));
+        background-image: -moz-linear-gradient(right, #d8eaeca2, rgba(255, 255, 255, 0));
+        background-image: linear-gradient(to right, #d8eaeca2, rgba(255, 255, 255, 0));
+    }
+
+    .confirm-logout {
+        left: 0;
+        font-size: 85%;
+    }
+
+    button.confirm-logout-close {
+        top: 5px;
+        right: 5px;
+        border-radius: 3px;
+    }
+
+    button.confirm-logout-button {
+        font-size: 50%;
+    }
 }
