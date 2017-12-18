@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MostRecalled shows MostRecalled component 1`] = `
+<article
+  className="most-recalled"
+/>
+`;

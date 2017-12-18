@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header shows Header component 1`] = `
+<header
+  className="hero-header"
+>
+  <h1>
+    multi N back
+  </h1>
+  <Connect(Auth) />
+  <Connect(Nav) />
+</header>
+`;

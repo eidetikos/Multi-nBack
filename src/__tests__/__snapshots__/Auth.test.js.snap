@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Auth shows Auth component 1`] = `
+<div
+  className="auth"
+>
+  <withRouter(Connect(Log)) />
+</div>
+`;

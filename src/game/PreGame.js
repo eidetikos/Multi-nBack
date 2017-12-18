@@ -5,7 +5,7 @@ import { setSettings } from './actions/actions';
 import './PreGame.css';
 
 
-class PreGame extends PureComponent {
+export class PreGame extends PureComponent {
   constructor() {
     super();
     this.state = {
