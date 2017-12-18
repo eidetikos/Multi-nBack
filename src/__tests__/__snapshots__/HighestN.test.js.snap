@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HighestN shows HighestN component 1`] = `
+<article
+  className="highest-n"
+/>
+`;

@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { getUserStats } from './actions';
 
 
-class UserStats extends PureComponent {
+export class UserStats extends PureComponent {
   
   componentDidMount() { 
     this.props.getUserStats();

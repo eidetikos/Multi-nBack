@@ -12,7 +12,6 @@ class PostGame extends PureComponent {
 
   render() {
     const finalStats = this.props.game.finalStats;
-    console.log(finalStats)
 
     return (finalStats.game ?
       (

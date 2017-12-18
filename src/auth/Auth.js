@@ -4,7 +4,7 @@ import Log from './Log';
 import './Auth.css';
 
 
-class Auth extends PureComponent {
+export class Auth extends PureComponent {
  
   render() {
     return (

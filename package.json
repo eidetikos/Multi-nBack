@@ -34,8 +34,12 @@
   "proxy": "http://localhost:3001",
   "devDependencies": {
     "deep-equal": "^1.0.1",
+    "enzyme": "^3.2.0",
+    "enzyme-adapter-react-16": "^1.1.0",
+    "jest-enzyme": "^4.0.1",
+    "node-sass-chokidar": "0.0.3",
     "now": "^8.5.4",
-    "node-sass-chokidar": "0.0.3"
+    "react-test-renderer": "^16.2.0"
   },
   "now": {
     "alias": "multi-n-back.now.sh"

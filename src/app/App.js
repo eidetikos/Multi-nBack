@@ -12,7 +12,7 @@ import PrivateRoute from '../auth/PrivateRoute';
 import './App.css';
 
 
-class App extends Component {
+export class App extends Component {
 
   componentDidMount() {
     this.props.checkForToken();

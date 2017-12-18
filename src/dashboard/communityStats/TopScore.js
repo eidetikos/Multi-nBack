@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
 
 
-class TopScore extends PureComponent {
+export class TopScore extends PureComponent {
   
   render() {
     const { leaderboard } = this.props;

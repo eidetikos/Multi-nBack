@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
 
 
-class HighestN extends PureComponent {
+export class HighestN extends PureComponent {
 
   render() {
     const { leaderboard } = this.props;
