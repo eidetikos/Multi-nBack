@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "multi-N-back",
+  "name": "multi-N-back",
   "icons": [
     {
       "src": "favicon.ico",
