@@ -1,5 +1,5 @@
 .about {
-    padding: 2.5em 20% 4em 20%;;
+    padding: 2.5em 12.5% 4em 12.5%;;
 }
 
 .about section {
@@ -40,4 +40,23 @@
     background-image: -webkit-radial-gradient(center, #d8eaec, #ffffff00 25%, #ffffff00 75%, #d8eaec);
     background-image: -moz-radial-gradient(center, #d8eaec, #ffffff00 25%, #ffffff00 75%, #d8eaec);
     background-image: radial-gradient(at center, #ffffff00 60%, #d8eaec);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@Media (min-width: 1080px) {
+    .about {
+        padding: 2.5em 20% 4em 20%;;
+    }
 }
