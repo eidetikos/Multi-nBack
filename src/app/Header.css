@@ -21,9 +21,9 @@ white: #fff
     height: 720px;
     top: 0; right: 0; bottom: 0; left: 0;
     border-top: 1px solid #770d00;
-    background-image: -webkit-gradient(linear, left top, left bottom, from(#d8eaec), to(white));
-    background-image: -webkit-linear-gradient(top, #d8eaec, white);
-    background-image: -moz-linear-gradient(top, #d8eaec, white);
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#d8eaecbe), to(white));
+    background-image: -webkit-linear-gradient(top, #d8eaecbe, white);
+    background-image: -moz-linear-gradient(top, #d8eaecbe, white);
     background-image: linear-gradient(to bottom, #d8eaecbe 60%, white);
 }
 
