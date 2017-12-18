@@ -19,5 +19,40 @@ This project is being created to showcase a full-stack web development.  The mot
 # STYLE
 For the frontend development, we are using the React JavaScript library for building our user interface, Redux for our state management, and Promises and async-await to handle our asynchronous code. For the backend, we are using the Node.js extension, .mjs, to support our ES modules, express as our framework, and MongoDB for our database.  We use white space to separate our imports from the rest of the code and to separate grouped blocks of code.  We indent our code using 2 spaces on the frontend and 4 spaces on the backend.
 
+## Requirements
+
+MongoDB, latest stable version of Node.js 
+
+## Installation
+
+
+1. Clone repository.
+
+    ```
+    git clone https://github.com/tbdello/i-travel 
+    ```
+
+1. Install dependencies.
+
+    ```
+    npm install
+    ```
+
+Server to run this app can be found at:
+
+https://github.com/eidetikos/multi-n-back-api
+
+installation of server is the same as above installation.
+
+The default port is 3000.
+
+## Usage
+
+After installation, in the terminal type: `npm start`
+After server installation, in the terminal type: `npm run start:watch`
+
+and then open a browser to: `http://localhost:3000/`
+
+
 # GROUP MEMBERS
 Our group is called Eidetikos and we are David, Kate, and Zach.
