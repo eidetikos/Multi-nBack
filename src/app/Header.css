@@ -160,13 +160,6 @@ white: #fff
     outline: none;
 }
 
-.collapsed-header .auth .logout-button:hover, .collapsed-header .auth .logout-button:target {
-    background-image: -webkit-gradient(linear, left, right, from(#d8eaeca2), to(rgba(255, 255, 255, 0)));
-    background-image: -webkit-linear-gradient(right, #d8eaeca2, rgba(255, 255, 255, 0));
-    background-image: -moz-linear-gradient(right, #d8eaeca2, rgba(255, 255, 255, 0));
-    background-image: linear-gradient(to right, #d8eaeca2, rgba(255, 255, 255, 0));
-}
-
 .collapsed-header nav {
     position: absolute;
     right: 0;
@@ -201,7 +194,7 @@ white: #fff
 
 .confirm-logout {
     position: absolute;
-    left: 0; right: 0;
+    left: -5.25em; right: 0;
     height: 6em;
     margin-top: 17px;
     border-top: solid #770d00 3px;
@@ -210,17 +203,19 @@ white: #fff
     font-family: 'Pragati Narrow', sans-serif;  
     color: #254044;
     text-align: center;
+    font-size: 200%;
     z-index: 3;
 }
 
 button.confirm-logout-close {
     position: absolute;
-    top: 5px;
-    right: 5px;
+    top: 0.2em;
+    right: 0.2em;
     border: none;
     color: #254044;
     background: #d8eaec;
-    border-radius: 3px;
+    border-radius: 0.25em;
+    font-size: 100%;
 }
 
 .confirm-logout p { 
@@ -242,10 +237,50 @@ button.confirm-logout-button {
     padding: 0.5em 3em;
     text-align: center;
     background-color: #d8eaec;
+    font-size: 50%;
     letter-spacing: 0.2em;
     outline: none;
 }
 
 button.confirm-logout-button:hover, button.confirm-logout-button:target {
     border: 2px solid #568289;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@Media (min-width: 1080px) {
+
+    .collapsed-header .auth .logout-button:hover, .collapsed-header .auth .logout-button:target {
+        background-image: -webkit-gradient(linear, left, right, from(#d8eaeca2), to(rgba(255, 255, 255, 0)));
+        background-image: -webkit-linear-gradient(right, #d8eaeca2, rgba(255, 255, 255, 0));
+        background-image: -moz-linear-gradient(right, #d8eaeca2, rgba(255, 255, 255, 0));
+        background-image: linear-gradient(to right, #d8eaeca2, rgba(255, 255, 255, 0));
+    }
+
+    .confirm-logout {
+        left: 0;
+        font-size: 85%;
+    }
+
+    button.confirm-logout-close {
+        top: 5px;
+        right: 5px;
+        border-radius: 3px;
+    }
+
+    button.confirm-logout-button {
+        font-size: 50%;
+    }
 }
