@@ -29,7 +29,7 @@ MongoDB, latest stable version of Node.js
 1. Clone repository.
 
     ```
-    git clone https://github.com/tbdello/i-travel 
+    git clone https://github.com/eidetikos/multi-n-back 
     ```
 
 1. Install dependencies.
