@@ -7,8 +7,9 @@ import Error from '../app/Error';
 
 class AuthForm extends PureComponent {
 
-  handleLogin = event => {
-
+  handleSubmit = event => {
+    // onClick means enter key won't work. Not sure how else you might do this...
+    
     if(event.target.value === 'signin' || event.target.value === 'signup') {
       const loginType = event.target.value;
       const form = event.target.parentNode.parentNode;
@@ -40,7 +41,7 @@ class AuthForm extends PureComponent {
     return (this.verifiedUser ? (
       <button onClick={this.handleLogout}>Are you sure?</button>
     ) : (
-      <form onClick={this.handleLogin}>
+      <form onSubmit={this.handleSubmit}>
         <section className="login-input-field">
           <section className="login-input">
             <label>User Name:</label>

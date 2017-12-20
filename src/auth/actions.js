@@ -81,9 +81,9 @@ export function signIn(name, password) {
 }
 
 export function logOut() {
-
   return dispatch => {
     dispatch({ type: actions.INIT_GAME });
     dispatch({ type: actions.LOG_OUT });
+    localStorage.removeItem('token');
   };
 }

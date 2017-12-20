@@ -73,6 +73,6 @@ export class PreGame extends PureComponent {
 }
 
 export default connect(
-  state => ({}),
+  null,
   { setSettings }
 )(PreGame);

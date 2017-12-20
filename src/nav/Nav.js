@@ -12,8 +12,8 @@ class Nav extends PureComponent {
       collapsed: false
     };
   }
-
-  handleToggle = () => this.setState({ collapsed: !this.state.collapsed });
+  // use function form of setState
+  handleToggle = () => this.setState(state => ({ collapsed: !state.collapsed }));
 
   render() {
     return (
