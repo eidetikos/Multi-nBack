@@ -1,3 +1,5 @@
+// initial commit 
+
 # multi-N-back SYNOPSIS
 Multi-N-back is a game based on the cognitive training game, Dual-N-Back, that has been scientifically proven to improve memory.  In the multi-N-back paradigm, two to five variates (audio, color, number, position, and/or shape)  are presented at the same time. N refers to how many previous stimuli in the sequence must be recalled. 
 
