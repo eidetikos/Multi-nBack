@@ -14,28 +14,32 @@ class Log extends PureComponent {
       confirmLogoutIsOpen: false
     };
 
-    this.openModal = this.openModal.bind(this);
-    this.closeModal = this.closeModal.bind(this);
+    // this.openModal = this.openModal.bind(this);
+    // this.closeModal = this.closeModal.bind(this);
   }
-
-  openModal() {
+  // pick one style and stick with it
+  openModal = () => {
     this.setState({ modalIsOpen: true });
   }
 
-  closeModal() {
+  closeModal = () => {
     this.setState({ modalIsOpen: false });
   }
 
-  handleLogoutToggle = () => this.setState({ confirmLogoutIsOpen: !this.state.confirmLogoutIsOpen })
+  // need to use function when updating state _from_ state
+  handleLogoutToggle = () => this.setState(prevState => ({ confirmLogoutIsOpen: !prevState.confirmLogoutIsOpen }))
 
   handleLogout = () => {
-    localStorage.removeItem('token');
+    // this should be part of action creator,
+    // same place as rest of localStorage use
+    // localStorage.removeItem('token');
     this.handleLogoutToggle();
     this.props.logOut();
     this.props.history.push('/');
   }
 
   componentWillMount() {
+    // this can go in constructor
     this.verifiedUser = !!localStorage.getItem('token');
   }
 

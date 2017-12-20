@@ -7,22 +7,21 @@ import PostGame from './PostGame';
 
 import './Game.css';
 
+const Games = {
+  pre: PreGame,
+  in: InGame,
+  post: PostGame
+};
 
 class Game extends PureComponent {
 
   render() {
     const { game } = this.props;
+    const Game = Games[game.status];
+
     return (
       <main className="game">
-        {game.status === 'pre' &&
-          <PreGame/>
-        }
-        {game.status === 'in' &&
-          <InGame/>
-        }
-        {game.status === 'post' &&
-          <PostGame/>
-        }
+        <Game key={game.status}/>
       </main>
     );
   }

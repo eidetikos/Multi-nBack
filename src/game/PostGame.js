@@ -11,14 +11,15 @@ class PostGame extends PureComponent {
   handleChangeSettings = () => this.props.newGame();
 
   render() {
-    const finalStats = this.props.game.finalStats;
+    const { game } = this.props;
+    const { finalStats } = game;
 
     return (finalStats.game ?
       (
         <div className="post-game">
           <div className="post-chart">
             <h5>{finalStats.user.name}'s Final Stats</h5>
-            <Chart/>
+            <Chart game={game}/>
           </div>
           <div className="post-stats">
             <fieldset className="post-field">

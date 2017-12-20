@@ -63,9 +63,10 @@ export class Chart extends PureComponent {
   }
 }
 
-export default connect(
-  state => ({
-    game: state.game
-  }),
-  null
-)(Chart);
+// In this case, better for Chart to get this from parent
+// export default connect(
+//   state => ({
+//     game: state.game
+//   }),
+//   null
+// )(Chart);
